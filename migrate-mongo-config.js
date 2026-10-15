@@ -1,13 +1,13 @@
-require("dotenv").config();
+require('dotenv').config();
 
 module.exports = {
   mongodb: {
-    url: process.env.MONGODB_URI || "mongodb://localhost:27017/univers_barca",
+    url: process.env.MONGODB_URI || 'mongodb://localhost:27017/univers_barca',
     options: {},
   },
-  migrationsDir: "scripts/migrations",
-  changelogCollectionName: "migrations_changelog",
-  migrationFileExtension: ".js",
+  migrationsDir: 'scripts/migrations',
+  changelogCollectionName: 'migrations_changelog',
+  migrationFileExtension: '.js',
   useFileHash: false,
-  moduleSystem: "commonjs",
+  moduleSystem: 'commonjs',
 };

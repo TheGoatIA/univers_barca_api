@@ -97,7 +97,19 @@ jobs:
     environment: ${{ github.ref == 'refs/heads/main' && 'production' || 'staging' }}
     steps:
       - uses: actions/checkout@v4
+      - name: Vérifier la configuration du VPS
+        id: vps
+        env:
+          VPS_HOST: ${{ secrets.VPS_HOST }}
+        run: |
+          if [ -z "$VPS_HOST" ]; then
+            echo "configured=false" >> "$GITHUB_OUTPUT"
+            echo "::notice::Secrets VPS absents : image construite et publiée, déploiement SSH ignoré (voir docs/DEPLOYMENT.md)."
+          else
+            echo "configured=true" >> "$GITHUB_OUTPUT"
+          fi
       - name: Déployer via SSH (avec rollback automatique)
+        if: steps.vps.outputs.configured == 'true'
         uses: appleboy/ssh-action@v1.2.5
         env:
           IMAGE: ${{ needs.docker.outputs.image }}

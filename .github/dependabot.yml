@@ -65,6 +65,9 @@ updates:
     labels: ["dependabot", "docker"]
     commit-message:
       prefix: "build(docker)"
+    ignore:
+      - dependency-name: "*"
+        update-types: ["version-update:semver-major"]
 
   - package-ecosystem: "docker"
     directory: "/docker"
@@ -77,6 +80,9 @@ updates:
     labels: ["dependabot", "docker"]
     commit-message:
       prefix: "build(docker)"
+    ignore:
+      - dependency-name: "*"
+        update-types: ["version-update:semver-major"]
 
   - package-ecosystem: "github-actions"
     directory: "/"
