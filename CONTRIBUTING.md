@@ -28,6 +28,7 @@ npm run lint && npm run format:check && npm run typecheck
 npm run test:unit
 docker compose -f docker/docker-compose.dev.yml up -d mongodb mongo-init redis
 npm run test:integration && npm run test:e2e && npm run test:security
+npm run load:smoke           # après une modification de route : ajouter le parcours à tests/load/lib.js
 npm run check:swagger        # si vous avez modifié des routes : npm run export:swagger puis committer swagger.json
 ```
 

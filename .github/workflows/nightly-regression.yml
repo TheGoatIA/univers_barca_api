@@ -39,15 +39,3 @@ jobs:
       - name: Audit complet
         run: npm audit --audit-level=moderate
         continue-on-error: true
-      - name: Démarrer l'API pour le test de charge
-        run: |
-          npm run build
-          JWT_ACCESS_SECRET=$(openssl rand -hex 32) JWT_REFRESH_SECRET=$(openssl rand -hex 32) RUN_CRON=false node dist/server.js &
-          for i in $(seq 1 30); do curl -sf http://localhost:5000/health && break || sleep 1; done
-      - name: Test de charge de fumée (k6)
-        uses: grafana/k6-action@v0.3.1
-        continue-on-error: true
-        with:
-          filename: tests/load/smoke.js
-        env:
-          BASE_URL: http://localhost:5000

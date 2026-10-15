@@ -1,19 +1,21 @@
-// Test de charge de fumée k6 — cible : BASE_URL (par défaut un API locale).
-import http from 'k6/http';
-import { check, sleep } from 'k6';
+// Profil « smoke » — vérification rapide : 1 utilisateur virtuel, 30 s. Valide que la plateforme répond avant de charger.
+import { createUsers, mixedIteration, report, thresholds } from './lib.js';
 
 export const options = {
-  vus: 10,
+  summaryTrendStats: ['avg', 'min', 'med', 'p(90)', 'p(95)', 'p(99)', 'max'],
+  vus: 1,
   duration: '30s',
-  thresholds: { http_req_failed: ['rate<0.01'], http_req_duration: ['p(95)<500'] },
+  thresholds: thresholds(),
 };
 
-const BASE = __ENV.BASE_URL || 'http://localhost:5000';
+export function setup() {
+  return { users: createUsers('smoke') };
+}
 
-export default function () {
-  const res = http.get(`${BASE}/health`);
-  check(res, { 'health 200': (r) => r.status === 200 });
-  const players = http.get(`${BASE}/api/v1/players?limit=10`);
-  check(players, { 'players 200': (r) => r.status === 200 });
-  sleep(1);
+export default function (data) {
+  mixedIteration(data.users);
+}
+
+export function handleSummary(data) {
+  return report('smoke', data);
 }

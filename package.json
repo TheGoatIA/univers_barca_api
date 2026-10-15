@@ -33,7 +33,12 @@
     "export:swagger": "tsx scripts/export-swagger.ts",
     "check:swagger": "tsx scripts/export-swagger.ts --check",
     "licenses": "license-checker-rseidelsohn --production --markdown --out THIRD_PARTY_LICENSES.md",
-    "prepare": "husky || true"
+    "prepare": "husky || true",
+    "load:smoke": "sh scripts/run-load.sh smoke",
+    "load:load": "sh scripts/run-load.sh load",
+    "load:stress": "sh scripts/run-load.sh stress",
+    "load:spike": "sh scripts/run-load.sh spike",
+    "load:soak": "sh scripts/run-load.sh soak"
   },
   "lint-staged": {
     "*.ts": [

@@ -52,6 +52,7 @@ npm run dev                                # http://localhost:5000
 - [Architecture](docs/ARCHITECTURE.md) — vues d'ensemble, flux d'authentification, déploiement (Mermaid)
 - [Base de données](docs/DATABASE.md) — collections, index, relations
 - [Déploiement](docs/DEPLOYMENT.md) — environnements, secrets, VPS, CI/CD, rollback
+- [Tests de montée en charge](docs/LOAD_TESTING.md) — profils k6, dimensionnement, journal des capacités
 - [Reprise après sinistre](docs/DISASTER_RECOVERY.md) — sauvegardes, restauration, RPO/RTO
 - [Décisions d'architecture (ADR)](docs/adr/)
 - [Journal des changements](CHANGELOG.md) · [Sécurité](SECURITY.md) · [Contribuer](CONTRIBUTING.md)

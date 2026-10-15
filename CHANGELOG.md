@@ -6,6 +6,8 @@ Format inspiré de [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/). Les
 
 ### Ajouté
 
+- Tests de montée en charge k6 (smoke, charge, stress, pic, endurance), workflow dédié et suivi de tendance.
+
 - Socle Express + MongoDB (Mongoose) + Redis + BullMQ, architecture en couches.
 - Authentification utilisateur : inscription avec consentements RGPD, connexion, rotation du refresh token avec détection de réutilisation, déconnexion, réinitialisation de mot de passe, export et suppression de compte.
 - Authentification back-office distincte : cookie httpOnly, verrouillage après échecs, 2FA TOTP, RBAC (`content-manager`, `moderator`, `super-admin`).

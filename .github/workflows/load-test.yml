@@ -1,0 +1,107 @@
+name: Tests de montée en charge
+
+# push sur dev : smoke + charge nominale réduite (suivi de tendance à chaque évolution)
+# lundi 01:00 UTC : stress + pic (dimensionnement)  |  manuel : profil et cible au choix (ex. staging)
+on:
+  push:
+    branches: [dev]
+    paths: ["src/**", "package*.json", "tests/load/**", "Dockerfile", "ecosystem.config.js"]
+  schedule:
+    - cron: "0 1 * * 1"
+  workflow_dispatch:
+    inputs:
+      profile:
+        description: "Profil k6"
+        type: choice
+        default: load
+        options: [smoke, load, stress, spike, soak]
+      target_url:
+        description: "URL cible (vide = API démarrée dans le runner). Ex. https://api-staging.univers-barca.app"
+        required: false
+        default: ""
+      vus:
+        description: "Utilisateurs virtuels (LOAD_VUS / STRESS_VUS / SPIKE_VUS / SOAK_VUS)"
+        required: false
+        default: ""
+
+permissions:
+  contents: read
+
+concurrency:
+  group: load-test-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  load:
+    name: Charge (${{ github.event_name == 'schedule' && 'stress + pic' || inputs.profile || 'smoke + charge' }})
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    services:
+      mongo:
+        image: mongo:7-jammy
+        ports: ["27017:27017"]
+        options: >-
+          --health-cmd "mongosh --quiet --eval 'db.adminCommand(\"ping\").ok'"
+          --health-interval 10s --health-timeout 5s --health-retries 10
+      redis:
+        image: redis:7-alpine
+        ports: ["6379:6379"]
+        options: >-
+          --health-cmd "redis-cli ping" --health-interval 10s --health-timeout 5s --health-retries 5
+    env:
+      TARGET_URL: ${{ inputs.target_url }}
+      VUS: ${{ inputs.vus }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+      - run: npm ci
+      - uses: grafana/setup-k6-action@v1
+
+      - name: Démarrer l'API locale (Mongo + Redis du runner)
+        if: env.TARGET_URL == ''
+        env:
+          NODE_ENV: staging
+          MONGODB_URI: mongodb://localhost:27017/univers_barca_load
+          REDIS_URL: redis://localhost:6379
+          RATE_LIMIT_DISABLED: "true"
+          RUN_CRON: "false"
+          PORT: "5000"
+        run: |
+          export JWT_ACCESS_SECRET=$(openssl rand -hex 32) JWT_REFRESH_SECRET=$(openssl rand -hex 32)
+          npm run build
+          npx tsx scripts/seed-data.ts
+          nohup node dist/server.js > api.log 2>&1 &
+          for i in $(seq 1 30); do curl -sf http://localhost:5000/health/deep && break || sleep 1; done
+
+      - name: Exécuter les profils k6
+        run: |
+          BASE="${TARGET_URL:-http://localhost:5000}"
+          export BASE_URL="$BASE"
+          if [ "${{ github.event_name }}" = "schedule" ]; then PROFILES="stress spike"
+          elif [ "${{ github.event_name }}" = "workflow_dispatch" ]; then PROFILES="${{ inputs.profile }}"
+          else PROFILES="smoke load"; export LOAD_VUS=30 LOAD_HOLD=1m; fi
+          if [ -n "$VUS" ]; then export LOAD_VUS=$VUS STRESS_VUS=$VUS SPIKE_VUS=$VUS SOAK_VUS=$VUS; fi
+          mkdir -p tests/load/results
+          status=0
+          for p in $PROFILES; do
+            echo "::group::k6 $p"
+            (cd tests/load && k6 run $p.js) || status=$?
+            echo "::endgroup::"
+            cat tests/load/results/$p.md >> "$GITHUB_STEP_SUMMARY" 2>/dev/null || true
+            node scripts/load-compare.mjs $p >> "$GITHUB_STEP_SUMMARY" || true
+          done
+          exit $status
+
+      - name: Journal de l'API en cas d'échec
+        if: failure() && env.TARGET_URL == ''
+        run: tail -n 100 api.log || true
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: load-results-${{ github.run_number }}
+          path: tests/load/results/
+          retention-days: 90

@@ -1,7 +1,7 @@
 import { Options, rateLimit } from 'express-rate-limit';
 import { RedisStore } from 'rate-limit-redis';
 import { getRedis } from '../config/redis';
-import { isTest } from '../config/env';
+import { isProd, isTest } from '../config/env';
 
 const make = (prefix: string, windowMs: number, limit: number, message: string) => {
   const redis = getRedis();
@@ -10,7 +10,10 @@ const make = (prefix: string, windowMs: number, limit: number, message: string) 
     limit,
     standardHeaders: 'draft-7',
     legacyHeaders: false,
-    skip: () => isTest && process.env.RATE_LIMIT_IN_TESTS !== 'true',
+    // Désactivable hors production uniquement : tests automatisés et tests de charge (RATE_LIMIT_DISABLED=true)
+    skip: () =>
+      (isTest && process.env.RATE_LIMIT_IN_TESTS !== 'true') ||
+      (!isProd && process.env.RATE_LIMIT_DISABLED === 'true'),
     handler: (_req, res) =>
       res.status(429).json({ success: false, error: { code: 'RATE_LIMITED', message } }),
   };
