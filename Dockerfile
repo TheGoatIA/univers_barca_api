@@ -1,6 +1,6 @@
 # syntax=docker/dockerfile:1.7
 # ─── Stage 1 : Builder ───────────────────────────────────────────────────────
-FROM node:22-alpine AS builder
+FROM node:25-alpine AS builder
 WORKDIR /app
 RUN apk add --no-cache python3 make g++
 COPY package*.json ./
@@ -16,7 +16,7 @@ FROM builder AS seeder
 CMD ["npx", "tsx", "scripts/seed-data.ts", "--force"]
 
 # ─── Stage 3 : Production ────────────────────────────────────────────────────
-FROM node:22-alpine AS production
+FROM node:25-alpine AS production
 RUN apk add --no-cache tini curl mongodb-tools python3 make g++ \
  && npm install -g pm2@latest
 WORKDIR /app
