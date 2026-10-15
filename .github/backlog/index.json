@@ -2174,6 +2174,716 @@
    ]
   },
   {
+   "code": "API-FANT-01",
+   "title": "[API-FANT-01] Modèle Gameweek, génération des journées et endpoints de lecture",
+   "labels": [
+    "backend",
+    "module:fantasy",
+    "module:football-data",
+    "phase:2",
+    "priorite:P0",
+    "taille:L",
+    "type:donnees"
+   ],
+   "milestone": "Phase 2 — Communautaire & compétitif",
+   "epic": "API-FANT",
+   "type": "donnees",
+   "ecrans": [
+    "H-01",
+    "H-02",
+    "H-09",
+    "H-10"
+   ]
+  },
+  {
+   "code": "API-FANT-02",
+   "title": "[API-FANT-02] Durcir les modèles FantasyTeam et FantasyGameweekScore",
+   "labels": [
+    "backend",
+    "module:fantasy",
+    "phase:2",
+    "priorite:P0",
+    "taille:M",
+    "type:donnees"
+   ],
+   "milestone": "Phase 2 — Communautaire & compétitif",
+   "epic": "API-FANT",
+   "type": "donnees",
+   "ecrans": [
+    "H-02",
+    "H-03",
+    "H-06",
+    "H-10"
+   ]
+  },
+  {
+   "code": "API-FANT-03",
+   "title": "[API-FANT-03] Service des formations et règles de validation d'une composition",
+   "labels": [
+    "backend",
+    "module:fantasy",
+    "phase:2",
+    "priorite:P0",
+    "taille:M",
+    "type:fonctionnel"
+   ],
+   "milestone": "Phase 2 — Communautaire & compétitif",
+   "epic": "API-FANT",
+   "type": "fonctionnel",
+   "ecrans": [
+    "H-02",
+    "H-03",
+    "H-04",
+    "H-05"
+   ]
+  },
+  {
+   "code": "API-FANT-04",
+   "title": "[API-FANT-04] Endpoint des joueurs sélectionnables avec forme et points",
+   "labels": [
+    "backend",
+    "module:fantasy",
+    "module:football-data",
+    "phase:2",
+    "priorite:P0",
+    "taille:M",
+    "type:api"
+   ],
+   "milestone": "Phase 2 — Communautaire & compétitif",
+   "epic": "API-FANT",
+   "type": "api",
+   "ecrans": [
+    "H-05",
+    "H-03"
+   ]
+  },
+  {
+   "code": "API-FANT-05",
+   "title": "[API-FANT-05] GET /fantasy/team : consultation de l'équipe d'une journée",
+   "labels": [
+    "backend",
+    "module:fantasy",
+    "phase:2",
+    "priorite:P0",
+    "taille:S",
+    "type:api"
+   ],
+   "milestone": "Phase 2 — Communautaire & compétitif",
+   "epic": "API-FANT",
+   "type": "api",
+   "ecrans": [
+    "H-01",
+    "H-02",
+    "H-03",
+    "H-09",
+    "H-10",
+    "H-16"
+   ]
+  },
+  {
+   "code": "API-FANT-06",
+   "title": "[API-FANT-06] PUT /fantasy/team : création/mise à jour du XI (409 verrouillé, 422 invalide)",
+   "labels": [
+    "backend",
+    "high-priority",
+    "module:fantasy",
+    "phase:2",
+    "priorite:P0",
+    "taille:L",
+    "type:api"
+   ],
+   "milestone": "Phase 2 — Communautaire & compétitif",
+   "epic": "API-FANT",
+   "type": "api",
+   "ecrans": [
+    "H-02",
+    "H-07",
+    "H-08",
+    "H-09"
+   ]
+  },
+  {
+   "code": "API-FANT-07",
+   "title": "[API-FANT-07] Verrouillage des compositions au coup d'envoi (garde serveur et job différé)",
+   "labels": [
+    "backend",
+    "high-priority",
+    "module:fantasy",
+    "phase:2",
+    "priorite:P0",
+    "taille:M",
+    "type:fonctionnel"
+   ],
+   "milestone": "Phase 2 — Communautaire & compétitif",
+   "epic": "API-FANT",
+   "type": "fonctionnel",
+   "ecrans": [
+    "H-01",
+    "H-02",
+    "H-09"
+   ]
+  },
+  {
+   "code": "API-FANT-08",
+   "title": "[API-FANT-08] Barème ScoringRule versionné : modèle, seed CDC et endpoints",
+   "labels": [
+    "backend",
+    "module:fantasy",
+    "module:plateforme",
+    "phase:2",
+    "priorite:P0",
+    "taille:L",
+    "type:donnees"
+   ],
+   "milestone": "Phase 2 — Communautaire & compétitif",
+   "epic": "API-FANT",
+   "type": "donnees",
+   "ecrans": [
+    "H-14",
+    "H-11"
+   ]
+  },
+  {
+   "code": "API-FANT-09",
+   "title": "[API-FANT-09] Événements de match enrichis et statistiques par joueur et par match",
+   "labels": [
+    "backend",
+    "module:fantasy",
+    "module:football-data",
+    "phase:2",
+    "priorite:P0",
+    "taille:L",
+    "type:donnees"
+   ],
+   "milestone": "Phase 2 — Communautaire & compétitif",
+   "epic": "API-FANT",
+   "type": "donnees",
+   "ecrans": [
+    "H-10",
+    "H-11"
+   ]
+  },
+  {
+   "code": "API-FANT-10",
+   "title": "[API-FANT-10] Moteur de scoring partagé : calcul des points d'un joueur depuis les statistiques",
+   "labels": [
+    "backend",
+    "high-priority",
+    "module:fantasy",
+    "phase:2",
+    "priorite:P0",
+    "taille:L",
+    "type:fonctionnel"
+   ],
+   "milestone": "Phase 2 — Communautaire & compétitif",
+   "epic": "API-FANT",
+   "type": "fonctionnel",
+   "ecrans": [
+    "H-10",
+    "H-11",
+    "H-14"
+   ]
+  },
+  {
+   "code": "API-FANT-11",
+   "title": "[API-FANT-11] Job BullMQ compute-fantasy-scores (provisoire en direct et final)",
+   "labels": [
+    "backend",
+    "module:fantasy",
+    "phase:2",
+    "priorite:P0",
+    "taille:L",
+    "type:infra"
+   ],
+   "milestone": "Phase 2 — Communautaire & compétitif",
+   "epic": "API-FANT",
+   "type": "infra",
+   "ecrans": [
+    "H-09",
+    "H-10"
+   ]
+  },
+  {
+   "code": "API-FANT-12",
+   "title": "[API-FANT-12] Idempotence, correction de statistiques et reprise des calculs Fantasy",
+   "labels": [
+    "backend",
+    "module:fantasy",
+    "phase:2",
+    "priorite:P0",
+    "taille:M",
+    "type:infra"
+   ],
+   "milestone": "Phase 2 — Communautaire & compétitif",
+   "epic": "API-FANT",
+   "type": "infra",
+   "ecrans": [
+    "H-10"
+   ]
+  },
+  {
+   "code": "API-FANT-13",
+   "title": "[API-FANT-13] Points d'une journée et détail par joueur",
+   "labels": [
+    "backend",
+    "module:fantasy",
+    "phase:2",
+    "priorite:P0",
+    "taille:M",
+    "type:api"
+   ],
+   "milestone": "Phase 2 — Communautaire & compétitif",
+   "epic": "API-FANT",
+   "type": "api",
+   "ecrans": [
+    "H-10",
+    "H-11",
+    "H-09"
+   ]
+  },
+  {
+   "code": "API-FANT-14",
+   "title": "[API-FANT-14] Classements matérialisés : FantasyStanding et sorted sets Redis",
+   "labels": [
+    "backend",
+    "module:fantasy",
+    "performance",
+    "phase:2",
+    "priorite:P0",
+    "taille:L",
+    "type:donnees"
+   ],
+   "milestone": "Phase 2 — Communautaire & compétitif",
+   "epic": "API-FANT",
+   "type": "donnees",
+   "ecrans": [
+    "H-12",
+    "H-13",
+    "H-01"
+   ]
+  },
+  {
+   "code": "API-FANT-15",
+   "title": "[API-FANT-15] GET /fantasy/leaderboard : amis, mondial, journée et ligue",
+   "labels": [
+    "backend",
+    "module:fantasy",
+    "phase:2",
+    "priorite:P0",
+    "taille:L",
+    "type:api"
+   ],
+   "milestone": "Phase 2 — Communautaire & compétitif",
+   "epic": "API-FANT",
+   "type": "api",
+   "ecrans": [
+    "H-12",
+    "H-13",
+    "H-01",
+    "H-15"
+   ]
+  },
+  {
+   "code": "API-FANT-16",
+   "title": "[API-FANT-16] Modèle FantasyLeague : ligues privées et publiques, codes d'invitation",
+   "labels": [
+    "backend",
+    "module:fantasy",
+    "phase:2",
+    "priorite:P1",
+    "taille:M",
+    "type:donnees"
+   ],
+   "milestone": "Phase 2 — Communautaire & compétitif",
+   "epic": "API-FANT",
+   "type": "donnees",
+   "ecrans": [
+    "H-12",
+    "H-15"
+   ]
+  },
+  {
+   "code": "API-FANT-17",
+   "title": "[API-FANT-17] Créer une ligue et rejoindre avec un code (POST /fantasy/leagues, /join)",
+   "labels": [
+    "backend",
+    "module:fantasy",
+    "phase:2",
+    "priorite:P1",
+    "taille:M",
+    "type:api"
+   ],
+   "milestone": "Phase 2 — Communautaire & compétitif",
+   "epic": "API-FANT",
+   "type": "api",
+   "ecrans": [
+    "H-15",
+    "H-12"
+   ]
+  },
+  {
+   "code": "API-FANT-18",
+   "title": "[API-FANT-18] Gestion des ligues, ligues publiques et lien d'invitation",
+   "labels": [
+    "backend",
+    "module:fantasy",
+    "phase:2",
+    "priorite:P2",
+    "taille:L",
+    "type:api"
+   ],
+   "milestone": "Phase 2 — Communautaire & compétitif",
+   "epic": "API-FANT",
+   "type": "api",
+   "ecrans": [
+    "H-12",
+    "H-15"
+   ]
+  },
+  {
+   "code": "API-FANT-19",
+   "title": "[API-FANT-19] GET /fantasy/summary : agrégat de l'accueil Fantasy et de la carte dashboard",
+   "labels": [
+    "backend",
+    "module:fantasy",
+    "phase:2",
+    "priorite:P1",
+    "taille:M",
+    "type:api"
+   ],
+   "milestone": "Phase 2 — Communautaire & compétitif",
+   "epic": "API-FANT",
+   "type": "api",
+   "ecrans": [
+    "H-01",
+    "H-16",
+    "H-17"
+   ]
+  },
+  {
+   "code": "API-FANT-20",
+   "title": "[API-FANT-20] Activation des modules Fantasy et Academy (403 MODULE_DISABLED) et « Me prévenir »",
+   "labels": [
+    "backend",
+    "module:fantasy",
+    "module:masia",
+    "module:plateforme",
+    "phase:2",
+    "priorite:P1",
+    "taille:M",
+    "type:fonctionnel"
+   ],
+   "milestone": "Phase 2 — Communautaire & compétitif",
+   "epic": "API-FANT",
+   "type": "fonctionnel",
+   "ecrans": [
+    "H-17",
+    "I-13"
+   ]
+  },
+  {
+   "code": "API-FANT-21",
+   "title": "[API-FANT-21] Sécurité et anti-triche Fantasy (horloge, accès, abus)",
+   "labels": [
+    "backend",
+    "module:fantasy",
+    "phase:2",
+    "priorite:P0",
+    "security",
+    "taille:M",
+    "type:securite"
+   ],
+   "milestone": "Phase 2 — Communautaire & compétitif",
+   "epic": "API-FANT",
+   "type": "securite",
+   "ecrans": [
+    "H-02",
+    "H-09",
+    "H-13"
+   ]
+  },
+  {
+   "code": "API-FANT-22",
+   "title": "[API-FANT-22] RGPD Fantasy et Academy : export, suppression, anonymisation",
+   "labels": [
+    "backend",
+    "module:fantasy",
+    "module:masia",
+    "phase:2",
+    "priorite:P0",
+    "rgpd",
+    "taille:M",
+    "type:rgpd"
+   ],
+   "milestone": "Phase 2 — Communautaire & compétitif",
+   "epic": "API-FANT",
+   "type": "rgpd",
+   "ecrans": [
+    "H-12",
+    "H-13",
+    "I-05"
+   ]
+  },
+  {
+   "code": "API-FANT-23",
+   "title": "[API-FANT-23] Index MongoDB, cache Redis et objectifs de performance Fantasy",
+   "labels": [
+    "backend",
+    "module:fantasy",
+    "performance",
+    "phase:2",
+    "priorite:P1",
+    "taille:M",
+    "type:performance"
+   ],
+   "milestone": "Phase 2 — Communautaire & compétitif",
+   "epic": "API-FANT",
+   "type": "performance",
+   "ecrans": [
+    "H-01",
+    "H-13",
+    "H-05"
+   ]
+  },
+  {
+   "code": "API-FANT-24",
+   "title": "[API-FANT-24] Suite de tests d'intégration et e2e Fantasy",
+   "labels": [
+    "backend",
+    "module:fantasy",
+    "phase:2",
+    "priorite:P0",
+    "taille:L",
+    "tests",
+    "type:tests"
+   ],
+   "milestone": "Phase 2 — Communautaire & compétitif",
+   "epic": "API-FANT",
+   "type": "tests",
+   "ecrans": [
+    "H-02",
+    "H-07",
+    "H-08",
+    "H-09",
+    "H-10",
+    "H-12",
+    "H-13"
+   ]
+  },
+  {
+   "code": "API-FANT-25",
+   "title": "[API-FANT-25] Durcir le modèle AcademyPlayer (un joueur par utilisateur, bilans, jalons)",
+   "labels": [
+    "backend",
+    "module:masia",
+    "phase:3",
+    "priorite:P1",
+    "taille:M",
+    "type:donnees"
+   ],
+   "milestone": "Phase 3 — Fonctionnalités avancées",
+   "epic": "API-FANT",
+   "type": "donnees",
+   "ecrans": [
+    "I-04",
+    "I-05",
+    "I-08",
+    "I-10"
+   ]
+  },
+  {
+   "code": "API-FANT-26",
+   "title": "[API-FANT-26] Configuration des règles d'impact des décisions et note globale (paramétrable)",
+   "labels": [
+    "backend",
+    "module:masia",
+    "phase:3",
+    "priorite:P1",
+    "taille:M",
+    "type:fonctionnel"
+   ],
+   "milestone": "Phase 3 — Fonctionnalités avancées",
+   "epic": "API-FANT",
+   "type": "fonctionnel",
+   "ecrans": [
+    "I-06",
+    "I-07",
+    "I-05",
+    "I-11"
+   ]
+  },
+  {
+   "code": "API-FANT-27",
+   "title": "[API-FANT-27] POST /academy/player : création du joueur virtuel (12 points bonus)",
+   "labels": [
+    "backend",
+    "module:masia",
+    "phase:3",
+    "priorite:P1",
+    "taille:M",
+    "type:api"
+   ],
+   "milestone": "Phase 3 — Fonctionnalités avancées",
+   "epic": "API-FANT",
+   "type": "api",
+   "ecrans": [
+    "I-02",
+    "I-03",
+    "I-04"
+   ]
+  },
+  {
+   "code": "API-FANT-28",
+   "title": "[API-FANT-28] GET /academy/player : état du joueur, semaine en cours et alertes",
+   "labels": [
+    "backend",
+    "module:masia",
+    "phase:3",
+    "priorite:P1",
+    "taille:M",
+    "type:api"
+   ],
+   "milestone": "Phase 3 — Fonctionnalités avancées",
+   "epic": "API-FANT",
+   "type": "api",
+   "ecrans": [
+    "I-05",
+    "I-11",
+    "I-12",
+    "I-01"
+   ]
+  },
+  {
+   "code": "API-FANT-29",
+   "title": "[API-FANT-29] POST /academy/player/decision : décision hebdomadaire et prévisualisation des effets",
+   "labels": [
+    "backend",
+    "module:masia",
+    "phase:3",
+    "priorite:P1",
+    "taille:M",
+    "type:api"
+   ],
+   "milestone": "Phase 3 — Fonctionnalités avancées",
+   "epic": "API-FANT",
+   "type": "api",
+   "ecrans": [
+    "I-06",
+    "I-07"
+   ]
+  },
+  {
+   "code": "API-FANT-30",
+   "title": "[API-FANT-30] Moteur ComputeAcademyProgression : application d'une semaine, bilan et promotions",
+   "labels": [
+    "backend",
+    "high-priority",
+    "module:masia",
+    "phase:3",
+    "priorite:P1",
+    "taille:L",
+    "type:fonctionnel"
+   ],
+   "milestone": "Phase 3 — Fonctionnalités avancées",
+   "epic": "API-FANT",
+   "type": "fonctionnel",
+   "ecrans": [
+    "I-08",
+    "I-11",
+    "I-12"
+   ]
+  },
+  {
+   "code": "API-FANT-31",
+   "title": "[API-FANT-31] Job hebdomadaire academy-weekly-tick (application des décisions, idempotent)",
+   "labels": [
+    "backend",
+    "module:masia",
+    "phase:3",
+    "priorite:P1",
+    "taille:M",
+    "type:infra"
+   ],
+   "milestone": "Phase 3 — Fonctionnalités avancées",
+   "epic": "API-FANT",
+   "type": "infra",
+   "ecrans": [
+    "I-07",
+    "I-08",
+    "I-12"
+   ]
+  },
+  {
+   "code": "API-FANT-32",
+   "title": "[API-FANT-32] Endpoints de bilan, historique des décisions, progression et jalons",
+   "labels": [
+    "backend",
+    "module:masia",
+    "phase:3",
+    "priorite:P1",
+    "taille:L",
+    "type:api"
+   ],
+   "milestone": "Phase 3 — Fonctionnalités avancées",
+   "epic": "API-FANT",
+   "type": "api",
+   "ecrans": [
+    "I-08",
+    "I-09",
+    "I-10",
+    "I-12"
+   ]
+  },
+  {
+   "code": "API-FANT-33",
+   "title": "[API-FANT-33] Alimentation du Passport par Fantasy et La Masia (événements d'activité)",
+   "labels": [
+    "backend",
+    "module:fantasy",
+    "module:masia",
+    "module:passport",
+    "phase:3",
+    "priorite:P1",
+    "taille:M",
+    "type:fonctionnel"
+   ],
+   "milestone": "Phase 3 — Fonctionnalités avancées",
+   "epic": "API-FANT",
+   "type": "fonctionnel",
+   "ecrans": [
+    "H-10",
+    "H-12",
+    "I-12",
+    "P-06",
+    "P-01"
+   ]
+  },
+  {
+   "code": "API-FANT-34",
+   "title": "[API-FANT-34] Tests unitaires et d'intégration La Masia Academy",
+   "labels": [
+    "backend",
+    "module:masia",
+    "phase:3",
+    "priorite:P1",
+    "taille:M",
+    "tests",
+    "type:tests"
+   ],
+   "milestone": "Phase 3 — Fonctionnalités avancées",
+   "epic": "API-FANT",
+   "type": "tests",
+   "ecrans": [
+    "I-02",
+    "I-03",
+    "I-05",
+    "I-06",
+    "I-08",
+    "I-09",
+    "I-12"
+   ]
+  },
+  {
    "code": "API-FOOT-01",
    "title": "[API-FOOT-01] Durcir le modèle Player (slug, recherche normalisée, complétude i18n, historique de statut)",
    "labels": [
@@ -3325,6 +4035,2655 @@
    ]
   },
   {
+   "code": "API-GOAT-01",
+   "title": "[API-GOAT-01] Modèles GoatVote et GoatDuel (clé de paire, unicité du vote par duel)",
+   "labels": [
+    "backend",
+    "module:goat",
+    "phase:2",
+    "priorite:P0",
+    "taille:M",
+    "type:donnees"
+   ],
+   "milestone": "Phase 2 — Communautaire & compétitif",
+   "epic": "API-GOAT",
+   "type": "donnees",
+   "ecrans": [
+    "G-04",
+    "G-06",
+    "G-07"
+   ]
+  },
+  {
+   "code": "API-GOAT-02",
+   "title": "[API-GOAT-02] Catalogue des critères de vote (global + critères optionnels)",
+   "labels": [
+    "backend",
+    "module:goat",
+    "phase:2",
+    "priorite:P1",
+    "taille:S",
+    "type:donnees"
+   ],
+   "milestone": "Phase 2 — Communautaire & compétitif",
+   "epic": "API-GOAT",
+   "type": "donnees",
+   "ecrans": [
+    "G-04",
+    "G-05"
+   ]
+  },
+  {
+   "code": "API-GOAT-03",
+   "title": "[API-GOAT-03] Calcul des statistiques croisées (totaux, buts par match, longévité)",
+   "labels": [
+    "backend",
+    "module:goat",
+    "phase:2",
+    "priorite:P0",
+    "taille:M",
+    "type:fonctionnel"
+   ],
+   "milestone": "Phase 2 — Communautaire & compétitif",
+   "epic": "API-GOAT",
+   "type": "fonctionnel",
+   "ecrans": [
+    "G-04",
+    "G-05"
+   ]
+  },
+  {
+   "code": "API-GOAT-04",
+   "title": "[API-GOAT-04] GET /goat/players : sélecteur de joueur (Tous, Légendes, Effectif actuel, recherche)",
+   "labels": [
+    "backend",
+    "module:goat",
+    "phase:2",
+    "priorite:P0",
+    "taille:M",
+    "type:api"
+   ],
+   "milestone": "Phase 2 — Communautaire & compétitif",
+   "epic": "API-GOAT",
+   "type": "api",
+   "ecrans": [
+    "G-01",
+    "G-02",
+    "G-03"
+   ]
+  },
+  {
+   "code": "API-GOAT-05",
+   "title": "[API-GOAT-05] GET /goat/duels/popular : duels populaires",
+   "labels": [
+    "backend",
+    "module:goat",
+    "phase:2",
+    "priorite:P1",
+    "taille:S",
+    "type:api"
+   ],
+   "milestone": "Phase 2 — Communautaire & compétitif",
+   "epic": "API-GOAT",
+   "type": "api",
+   "ecrans": [
+    "G-01",
+    "G-02"
+   ]
+  },
+  {
+   "code": "API-GOAT-06",
+   "title": "[API-GOAT-06] GET /players/compare?a=:id&b=:id : statistiques croisées de deux joueurs",
+   "labels": [
+    "backend",
+    "module:goat",
+    "phase:2",
+    "priorite:P0",
+    "taille:L",
+    "type:api"
+   ],
+   "milestone": "Phase 2 — Communautaire & compétitif",
+   "epic": "API-GOAT",
+   "type": "api",
+   "ecrans": [
+    "G-04",
+    "G-05",
+    "G-06",
+    "G-07"
+   ]
+  },
+  {
+   "code": "API-GOAT-07",
+   "title": "[API-GOAT-07] Profil de jeu (radar) et évolution des buts par saison",
+   "labels": [
+    "backend",
+    "module:goat",
+    "phase:2",
+    "priorite:P1",
+    "taille:M",
+    "type:api"
+   ],
+   "milestone": "Phase 2 — Communautaire & compétitif",
+   "epic": "API-GOAT",
+   "type": "api",
+   "ecrans": [
+    "G-05"
+   ]
+  },
+  {
+   "code": "API-GOAT-08",
+   "title": "[API-GOAT-08] POST /players/:id/vote-goat : voter pour un joueur dans un duel",
+   "labels": [
+    "backend",
+    "module:goat",
+    "phase:2",
+    "priorite:P0",
+    "taille:L",
+    "type:api"
+   ],
+   "milestone": "Phase 2 — Communautaire & compétitif",
+   "epic": "API-GOAT",
+   "type": "api",
+   "ecrans": [
+    "G-04",
+    "G-06",
+    "G-07"
+   ]
+  },
+  {
+   "code": "API-GOAT-09",
+   "title": "[API-GOAT-09] Règle « un changement de vote par semaine » (fenêtre glissante de 7 jours)",
+   "labels": [
+    "backend",
+    "module:goat",
+    "phase:2",
+    "priorite:P0",
+    "taille:S",
+    "type:fonctionnel"
+   ],
+   "milestone": "Phase 2 — Communautaire & compétitif",
+   "epic": "API-GOAT",
+   "type": "fonctionnel",
+   "ecrans": [
+    "G-04",
+    "G-07"
+   ]
+  },
+  {
+   "code": "API-GOAT-10",
+   "title": "[API-GOAT-10] GET /players/compare/votes : résultat de la communauté et mon vote",
+   "labels": [
+    "backend",
+    "module:goat",
+    "phase:2",
+    "priorite:P0",
+    "taille:S",
+    "type:api"
+   ],
+   "milestone": "Phase 2 — Communautaire & compétitif",
+   "epic": "API-GOAT",
+   "type": "api",
+   "ecrans": [
+    "G-06",
+    "G-07"
+   ]
+  },
+  {
+   "code": "API-GOAT-11",
+   "title": "[API-GOAT-11] Agrégats de votes : compteurs atomiques, Redis et réconciliation",
+   "labels": [
+    "backend",
+    "module:goat",
+    "performance",
+    "phase:2",
+    "priorite:P1",
+    "taille:M",
+    "type:fonctionnel"
+   ],
+   "milestone": "Phase 2 — Communautaire & compétitif",
+   "epic": "API-GOAT",
+   "type": "fonctionnel",
+   "ecrans": [
+    "G-06"
+   ]
+  },
+  {
+   "code": "API-GOAT-12",
+   "title": "[API-GOAT-12] Anti-abus des votes : éligibilité, limites, bots, empreintes éphémères",
+   "labels": [
+    "backend",
+    "module:goat",
+    "phase:2",
+    "priorite:P0",
+    "security",
+    "taille:M",
+    "type:securite"
+   ],
+   "milestone": "Phase 2 — Communautaire & compétitif",
+   "epic": "API-GOAT",
+   "type": "securite",
+   "ecrans": [
+    "G-04",
+    "G-06",
+    "G-07"
+   ]
+  },
+  {
+   "code": "API-GOAT-13",
+   "title": "[API-GOAT-13] Détection d'anomalies de vote (pics, concentration, comptes liés)",
+   "labels": [
+    "backend",
+    "module:goat",
+    "phase:2",
+    "priorite:P1",
+    "security",
+    "taille:M",
+    "type:securite"
+   ],
+   "milestone": "Phase 2 — Communautaire & compétitif",
+   "epic": "API-GOAT",
+   "type": "securite",
+   "ecrans": [
+    "G-06"
+   ]
+  },
+  {
+   "code": "API-GOAT-14",
+   "title": "[API-GOAT-14] Cache Redis du comparateur (1 h par paire) et index MongoDB",
+   "labels": [
+    "backend",
+    "module:goat",
+    "performance",
+    "phase:2",
+    "priorite:P0",
+    "taille:M",
+    "type:performance"
+   ],
+   "milestone": "Phase 2 — Communautaire & compétitif",
+   "epic": "API-GOAT",
+   "type": "performance",
+   "ecrans": [
+    "G-04",
+    "G-05",
+    "G-06"
+   ]
+  },
+  {
+   "code": "API-GOAT-15",
+   "title": "[API-GOAT-15] Back-office : tableau de bord GOAT (suivi des votes)",
+   "labels": [
+    "backend",
+    "module:goat",
+    "phase:2",
+    "priorite:P2",
+    "taille:M",
+    "type:api"
+   ],
+   "milestone": "Phase 2 — Communautaire & compétitif",
+   "epic": "API-GOAT",
+   "type": "api",
+   "ecrans": [
+    "G-06"
+   ]
+  },
+  {
+   "code": "API-GOAT-16",
+   "title": "[API-GOAT-16] Back-office : actions sur anomalies et duels (invalider, masquer, mettre en avant)",
+   "labels": [
+    "backend",
+    "module:goat",
+    "phase:2",
+    "priorite:P2",
+    "security",
+    "taille:M",
+    "type:api"
+   ],
+   "milestone": "Phase 2 — Communautaire & compétitif",
+   "epic": "API-GOAT",
+   "type": "api",
+   "ecrans": [
+    "G-01",
+    "G-06"
+   ]
+  },
+  {
+   "code": "API-GOAT-17",
+   "title": "[API-GOAT-17] RGPD : votes GOAT dans l'export, suppression de compte et anonymat des agrégats",
+   "labels": [
+    "backend",
+    "module:goat",
+    "phase:2",
+    "priorite:P1",
+    "rgpd",
+    "taille:S",
+    "type:rgpd"
+   ],
+   "milestone": "Phase 2 — Communautaire & compétitif",
+   "epic": "API-GOAT",
+   "type": "rgpd",
+   "ecrans": [
+    "G-06",
+    "G-07"
+   ]
+  },
+  {
+   "code": "API-GOAT-18",
+   "title": "[API-GOAT-18] Libellés et messages d'erreur localisés fr/en/es du comparateur GOAT",
+   "labels": [
+    "backend",
+    "i18n",
+    "module:goat",
+    "phase:2",
+    "priorite:P1",
+    "taille:S",
+    "type:i18n"
+   ],
+   "milestone": "Phase 2 — Communautaire & compétitif",
+   "epic": "API-GOAT",
+   "type": "i18n",
+   "ecrans": [
+    "G-01",
+    "G-03",
+    "G-07"
+   ]
+  },
+  {
+   "code": "API-GOAT-19",
+   "title": "[API-GOAT-19] Tests unitaires et d'intégration du module GOAT",
+   "labels": [
+    "backend",
+    "module:goat",
+    "phase:2",
+    "priorite:P0",
+    "taille:L",
+    "tests",
+    "type:tests"
+   ],
+   "milestone": "Phase 2 — Communautaire & compétitif",
+   "epic": "API-GOAT",
+   "type": "tests",
+   "ecrans": [
+    "G-01",
+    "G-02",
+    "G-03",
+    "G-04",
+    "G-05",
+    "G-06",
+    "G-07"
+   ]
+  },
+  {
+   "code": "API-GOAT-20",
+   "title": "[API-GOAT-20] Tests de sécurité du comparateur GOAT (abus, rôles, confidentialité)",
+   "labels": [
+    "backend",
+    "module:goat",
+    "phase:2",
+    "priorite:P1",
+    "security",
+    "taille:M",
+    "tests",
+    "type:tests"
+   ],
+   "milestone": "Phase 2 — Communautaire & compétitif",
+   "epic": "API-GOAT",
+   "type": "tests",
+   "ecrans": [
+    "G-04",
+    "G-06",
+    "G-07"
+   ]
+  },
+  {
+   "code": "API-GOAT-21",
+   "title": "[API-GOAT-21] Test de charge k6 du comparateur et des votes (duel viral)",
+   "labels": [
+    "backend",
+    "module:goat",
+    "performance",
+    "phase:2",
+    "priorite:P2",
+    "taille:M",
+    "tests",
+    "type:tests"
+   ],
+   "milestone": "Phase 2 — Communautaire & compétitif",
+   "epic": "API-GOAT",
+   "type": "tests",
+   "ecrans": [
+    "G-04",
+    "G-06"
+   ]
+  },
+  {
+   "code": "API-GOAT-22",
+   "title": "[API-GOAT-22] Seed de démo, documentation Swagger/Markdown et métriques du module GOAT",
+   "labels": [
+    "backend",
+    "documentation",
+    "module:goat",
+    "phase:2",
+    "priorite:P1",
+    "taille:M",
+    "type:doc"
+   ],
+   "milestone": "Phase 2 — Communautaire & compétitif",
+   "epic": "API-GOAT",
+   "type": "doc",
+   "ecrans": [
+    "G-01",
+    "G-04",
+    "G-06"
+   ]
+  },
+  {
+   "code": "API-GOAT-23",
+   "title": "[API-GOAT-23] Votes par critères : POST du vote par critère et résultats par critère",
+   "labels": [
+    "backend",
+    "module:goat",
+    "phase:2",
+    "priorite:P2",
+    "taille:M",
+    "type:api"
+   ],
+   "milestone": "Phase 2 — Communautaire & compétitif",
+   "epic": "API-GOAT",
+   "type": "api",
+   "ecrans": [
+    "G-04",
+    "G-06"
+   ]
+  },
+  {
+   "code": "API-GOAT-24",
+   "title": "[API-GOAT-24] GET /goat/votes/mine : mes votes et délais de modification",
+   "labels": [
+    "backend",
+    "module:goat",
+    "phase:2",
+    "priorite:P1",
+    "taille:S",
+    "type:api"
+   ],
+   "milestone": "Phase 2 — Communautaire & compétitif",
+   "epic": "API-GOAT",
+   "type": "api",
+   "ecrans": [
+    "G-02",
+    "G-07"
+   ]
+  },
+  {
+   "code": "API-GOAT-25",
+   "title": "[API-GOAT-25] Validation Joi et contrat d'erreurs du module GOAT",
+   "labels": [
+    "backend",
+    "module:goat",
+    "phase:2",
+    "priorite:P1",
+    "taille:S",
+    "type:api"
+   ],
+   "milestone": "Phase 2 — Communautaire & compétitif",
+   "epic": "API-GOAT",
+   "type": "api",
+   "ecrans": [
+    "G-01",
+    "G-03",
+    "G-07"
+   ]
+  },
+  {
+   "code": "API-GOAT-26",
+   "title": "[API-GOAT-26] Évènements de vote et statistiques horaires (GoatHourlyStat)",
+   "labels": [
+    "backend",
+    "module:goat",
+    "phase:2",
+    "priorite:P1",
+    "taille:M",
+    "type:infra"
+   ],
+   "milestone": "Phase 2 — Communautaire & compétitif",
+   "epic": "API-GOAT",
+   "type": "infra",
+   "ecrans": [
+    "G-06"
+   ]
+  },
+  {
+   "code": "API-IA-01",
+   "title": "[API-IA-01] Éclater ChatConversation en deux collections ChatConversation et ChatMessage",
+   "labels": [
+    "backend",
+    "module:ia",
+    "phase:1",
+    "priorite:P0",
+    "taille:M",
+    "type:donnees"
+   ],
+   "milestone": "Phase 1 — MVP",
+   "epic": "API-IA",
+   "type": "donnees",
+   "ecrans": [
+    "N-02",
+    "N-03",
+    "N-15"
+   ]
+  },
+  {
+   "code": "API-IA-02",
+   "title": "[API-IA-02] Contrat typé des métadonnées de message : blocs, actions, sources, suggestions",
+   "labels": [
+    "backend",
+    "module:ia",
+    "phase:1",
+    "priorite:P0",
+    "taille:S",
+    "type:donnees"
+   ],
+   "milestone": "Phase 1 — MVP",
+   "epic": "API-IA",
+   "type": "donnees",
+   "ecrans": [
+    "N-03",
+    "N-05",
+    "N-06",
+    "N-11"
+   ]
+  },
+  {
+   "code": "API-IA-03",
+   "title": "[API-IA-03] Compteurs d'usage IA par utilisateur et par jour (AiQuota + AiUsage)",
+   "labels": [
+    "backend",
+    "module:ia",
+    "phase:1",
+    "priorite:P0",
+    "security",
+    "taille:M",
+    "type:donnees"
+   ],
+   "milestone": "Phase 1 — MVP",
+   "epic": "API-IA",
+   "type": "donnees",
+   "ecrans": [
+    "N-14",
+    "WI-06",
+    "M-12"
+   ]
+  },
+  {
+   "code": "API-IA-04",
+   "title": "[API-IA-04] Journal des appels IA : tokens, latence et coût estimé (AiCallLog)",
+   "labels": [
+    "backend",
+    "module:ia",
+    "performance",
+    "phase:1",
+    "priorite:P1",
+    "taille:S",
+    "type:donnees"
+   ],
+   "milestone": "Phase 1 — MVP",
+   "epic": "API-IA",
+   "type": "donnees",
+   "ecrans": [
+    "WH-04"
+   ]
+  },
+  {
+   "code": "API-IA-05",
+   "title": "[API-IA-05] Interface LanguageModelProvider et fabrique de fournisseurs de texte",
+   "labels": [
+    "backend",
+    "module:ia",
+    "phase:1",
+    "priorite:P0",
+    "taille:M",
+    "type:infra"
+   ],
+   "milestone": "Phase 1 — MVP",
+   "epic": "API-IA",
+   "type": "infra",
+   "ecrans": [
+    "N-04",
+    "N-03"
+   ]
+  },
+  {
+   "code": "API-IA-06",
+   "title": "[API-IA-06] Fournisseur IA simulé déterministe pour développement et tests",
+   "labels": [
+    "backend",
+    "module:ia",
+    "phase:1",
+    "priorite:P0",
+    "taille:S",
+    "tests",
+    "type:tests"
+   ],
+   "milestone": "Phase 1 — MVP",
+   "epic": "API-IA",
+   "type": "tests",
+   "ecrans": [
+    "N-03",
+    "N-04",
+    "N-09",
+    "N-10",
+    "N-11",
+    "N-12"
+   ]
+  },
+  {
+   "code": "API-IA-07",
+   "title": "[API-IA-07] Bascule automatique vers un fournisseur secondaire et disjoncteur",
+   "labels": [
+    "backend",
+    "module:ia",
+    "performance",
+    "phase:1",
+    "priorite:P1",
+    "taille:M",
+    "type:infra"
+   ],
+   "milestone": "Phase 1 — MVP",
+   "epic": "API-IA",
+   "type": "infra",
+   "ecrans": [
+    "N-12",
+    "WH-04"
+   ]
+  },
+  {
+   "code": "API-IA-08",
+   "title": "[API-IA-08] Prompt système Barça AI versionné et garde-fous de périmètre",
+   "labels": [
+    "backend",
+    "module:ia",
+    "phase:1",
+    "priorite:P0",
+    "security",
+    "taille:M",
+    "type:fonctionnel"
+   ],
+   "milestone": "Phase 1 — MVP",
+   "epic": "API-IA",
+   "type": "fonctionnel",
+   "ecrans": [
+    "N-02",
+    "N-09",
+    "N-11"
+   ]
+  },
+  {
+   "code": "API-IA-09",
+   "title": "[API-IA-09] Étapes 1 et 2 du pipeline : détection de langue FR/EN/ES et classification d'intention",
+   "labels": [
+    "backend",
+    "module:ia",
+    "phase:1",
+    "priorite:P0",
+    "taille:M",
+    "type:fonctionnel"
+   ],
+   "milestone": "Phase 1 — MVP",
+   "epic": "API-IA",
+   "type": "fonctionnel",
+   "ecrans": [
+    "N-07",
+    "N-08",
+    "N-09",
+    "N-05"
+   ]
+  },
+  {
+   "code": "API-IA-10",
+   "title": "[API-IA-10] Étape 3 : récupération contrôlée du contexte (joueurs, matchs, historique, stats)",
+   "labels": [
+    "backend",
+    "module:ia",
+    "phase:1",
+    "priorite:P0",
+    "taille:L",
+    "type:fonctionnel"
+   ],
+   "milestone": "Phase 1 — MVP",
+   "epic": "API-IA",
+   "type": "fonctionnel",
+   "ecrans": [
+    "N-03",
+    "N-06",
+    "N-07",
+    "N-08",
+    "N-11"
+   ]
+  },
+  {
+   "code": "API-IA-11",
+   "title": "[API-IA-11] Modération des messages entrants (message non traité)",
+   "labels": [
+    "backend",
+    "module:ia",
+    "phase:1",
+    "priorite:P0",
+    "security",
+    "taille:M",
+    "type:securite"
+   ],
+   "milestone": "Phase 1 — MVP",
+   "epic": "API-IA",
+   "type": "securite",
+   "ecrans": [
+    "N-10"
+   ]
+  },
+  {
+   "code": "API-IA-12",
+   "title": "[API-IA-12] Étape 6 : modération de la sortie du modèle et cohérence avec le périmètre",
+   "labels": [
+    "backend",
+    "module:ia",
+    "phase:1",
+    "priorite:P0",
+    "security",
+    "taille:M",
+    "type:securite"
+   ],
+   "milestone": "Phase 1 — MVP",
+   "epic": "API-IA",
+   "type": "securite",
+   "ecrans": [
+    "N-10",
+    "N-09",
+    "N-03"
+   ]
+  },
+  {
+   "code": "API-IA-13",
+   "title": "[API-IA-13] Réponses de recadrage hors périmètre et « information introuvable »",
+   "labels": [
+    "backend",
+    "module:ia",
+    "phase:1",
+    "priorite:P0",
+    "taille:S",
+    "type:fonctionnel"
+   ],
+   "milestone": "Phase 1 — MVP",
+   "epic": "API-IA",
+   "type": "fonctionnel",
+   "ecrans": [
+    "N-09",
+    "N-11"
+   ]
+  },
+  {
+   "code": "API-IA-14",
+   "title": "[API-IA-14] Étape 7 : détection d'actions et blocs enrichis (carte joueur)",
+   "labels": [
+    "backend",
+    "module:ia",
+    "phase:1",
+    "priorite:P0",
+    "taille:M",
+    "type:fonctionnel"
+   ],
+   "milestone": "Phase 1 — MVP",
+   "epic": "API-IA",
+   "type": "fonctionnel",
+   "ecrans": [
+    "N-05",
+    "N-06",
+    "N-03"
+   ]
+  },
+  {
+   "code": "API-IA-15",
+   "title": "[API-IA-15] Use case SendMessageToAssistant : orchestration complète du pipeline en 8 étapes",
+   "labels": [
+    "backend",
+    "module:ia",
+    "phase:1",
+    "priorite:P0",
+    "taille:L",
+    "type:fonctionnel"
+   ],
+   "milestone": "Phase 1 — MVP",
+   "epic": "API-IA",
+   "type": "fonctionnel",
+   "ecrans": [
+    "N-03",
+    "N-05",
+    "N-12"
+   ]
+  },
+  {
+   "code": "API-IA-16",
+   "title": "[API-IA-16] Endpoints de conversations : création, liste avec recherche, détail paginé, suppression",
+   "labels": [
+    "backend",
+    "module:ia",
+    "phase:1",
+    "priorite:P0",
+    "taille:M",
+    "type:api"
+   ],
+   "milestone": "Phase 1 — MVP",
+   "epic": "API-IA",
+   "type": "api",
+   "ecrans": [
+    "N-15",
+    "N-02",
+    "N-03"
+   ]
+  },
+  {
+   "code": "API-IA-17",
+   "title": "[API-IA-17] POST /assistant/conversations/:id/messages (réponse JSON complète)",
+   "labels": [
+    "backend",
+    "module:ia",
+    "phase:1",
+    "priorite:P0",
+    "taille:M",
+    "type:api"
+   ],
+   "milestone": "Phase 1 — MVP",
+   "epic": "API-IA",
+   "type": "api",
+   "ecrans": [
+    "N-03",
+    "N-05",
+    "N-12",
+    "N-14"
+   ]
+  },
+  {
+   "code": "API-IA-18",
+   "title": "[API-IA-18] Streaming SSE des réponses de l'assistant (text/event-stream)",
+   "labels": [
+    "backend",
+    "module:ia",
+    "performance",
+    "phase:1",
+    "priorite:P0",
+    "taille:L",
+    "type:api"
+   ],
+   "milestone": "Phase 1 — MVP",
+   "epic": "API-IA",
+   "type": "api",
+   "ecrans": [
+    "N-04",
+    "N-12"
+   ]
+  },
+  {
+   "code": "API-IA-19",
+   "title": "[API-IA-19] Quota quotidien de messages et exposition du solde (écran N-14)",
+   "labels": [
+    "backend",
+    "module:ia",
+    "phase:1",
+    "priorite:P0",
+    "taille:S",
+    "type:fonctionnel"
+   ],
+   "milestone": "Phase 1 — MVP",
+   "epic": "API-IA",
+   "type": "fonctionnel",
+   "ecrans": [
+    "N-14",
+    "N-02"
+   ]
+  },
+  {
+   "code": "API-IA-20",
+   "title": "[API-IA-20] Rate limiting spécifique à l'assistant et protection contre l'abus",
+   "labels": [
+    "backend",
+    "module:ia",
+    "phase:1",
+    "priorite:P0",
+    "security",
+    "taille:S",
+    "type:securite"
+   ],
+   "milestone": "Phase 1 — MVP",
+   "epic": "API-IA",
+   "type": "securite",
+   "ecrans": [
+    "N-12",
+    "N-14"
+   ]
+  },
+  {
+   "code": "API-IA-21",
+   "title": "[API-IA-21] Contrat d'erreurs, indisponibilité et kill switch de l'assistant",
+   "labels": [
+    "backend",
+    "module:ia",
+    "phase:1",
+    "priorite:P0",
+    "taille:S",
+    "type:securite"
+   ],
+   "milestone": "Phase 1 — MVP",
+   "epic": "API-IA",
+   "type": "securite",
+   "ecrans": [
+    "N-12",
+    "N-13",
+    "N-14",
+    "N-10"
+   ]
+  },
+  {
+   "code": "API-IA-22",
+   "title": "[API-IA-22] Feature flags et configuration publique : kill switch, streaming, wallpapers",
+   "labels": [
+    "backend",
+    "module:ia",
+    "module:plateforme",
+    "phase:1",
+    "priorite:P0",
+    "taille:M",
+    "type:fonctionnel"
+   ],
+   "milestone": "Phase 1 — MVP",
+   "epic": "API-IA",
+   "type": "fonctionnel",
+   "ecrans": [
+    "WI-05",
+    "N-01",
+    "M-14"
+   ]
+  },
+  {
+   "code": "API-IA-23",
+   "title": "[API-IA-23] Configuration back-office des quotas IA (GET/PATCH /admin/config/ai-quotas)",
+   "labels": [
+    "backend",
+    "module:ia",
+    "module:supervision",
+    "phase:1",
+    "priorite:P1",
+    "taille:S",
+    "type:api"
+   ],
+   "milestone": "Phase 1 — MVP",
+   "epic": "API-IA",
+   "type": "api",
+   "ecrans": [
+    "WI-06"
+   ]
+  },
+  {
+   "code": "API-IA-24",
+   "title": "[API-IA-24] Endpoint de consommation IA (GET /admin/observability/ai-usage)",
+   "labels": [
+    "backend",
+    "module:ia",
+    "module:supervision",
+    "phase:1",
+    "priorite:P1",
+    "taille:M",
+    "type:api"
+   ],
+   "milestone": "Phase 1 — MVP",
+   "epic": "API-IA",
+   "type": "api",
+   "ecrans": [
+    "WH-04"
+   ]
+  },
+  {
+   "code": "API-IA-25",
+   "title": "[API-IA-25] Caches Redis de l'assistant : contexte, réponses fréquentes, noms de joueurs",
+   "labels": [
+    "backend",
+    "module:ia",
+    "performance",
+    "phase:1",
+    "priorite:P1",
+    "taille:M",
+    "type:performance"
+   ],
+   "milestone": "Phase 1 — MVP",
+   "epic": "API-IA",
+   "type": "performance",
+   "ecrans": [
+    "N-02",
+    "N-03"
+   ]
+  },
+  {
+   "code": "API-IA-26",
+   "title": "[API-IA-26] Résumés glissants de l'historique pour limiter les tokens",
+   "labels": [
+    "backend",
+    "module:ia",
+    "performance",
+    "phase:1",
+    "priorite:P2",
+    "taille:M",
+    "type:fonctionnel"
+   ],
+   "milestone": "Phase 1 — MVP",
+   "epic": "API-IA",
+   "type": "fonctionnel",
+   "ecrans": [
+    "N-03",
+    "N-15"
+   ]
+  },
+  {
+   "code": "API-IA-27",
+   "title": "[API-IA-27] Export RGPD des conversations de l'assistant",
+   "labels": [
+    "backend",
+    "module:ia",
+    "phase:1",
+    "priorite:P1",
+    "rgpd",
+    "taille:S",
+    "type:rgpd"
+   ],
+   "milestone": "Phase 1 — MVP",
+   "epic": "API-IA",
+   "type": "rgpd",
+   "ecrans": [
+    "N-15"
+   ]
+  },
+  {
+   "code": "API-IA-28",
+   "title": "[API-IA-28] Suppression à la demande, suppression de compte et rétention des conversations",
+   "labels": [
+    "backend",
+    "module:ia",
+    "phase:1",
+    "priorite:P1",
+    "rgpd",
+    "taille:M",
+    "type:rgpd"
+   ],
+   "milestone": "Phase 1 — MVP",
+   "epic": "API-IA",
+   "type": "rgpd",
+   "ecrans": [
+    "N-15"
+   ]
+  },
+  {
+   "code": "API-IA-29",
+   "title": "[API-IA-29] Signalement d'une réponse de l'assistant (POST /assistant/messages/:id/report)",
+   "labels": [
+    "backend",
+    "module:ia",
+    "module:moderation",
+    "phase:1",
+    "priorite:P1",
+    "taille:S",
+    "type:fonctionnel"
+   ],
+   "milestone": "Phase 1 — MVP",
+   "epic": "API-IA",
+   "type": "fonctionnel",
+   "ecrans": [
+    "N-03",
+    "N-10"
+   ]
+  },
+  {
+   "code": "API-IA-30",
+   "title": "[API-IA-30] Observabilité de l'assistant : métriques, traces et alertes de dérive",
+   "labels": [
+    "backend",
+    "module:ia",
+    "performance",
+    "phase:1",
+    "priorite:P1",
+    "taille:S",
+    "type:infra"
+   ],
+   "milestone": "Phase 1 — MVP",
+   "epic": "API-IA",
+   "type": "infra",
+   "ecrans": [
+    "WH-04",
+    "WH-01"
+   ]
+  },
+  {
+   "code": "API-IA-31",
+   "title": "[API-IA-31] Suite de non-régression des garde-fous et du prompt (jeu d'or)",
+   "labels": [
+    "backend",
+    "module:ia",
+    "phase:1",
+    "priorite:P0",
+    "taille:M",
+    "tests",
+    "type:tests"
+   ],
+   "milestone": "Phase 1 — MVP",
+   "epic": "API-IA",
+   "type": "tests",
+   "ecrans": [
+    "N-09",
+    "N-10",
+    "N-11",
+    "N-07",
+    "N-08"
+   ]
+  },
+  {
+   "code": "API-IA-32",
+   "title": "[API-IA-32] Tests d'intégration et de contrat de l'API assistant",
+   "labels": [
+    "backend",
+    "module:ia",
+    "phase:1",
+    "priorite:P0",
+    "taille:M",
+    "tests",
+    "type:tests"
+   ],
+   "milestone": "Phase 1 — MVP",
+   "epic": "API-IA",
+   "type": "tests",
+   "ecrans": [
+    "N-02",
+    "N-03",
+    "N-04",
+    "N-14",
+    "N-15"
+   ]
+  },
+  {
+   "code": "API-IA-33",
+   "title": "[API-IA-33] Test de charge k6 du chat (JSON et SSE) avec fournisseur simulé",
+   "labels": [
+    "backend",
+    "module:ia",
+    "performance",
+    "phase:1",
+    "priorite:P2",
+    "taille:S",
+    "tests",
+    "type:performance"
+   ],
+   "milestone": "Phase 1 — MVP",
+   "epic": "API-IA",
+   "type": "performance",
+   "ecrans": [
+    "N-04",
+    "N-14"
+   ]
+  },
+  {
+   "code": "API-IA-34",
+   "title": "[API-IA-34] Documentation OpenAPI et guide d'intégration de l'assistant",
+   "labels": [
+    "backend",
+    "documentation",
+    "module:ia",
+    "phase:1",
+    "priorite:P1",
+    "taille:S",
+    "type:doc"
+   ],
+   "milestone": "Phase 1 — MVP",
+   "epic": "API-IA",
+   "type": "doc",
+   "ecrans": [
+    "N-02",
+    "N-03",
+    "N-04",
+    "N-15"
+   ]
+  },
+  {
+   "code": "API-JEUX-01",
+   "title": "[API-JEUX-01] Durcir DailyChallenge, GuessAttempt et créer GuessPlay (partie par joueur et par défi)",
+   "labels": [
+    "backend",
+    "module:jeux",
+    "phase:1",
+    "priorite:P0",
+    "taille:M",
+    "type:donnees"
+   ],
+   "milestone": "Phase 1 — MVP",
+   "epic": "API-JEUX",
+   "type": "donnees",
+   "ecrans": [
+    "D-03",
+    "D-07",
+    "D-08",
+    "D-10"
+   ]
+  },
+  {
+   "code": "API-JEUX-02",
+   "title": "[API-JEUX-02] Job cron de génération du défi quotidien (fuseau Europe/Madrid, pré-génération, idempotence)",
+   "labels": [
+    "backend",
+    "module:jeux",
+    "performance",
+    "phase:1",
+    "priorite:P0",
+    "taille:L",
+    "type:infra"
+   ],
+   "milestone": "Phase 1 — MVP",
+   "epic": "API-JEUX",
+   "type": "infra",
+   "ecrans": [
+    "D-01",
+    "D-10"
+   ]
+  },
+  {
+   "code": "API-JEUX-03",
+   "title": "[API-JEUX-03] Sélection pondérée du joueur mystère (éligibilité, anti-répétition)",
+   "labels": [
+    "backend",
+    "module:jeux",
+    "phase:1",
+    "priorite:P0",
+    "taille:M",
+    "type:fonctionnel"
+   ],
+   "milestone": "Phase 1 — MVP",
+   "epic": "API-JEUX",
+   "type": "fonctionnel",
+   "ecrans": [
+    "D-03"
+   ]
+  },
+  {
+   "code": "API-JEUX-04",
+   "title": "[API-JEUX-04] Moteur de comparaison des indices (correct / proche / faux, flèches plus/moins)",
+   "labels": [
+    "backend",
+    "module:jeux",
+    "phase:1",
+    "priorite:P0",
+    "taille:M",
+    "type:fonctionnel"
+   ],
+   "milestone": "Phase 1 — MVP",
+   "epic": "API-JEUX",
+   "type": "fonctionnel",
+   "ecrans": [
+    "D-03",
+    "D-04",
+    "D-05",
+    "D-06"
+   ]
+  },
+  {
+   "code": "API-JEUX-05",
+   "title": "[API-JEUX-05] GET /guess-the-player/today : état du défi pour l'utilisateur courant",
+   "labels": [
+    "backend",
+    "module:jeux",
+    "phase:1",
+    "priorite:P0",
+    "taille:M",
+    "type:api"
+   ],
+   "milestone": "Phase 1 — MVP",
+   "epic": "API-JEUX",
+   "type": "api",
+   "ecrans": [
+    "D-01",
+    "D-02",
+    "D-03",
+    "D-05",
+    "D-06",
+    "D-10",
+    "D-12"
+   ]
+  },
+  {
+   "code": "API-JEUX-06",
+   "title": "[API-JEUX-06] GET /guess-the-player/players/search : suggestions de joueurs à la saisie",
+   "labels": [
+    "backend",
+    "module:jeux",
+    "phase:1",
+    "priorite:P0",
+    "taille:S",
+    "type:api"
+   ],
+   "milestone": "Phase 1 — MVP",
+   "epic": "API-JEUX",
+   "type": "api",
+   "ecrans": [
+    "D-04"
+   ]
+  },
+  {
+   "code": "API-JEUX-07",
+   "title": "[API-JEUX-07] POST /guess-the-player/attempt : soumettre une tentative (idempotente, 6 essais)",
+   "labels": [
+    "backend",
+    "module:jeux",
+    "phase:1",
+    "priorite:P0",
+    "taille:L",
+    "type:api"
+   ],
+   "milestone": "Phase 1 — MVP",
+   "epic": "API-JEUX",
+   "type": "api",
+   "ecrans": [
+    "D-03",
+    "D-04",
+    "D-05",
+    "D-06",
+    "D-07",
+    "D-08",
+    "D-12"
+   ]
+  },
+  {
+   "code": "API-JEUX-08",
+   "title": "[API-JEUX-08] Anti-triche Guess the Player (non-fuite de la solution, automatisation, cache)",
+   "labels": [
+    "backend",
+    "module:jeux",
+    "phase:1",
+    "priorite:P0",
+    "security",
+    "taille:M",
+    "type:securite"
+   ],
+   "milestone": "Phase 1 — MVP",
+   "epic": "API-JEUX",
+   "type": "securite",
+   "ecrans": [
+    "D-03",
+    "D-04",
+    "D-12"
+   ]
+  },
+  {
+   "code": "API-JEUX-09",
+   "title": "[API-JEUX-09] Barème de points Guess the Player et génération de la grille d'emojis sans spoiler",
+   "labels": [
+    "backend",
+    "module:jeux",
+    "phase:1",
+    "priorite:P0",
+    "taille:M",
+    "type:fonctionnel"
+   ],
+   "milestone": "Phase 1 — MVP",
+   "epic": "API-JEUX",
+   "type": "fonctionnel",
+   "ecrans": [
+    "D-07",
+    "D-08",
+    "D-09"
+   ]
+  },
+  {
+   "code": "API-JEUX-10",
+   "title": "[API-JEUX-10] GET /guess-the-player/history : historique, taux de réussite et répartition des essais",
+   "labels": [
+    "backend",
+    "module:jeux",
+    "phase:1",
+    "priorite:P1",
+    "taille:M",
+    "type:api"
+   ],
+   "milestone": "Phase 1 — MVP",
+   "epic": "API-JEUX",
+   "type": "api",
+   "ecrans": [
+    "D-11",
+    "D-01"
+   ]
+  },
+  {
+   "code": "API-JEUX-11",
+   "title": "[API-JEUX-11] Durcir QuizQuestion, QuizSession et créer QuestionStatDaily / QuizLeague-ready",
+   "labels": [
+    "backend",
+    "module:jeux",
+    "phase:1",
+    "priorite:P0",
+    "taille:L",
+    "type:donnees"
+   ],
+   "milestone": "Phase 1 — MVP",
+   "epic": "API-JEUX",
+   "type": "donnees",
+   "ecrans": [
+    "E-03",
+    "E-06",
+    "E-08",
+    "WF-02"
+   ]
+  },
+  {
+   "code": "API-JEUX-12",
+   "title": "[API-JEUX-12] Algorithme d'adaptation du niveau (5 paliers, fenêtre glissante de 10 réponses)",
+   "labels": [
+    "backend",
+    "module:jeux",
+    "phase:1",
+    "priorite:P0",
+    "taille:L",
+    "type:fonctionnel"
+   ],
+   "milestone": "Phase 1 — MVP",
+   "epic": "API-JEUX",
+   "type": "fonctionnel",
+   "ecrans": [
+    "E-01",
+    "E-08",
+    "E-09",
+    "E-10"
+   ]
+  },
+  {
+   "code": "API-JEUX-13",
+   "title": "[API-JEUX-13] Sélection des 10 questions d'une session (mix de niveaux, anti-répétition)",
+   "labels": [
+    "backend",
+    "module:jeux",
+    "phase:1",
+    "priorite:P0",
+    "taille:M",
+    "type:fonctionnel"
+   ],
+   "milestone": "Phase 1 — MVP",
+   "epic": "API-JEUX",
+   "type": "fonctionnel",
+   "ecrans": [
+    "E-02",
+    "E-03",
+    "E-12",
+    "E-18"
+   ]
+  },
+  {
+   "code": "API-JEUX-14",
+   "title": "[API-JEUX-14] GET/POST /quiz/daily : démarrer, reprendre ou constater le quiz du jour",
+   "labels": [
+    "backend",
+    "module:jeux",
+    "phase:1",
+    "priorite:P0",
+    "taille:L",
+    "type:api"
+   ],
+   "milestone": "Phase 1 — MVP",
+   "epic": "API-JEUX",
+   "type": "api",
+   "ecrans": [
+    "E-01",
+    "E-02",
+    "E-03",
+    "E-17",
+    "E-18"
+   ]
+  },
+  {
+   "code": "API-JEUX-15",
+   "title": "[API-JEUX-15] GET /quiz/practice : entraînement libre illimité sans impact sur le niveau",
+   "labels": [
+    "backend",
+    "module:jeux",
+    "phase:1",
+    "priorite:P1",
+    "taille:M",
+    "type:api"
+   ],
+   "milestone": "Phase 1 — MVP",
+   "epic": "API-JEUX",
+   "type": "api",
+   "ecrans": [
+    "E-11",
+    "E-12"
+   ]
+  },
+  {
+   "code": "API-JEUX-16",
+   "title": "[API-JEUX-16] POST /quiz/answer : réponse, chrono serveur, scoring et anti-rejeu",
+   "labels": [
+    "backend",
+    "module:jeux",
+    "phase:1",
+    "priorite:P0",
+    "taille:L",
+    "type:api"
+   ],
+   "milestone": "Phase 1 — MVP",
+   "epic": "API-JEUX",
+   "type": "api",
+   "ecrans": [
+    "E-03",
+    "E-04",
+    "E-05",
+    "E-06",
+    "E-07"
+   ]
+  },
+  {
+   "code": "API-JEUX-17",
+   "title": "[API-JEUX-17] Résultat de session : synthèse, montée/descente de niveau et revue des explications",
+   "labels": [
+    "backend",
+    "module:jeux",
+    "phase:1",
+    "priorite:P0",
+    "taille:M",
+    "type:api"
+   ],
+   "milestone": "Phase 1 — MVP",
+   "epic": "API-JEUX",
+   "type": "api",
+   "ecrans": [
+    "E-08",
+    "E-09",
+    "E-10",
+    "E-17"
+   ]
+  },
+  {
+   "code": "API-JEUX-18",
+   "title": "[API-JEUX-18] GET /games/hub : agrégat des cartes Jeux (défi du jour, quiz du jour, niveau, historique)",
+   "labels": [
+    "backend",
+    "module:jeux",
+    "phase:1",
+    "priorite:P0",
+    "taille:M",
+    "type:api"
+   ],
+   "milestone": "Phase 1 — MVP",
+   "epic": "API-JEUX",
+   "type": "api",
+   "ecrans": [
+    "D-01",
+    "E-01",
+    "D-10",
+    "E-17"
+   ]
+  },
+  {
+   "code": "API-JEUX-19",
+   "title": "[API-JEUX-19] Streaks : série de jours consécutifs, record, rappel avant minuit",
+   "labels": [
+    "backend",
+    "module:jeux",
+    "module:notifications",
+    "phase:1",
+    "priorite:P0",
+    "taille:M",
+    "type:fonctionnel"
+   ],
+   "milestone": "Phase 1 — MVP",
+   "epic": "API-JEUX",
+   "type": "fonctionnel",
+   "ecrans": [
+    "D-07",
+    "D-08",
+    "D-09",
+    "D-11",
+    "D-01"
+   ]
+  },
+  {
+   "code": "API-JEUX-20",
+   "title": "[API-JEUX-20] Points (XP) : barème ScoringRule, registre d'événements idempotent, totalPoints",
+   "labels": [
+    "backend",
+    "module:jeux",
+    "phase:1",
+    "priorite:P0",
+    "taille:L",
+    "type:fonctionnel"
+   ],
+   "milestone": "Phase 1 — MVP",
+   "epic": "API-JEUX",
+   "type": "fonctionnel",
+   "ecrans": [
+    "D-07",
+    "E-06",
+    "E-08"
+   ]
+  },
+  {
+   "code": "API-JEUX-21",
+   "title": "[API-JEUX-21] GET /quiz/leaderboard : classements monde et amis par période",
+   "labels": [
+    "backend",
+    "module:jeux",
+    "phase:1",
+    "priorite:P0",
+    "taille:L",
+    "type:api"
+   ],
+   "milestone": "Phase 1 — MVP",
+   "epic": "API-JEUX",
+   "type": "api",
+   "ecrans": [
+    "E-13",
+    "E-14",
+    "E-01"
+   ]
+  },
+  {
+   "code": "API-JEUX-22",
+   "title": "[API-JEUX-22] Classements en temps réel sur Redis (sorted sets) avec reconstruction",
+   "labels": [
+    "backend",
+    "module:jeux",
+    "performance",
+    "phase:1",
+    "priorite:P1",
+    "taille:M",
+    "type:infra"
+   ],
+   "milestone": "Phase 1 — MVP",
+   "epic": "API-JEUX",
+   "type": "infra",
+   "ecrans": [
+    "E-13",
+    "E-14"
+   ]
+  },
+  {
+   "code": "API-JEUX-23",
+   "title": "[API-JEUX-23] Modèle QuizLeague : ligues privées entre amis avec code BARCA-XXXX",
+   "labels": [
+    "backend",
+    "module:jeux",
+    "phase:1",
+    "priorite:P1",
+    "taille:S",
+    "type:donnees"
+   ],
+   "milestone": "Phase 1 — MVP",
+   "epic": "API-JEUX",
+   "type": "donnees",
+   "ecrans": [
+    "E-14",
+    "E-15",
+    "E-16"
+   ]
+  },
+  {
+   "code": "API-JEUX-24",
+   "title": "[API-JEUX-24] Endpoints ligues : création, aperçu par code, adhésion, départ, invitation",
+   "labels": [
+    "backend",
+    "module:jeux",
+    "phase:1",
+    "priorite:P1",
+    "taille:L",
+    "type:api"
+   ],
+   "milestone": "Phase 1 — MVP",
+   "epic": "API-JEUX",
+   "type": "api",
+   "ecrans": [
+    "E-14",
+    "E-15",
+    "E-16"
+   ]
+  },
+  {
+   "code": "API-JEUX-25",
+   "title": "[API-JEUX-25] Back-office : liste filtrée et CRUD des questions de quiz (/admin/quiz-questions)",
+   "labels": [
+    "backend",
+    "module:jeux",
+    "phase:1",
+    "priorite:P0",
+    "taille:L",
+    "type:api"
+   ],
+   "milestone": "Phase 1 — MVP",
+   "epic": "API-JEUX",
+   "type": "api",
+   "ecrans": [
+    "WF-01",
+    "WF-02"
+   ]
+  },
+  {
+   "code": "API-JEUX-26",
+   "title": "[API-JEUX-26] Import / export CSV de questions de quiz (validation ligne à ligne)",
+   "labels": [
+    "backend",
+    "module:jeux",
+    "phase:1",
+    "priorite:P1",
+    "taille:M",
+    "type:api"
+   ],
+   "milestone": "Phase 1 — MVP",
+   "epic": "API-JEUX",
+   "type": "api",
+   "ecrans": [
+    "WF-01"
+   ]
+  },
+  {
+   "code": "API-JEUX-27",
+   "title": "[API-JEUX-27] File de validation des questions IA : lister, approuver, corriger puis approuver, rejeter",
+   "labels": [
+    "backend",
+    "module:ia",
+    "module:jeux",
+    "phase:1",
+    "priorite:P0",
+    "taille:L",
+    "type:api"
+   ],
+   "milestone": "Phase 1 — MVP",
+   "epic": "API-JEUX",
+   "type": "api",
+   "ecrans": [
+    "WF-01",
+    "WF-03",
+    "WF-05"
+   ]
+  },
+  {
+   "code": "API-JEUX-28",
+   "title": "[API-JEUX-28] Worker de génération assistée par IA : ingestion en pending-ai (jamais de publication directe)",
+   "labels": [
+    "backend",
+    "module:ia",
+    "module:jeux",
+    "phase:1",
+    "priorite:P1",
+    "taille:M",
+    "type:infra"
+   ],
+   "milestone": "Phase 1 — MVP",
+   "epic": "API-JEUX",
+   "type": "infra",
+   "ecrans": [
+    "WF-03"
+   ]
+  },
+  {
+   "code": "API-JEUX-29",
+   "title": "[API-JEUX-29] Difficulté mesurée : recalcul du niveau observé par question",
+   "labels": [
+    "backend",
+    "module:jeux",
+    "phase:1",
+    "priorite:P1",
+    "taille:M",
+    "type:fonctionnel"
+   ],
+   "milestone": "Phase 1 — MVP",
+   "epic": "API-JEUX",
+   "type": "fonctionnel",
+   "ecrans": [
+    "WF-04",
+    "WF-02",
+    "WF-01"
+   ]
+  },
+  {
+   "code": "API-JEUX-30",
+   "title": "[API-JEUX-30] Back-office : performance des questions et export (/admin/quiz-questions/performance)",
+   "labels": [
+    "backend",
+    "module:jeux",
+    "phase:1",
+    "priorite:P1",
+    "taille:M",
+    "type:api"
+   ],
+   "milestone": "Phase 1 — MVP",
+   "epic": "API-JEUX",
+   "type": "api",
+   "ecrans": [
+    "WF-04",
+    "WF-01"
+   ]
+  },
+  {
+   "code": "API-JEUX-31",
+   "title": "[API-JEUX-31] Back-office : planification du joueur mystère et du quiz mis en avant",
+   "labels": [
+    "backend",
+    "module:jeux",
+    "phase:1",
+    "priorite:P1",
+    "taille:M",
+    "type:api"
+   ],
+   "milestone": "Phase 1 — MVP",
+   "epic": "API-JEUX",
+   "type": "api",
+   "ecrans": [
+    "WF-01",
+    "D-01"
+   ]
+  },
+  {
+   "code": "API-JEUX-32",
+   "title": "[API-JEUX-32] Index MongoDB et caches Redis des modules jeux",
+   "labels": [
+    "backend",
+    "module:jeux",
+    "performance",
+    "phase:1",
+    "priorite:P1",
+    "taille:M",
+    "type:performance"
+   ],
+   "milestone": "Phase 1 — MVP",
+   "epic": "API-JEUX",
+   "type": "performance",
+   "ecrans": [
+    "D-01",
+    "E-01",
+    "E-13"
+   ]
+  },
+  {
+   "code": "API-JEUX-33",
+   "title": "[API-JEUX-33] RGPD : export, suppression et minimisation des données de jeu",
+   "labels": [
+    "backend",
+    "module:jeux",
+    "phase:1",
+    "priorite:P1",
+    "rgpd",
+    "taille:M",
+    "type:rgpd"
+   ],
+   "milestone": "Phase 1 — MVP",
+   "epic": "API-JEUX",
+   "type": "rgpd",
+   "ecrans": [
+    "D-11",
+    "E-13"
+   ]
+  },
+  {
+   "code": "API-JEUX-34",
+   "title": "[API-JEUX-34] Seed (barèmes, badges, questions de démo) et documentation Swagger/Markdown des jeux",
+   "labels": [
+    "backend",
+    "documentation",
+    "module:jeux",
+    "phase:1",
+    "priorite:P1",
+    "taille:M",
+    "type:doc"
+   ],
+   "milestone": "Phase 1 — MVP",
+   "epic": "API-JEUX",
+   "type": "doc",
+   "ecrans": [
+    "D-01",
+    "E-01"
+   ]
+  },
+  {
+   "code": "API-JEUX-35",
+   "title": "[API-JEUX-35] Tests unitaires et d'intégration des jeux (domaine, API, jobs)",
+   "labels": [
+    "backend",
+    "module:jeux",
+    "phase:1",
+    "priorite:P0",
+    "taille:L",
+    "tests",
+    "type:tests"
+   ],
+   "milestone": "Phase 1 — MVP",
+   "epic": "API-JEUX",
+   "type": "tests",
+   "ecrans": [
+    "D-01",
+    "D-02",
+    "D-03",
+    "D-04",
+    "D-05",
+    "D-06",
+    "D-07",
+    "D-08",
+    "D-09",
+    "D-10",
+    "D-11",
+    "D-12",
+    "E-01",
+    "E-03",
+    "E-08"
+   ]
+  },
+  {
+   "code": "API-JEUX-36",
+   "title": "[API-JEUX-36] Tests de sécurité des jeux (fuite de solution, rejeu, rôles admin)",
+   "labels": [
+    "backend",
+    "module:jeux",
+    "phase:1",
+    "priorite:P1",
+    "security",
+    "taille:M",
+    "tests",
+    "type:tests"
+   ],
+   "milestone": "Phase 1 — MVP",
+   "epic": "API-JEUX",
+   "type": "tests",
+   "ecrans": [
+    "D-03",
+    "E-03",
+    "WF-01"
+   ]
+  },
+  {
+   "code": "API-JEUX-37",
+   "title": "[API-JEUX-37] Tests de charge k6 : soir de match (hub, défi du jour, quiz, classements)",
+   "labels": [
+    "backend",
+    "module:jeux",
+    "performance",
+    "phase:1",
+    "priorite:P1",
+    "taille:M",
+    "tests",
+    "type:tests"
+   ],
+   "milestone": "Phase 1 — MVP",
+   "epic": "API-JEUX",
+   "type": "tests",
+   "ecrans": [
+    "D-01",
+    "D-03",
+    "E-03",
+    "E-13"
+   ]
+  },
+  {
+   "code": "API-MODER-01",
+   "title": "[API-MODER-01] Durcir le modèle ModerationReport (types, doublons, snapshot, SLA)",
+   "labels": [
+    "backend",
+    "module:moderation",
+    "phase:2",
+    "priorite:P0",
+    "security",
+    "taille:M",
+    "type:donnees"
+   ],
+   "milestone": "Phase 2 — Communautaire & compétitif",
+   "epic": "API-MODER",
+   "type": "donnees",
+   "ecrans": [
+    "WG-01",
+    "WG-02",
+    "K-05"
+   ]
+  },
+  {
+   "code": "API-MODER-02",
+   "title": "[API-MODER-02] Rendre ModerationAction et AuditLog réellement immuables",
+   "labels": [
+    "backend",
+    "module:moderation",
+    "phase:2",
+    "priorite:P0",
+    "security",
+    "taille:M",
+    "type:securite"
+   ],
+   "milestone": "Phase 2 — Communautaire & compétitif",
+   "epic": "API-MODER",
+   "type": "securite",
+   "ecrans": [
+    "WG-03",
+    "WG-04"
+   ]
+  },
+  {
+   "code": "API-MODER-03",
+   "title": "[API-MODER-03] Modèle de sanctions et états de compte utilisateur (actif, suspendu, banni)",
+   "labels": [
+    "backend",
+    "module:comptes",
+    "module:moderation",
+    "phase:2",
+    "priorite:P0",
+    "taille:M",
+    "type:donnees"
+   ],
+   "milestone": "Phase 2 — Communautaire & compétitif",
+   "epic": "API-MODER",
+   "type": "donnees",
+   "ecrans": [
+    "A-09",
+    "A-10",
+    "WJ-02"
+   ]
+  },
+  {
+   "code": "API-MODER-04",
+   "title": "[API-MODER-04] Middleware de restriction selon l'état de compte (A-09, A-10)",
+   "labels": [
+    "backend",
+    "module:auth",
+    "module:moderation",
+    "phase:2",
+    "priorite:P0",
+    "security",
+    "taille:M",
+    "type:securite"
+   ],
+   "milestone": "Phase 2 — Communautaire & compétitif",
+   "epic": "API-MODER",
+   "type": "securite",
+   "ecrans": [
+    "A-09",
+    "A-10"
+   ]
+  },
+  {
+   "code": "API-MODER-05",
+   "title": "[API-MODER-05] API de signalement d'un contenu ou d'un utilisateur",
+   "labels": [
+    "backend",
+    "module:communaute",
+    "module:moderation",
+    "phase:2",
+    "priorite:P0",
+    "taille:M",
+    "type:api"
+   ],
+   "milestone": "Phase 2 — Communautaire & compétitif",
+   "epic": "API-MODER",
+   "type": "api",
+   "ecrans": [
+    "K-04",
+    "K-05",
+    "K-06"
+   ]
+  },
+  {
+   "code": "API-MODER-06",
+   "title": "[API-MODER-06] Filtrage automatique : mots interdits et liens suspects",
+   "labels": [
+    "backend",
+    "module:moderation",
+    "phase:2",
+    "priorite:P0",
+    "security",
+    "taille:L",
+    "type:fonctionnel"
+   ],
+   "milestone": "Phase 2 — Communautaire & compétitif",
+   "epic": "API-MODER",
+   "type": "fonctionnel",
+   "ecrans": [
+    "WG-01",
+    "K-03"
+   ]
+  },
+  {
+   "code": "API-MODER-07",
+   "title": "[API-MODER-07] Détection de flood et de comportements répétitifs",
+   "labels": [
+    "backend",
+    "module:moderation",
+    "phase:2",
+    "priorite:P1",
+    "security",
+    "taille:M",
+    "type:securite"
+   ],
+   "milestone": "Phase 2 — Communautaire & compétitif",
+   "epic": "API-MODER",
+   "type": "securite",
+   "ecrans": [
+    "WG-01",
+    "K-03"
+   ]
+  },
+  {
+   "code": "API-MODER-08",
+   "title": "[API-MODER-08] Service de gravité auto-évaluée indicative des signalements",
+   "labels": [
+    "backend",
+    "module:moderation",
+    "phase:2",
+    "priorite:P0",
+    "taille:M",
+    "type:fonctionnel"
+   ],
+   "milestone": "Phase 2 — Communautaire & compétitif",
+   "epic": "API-MODER",
+   "type": "fonctionnel",
+   "ecrans": [
+    "WG-01",
+    "WG-02"
+   ]
+  },
+  {
+   "code": "API-MODER-09",
+   "title": "[API-MODER-09] GET /admin/moderation/reports : file de modération (tri, filtres, compteurs)",
+   "labels": [
+    "backend",
+    "module:comptes",
+    "module:moderation",
+    "phase:2",
+    "priorite:P0",
+    "taille:L",
+    "type:api"
+   ],
+   "milestone": "Phase 2 — Communautaire & compétitif",
+   "epic": "API-MODER",
+   "type": "api",
+   "ecrans": [
+    "WG-01",
+    "WG-07"
+   ]
+  },
+  {
+   "code": "API-MODER-10",
+   "title": "[API-MODER-10] GET /admin/moderation/reports/:id : détail, contexte et prise en charge",
+   "labels": [
+    "backend",
+    "module:moderation",
+    "phase:2",
+    "priorite:P0",
+    "taille:L",
+    "type:api"
+   ],
+   "milestone": "Phase 2 — Communautaire & compétitif",
+   "epic": "API-MODER",
+   "type": "api",
+   "ecrans": [
+    "WG-02",
+    "WG-03"
+   ]
+  },
+  {
+   "code": "API-MODER-11",
+   "title": "[API-MODER-11] Service de barème indicatif et calcul du rang de récidive",
+   "labels": [
+    "backend",
+    "module:moderation",
+    "phase:2",
+    "priorite:P0",
+    "taille:M",
+    "type:fonctionnel"
+   ],
+   "milestone": "Phase 2 — Communautaire & compétitif",
+   "epic": "API-MODER",
+   "type": "fonctionnel",
+   "ecrans": [
+    "WG-06",
+    "WG-04",
+    "WG-03"
+   ]
+  },
+  {
+   "code": "API-MODER-12",
+   "title": "[API-MODER-12] POST /admin/moderation/reports/:id/action : ignorer, masquer, avertir, suspendre, bannir",
+   "labels": [
+    "backend",
+    "module:moderation",
+    "phase:2",
+    "priorite:P0",
+    "security",
+    "taille:XL",
+    "type:api"
+   ],
+   "milestone": "Phase 2 — Communautaire & compétitif",
+   "epic": "API-MODER",
+   "type": "api",
+   "ecrans": [
+    "WG-02",
+    "WG-03"
+   ]
+  },
+  {
+   "code": "API-MODER-13",
+   "title": "[API-MODER-13] Levée de sanction : fin de suspension et débannissement",
+   "labels": [
+    "backend",
+    "module:comptes",
+    "module:moderation",
+    "phase:2",
+    "priorite:P1",
+    "taille:M",
+    "type:fonctionnel"
+   ],
+   "milestone": "Phase 2 — Communautaire & compétitif",
+   "epic": "API-MODER",
+   "type": "fonctionnel",
+   "ecrans": [
+    "WG-04",
+    "WJ-02",
+    "A-09"
+   ]
+  },
+  {
+   "code": "API-MODER-14",
+   "title": "[API-MODER-14] GET /admin/moderation/users/:id/history : historique de modération par utilisateur",
+   "labels": [
+    "backend",
+    "module:moderation",
+    "phase:2",
+    "priorite:P0",
+    "taille:M",
+    "type:api"
+   ],
+   "milestone": "Phase 2 — Communautaire & compétitif",
+   "epic": "API-MODER",
+   "type": "api",
+   "ecrans": [
+    "WG-04",
+    "WJ-02"
+   ]
+  },
+  {
+   "code": "API-MODER-15",
+   "title": "[API-MODER-15] Back-office comptes : liste et fiche utilisateur avec actions de sanction directes",
+   "labels": [
+    "backend",
+    "module:comptes",
+    "module:moderation",
+    "module:utilisateurs",
+    "phase:2",
+    "priorite:P1",
+    "taille:L",
+    "type:api"
+   ],
+   "milestone": "Phase 2 — Communautaire & compétitif",
+   "epic": "API-MODER",
+   "type": "api",
+   "ecrans": [
+    "WJ-01",
+    "WJ-02"
+   ]
+  },
+  {
+   "code": "API-MODER-16",
+   "title": "[API-MODER-16] Back-office : validation et archivage des groupes locaux",
+   "labels": [
+    "backend",
+    "module:communaute",
+    "module:moderation",
+    "phase:2",
+    "priorite:P1",
+    "taille:M",
+    "type:api"
+   ],
+   "milestone": "Phase 2 — Communautaire & compétitif",
+   "epic": "API-MODER",
+   "type": "api",
+   "ecrans": [
+    "WG-05"
+   ]
+  },
+  {
+   "code": "API-MODER-17",
+   "title": "[API-MODER-17] Représentation des contenus masqués dans les fils (K-07)",
+   "labels": [
+    "backend",
+    "module:communaute",
+    "module:moderation",
+    "phase:2",
+    "priorite:P0",
+    "taille:M",
+    "type:fonctionnel"
+   ],
+   "milestone": "Phase 2 — Communautaire & compétitif",
+   "epic": "API-MODER",
+   "type": "fonctionnel",
+   "ecrans": [
+    "K-07",
+    "K-02"
+   ]
+  },
+  {
+   "code": "API-MODER-18",
+   "title": "[API-MODER-18] GET /moderation/me : sanction active, motif public et charte (A-09, A-10)",
+   "labels": [
+    "backend",
+    "module:comptes",
+    "module:moderation",
+    "phase:2",
+    "priorite:P0",
+    "taille:S",
+    "type:api"
+   ],
+   "milestone": "Phase 2 — Communautaire & compétitif",
+   "epic": "API-MODER",
+   "type": "api",
+   "ecrans": [
+    "A-09",
+    "A-10"
+   ]
+  },
+  {
+   "code": "API-MODER-19",
+   "title": "[API-MODER-19] Modèle et API de contestation d'une sanction (appel)",
+   "labels": [
+    "backend",
+    "module:comptes",
+    "module:moderation",
+    "phase:2",
+    "priorite:P1",
+    "taille:L",
+    "type:fonctionnel"
+   ],
+   "milestone": "Phase 2 — Communautaire & compétitif",
+   "epic": "API-MODER",
+   "type": "fonctionnel",
+   "ecrans": [
+    "A-09",
+    "A-10",
+    "WG-04"
+   ]
+  },
+  {
+   "code": "API-MODER-20",
+   "title": "[API-MODER-20] Notifications utilisateur pour avertissement, suspension, bannissement et contestation",
+   "labels": [
+    "backend",
+    "module:moderation",
+    "module:notifications",
+    "phase:2",
+    "priorite:P0",
+    "taille:M",
+    "type:fonctionnel"
+   ],
+   "milestone": "Phase 2 — Communautaire & compétitif",
+   "epic": "API-MODER",
+   "type": "fonctionnel",
+   "ecrans": [
+    "A-09",
+    "A-10"
+   ]
+  },
+  {
+   "code": "API-MODER-21",
+   "title": "[API-MODER-21] SLA de traitement : échéances, alertes et escalade",
+   "labels": [
+    "backend",
+    "module:moderation",
+    "module:supervision",
+    "phase:2",
+    "priorite:P1",
+    "taille:M",
+    "type:fonctionnel"
+   ],
+   "milestone": "Phase 2 — Communautaire & compétitif",
+   "epic": "API-MODER",
+   "type": "fonctionnel",
+   "ecrans": [
+    "WG-01",
+    "WG-07"
+   ]
+  },
+  {
+   "code": "API-MODER-22",
+   "title": "[API-MODER-22] GET /admin/audit-logs : journal d'audit consultable (super-admin)",
+   "labels": [
+    "backend",
+    "module:moderation",
+    "module:supervision",
+    "phase:2",
+    "priorite:P0",
+    "security",
+    "taille:M",
+    "type:api"
+   ],
+   "milestone": "Phase 2 — Communautaire & compétitif",
+   "epic": "API-MODER",
+   "type": "api",
+   "ecrans": [
+    "WG-03",
+    "WG-04"
+   ]
+  },
+  {
+   "code": "API-MODER-23",
+   "title": "[API-MODER-23] RBAC et durcissement des endpoints back-office de modération",
+   "labels": [
+    "backend",
+    "module:moderation",
+    "phase:2",
+    "priorite:P0",
+    "security",
+    "taille:M",
+    "type:securite"
+   ],
+   "milestone": "Phase 2 — Communautaire & compétitif",
+   "epic": "API-MODER",
+   "type": "securite",
+   "ecrans": [
+    "WG-01",
+    "WG-02",
+    "WG-03",
+    "WG-06",
+    "WJ-01"
+   ]
+  },
+  {
+   "code": "API-MODER-24",
+   "title": "[API-MODER-24] Recherche globale (Ctrl+K) : utilisateurs, groupes et signalements",
+   "labels": [
+    "backend",
+    "module:moderation",
+    "phase:2",
+    "priorite:P2",
+    "taille:S",
+    "type:api"
+   ],
+   "milestone": "Phase 2 — Communautaire & compétitif",
+   "epic": "API-MODER",
+   "type": "api",
+   "ecrans": [
+    "WG-01",
+    "WJ-01"
+   ]
+  },
+  {
+   "code": "API-MODER-25",
+   "title": "[API-MODER-25] Modération a posteriori des wallpapers IA et filtrage des prompts",
+   "labels": [
+    "backend",
+    "module:moderation",
+    "module:wallpapers",
+    "phase:2",
+    "priorite:P2",
+    "taille:M",
+    "type:fonctionnel"
+   ],
+   "milestone": "Phase 2 — Communautaire & compétitif",
+   "epic": "API-MODER",
+   "type": "fonctionnel",
+   "ecrans": [
+    "WJ-06"
+   ]
+  },
+  {
+   "code": "API-MODER-26",
+   "title": "[API-MODER-26] Configuration de la modération (termes, seuils, SLA) par le super-admin",
+   "labels": [
+    "backend",
+    "module:moderation",
+    "module:supervision",
+    "phase:2",
+    "priorite:P1",
+    "taille:M",
+    "type:api"
+   ],
+   "milestone": "Phase 2 — Communautaire & compétitif",
+   "epic": "API-MODER",
+   "type": "api",
+   "ecrans": [
+    "WG-06",
+    "WG-01"
+   ]
+  },
+  {
+   "code": "API-MODER-27",
+   "title": "[API-MODER-27] Métriques Prometheus et indicateurs du tableau de bord modération",
+   "labels": [
+    "backend",
+    "module:moderation",
+    "module:supervision",
+    "phase:2",
+    "priorite:P1",
+    "taille:M",
+    "type:performance"
+   ],
+   "milestone": "Phase 2 — Communautaire & compétitif",
+   "epic": "API-MODER",
+   "type": "performance",
+   "ecrans": [
+    "WG-01",
+    "WG-07"
+   ]
+  },
+  {
+   "code": "API-MODER-28",
+   "title": "[API-MODER-28] Rétention RGPD des données de modération",
+   "labels": [
+    "backend",
+    "module:moderation",
+    "phase:2",
+    "priorite:P0",
+    "rgpd",
+    "taille:M",
+    "type:rgpd"
+   ],
+   "milestone": "Phase 2 — Communautaire & compétitif",
+   "epic": "API-MODER",
+   "type": "rgpd",
+   "ecrans": [
+    "WG-04",
+    "A-10"
+   ]
+  },
+  {
+   "code": "API-MODER-29",
+   "title": "[API-MODER-29] Index, pagination et performances des collections de modération",
+   "labels": [
+    "backend",
+    "module:moderation",
+    "performance",
+    "phase:2",
+    "priorite:P1",
+    "taille:S",
+    "type:performance"
+   ],
+   "milestone": "Phase 2 — Communautaire & compétitif",
+   "epic": "API-MODER",
+   "type": "performance",
+   "ecrans": [
+    "WG-01",
+    "WG-04"
+   ]
+  },
+  {
+   "code": "API-MODER-30",
+   "title": "[API-MODER-30] Tests d'intégration et e2e du parcours de modération",
+   "labels": [
+    "backend",
+    "module:moderation",
+    "phase:2",
+    "priorite:P0",
+    "taille:L",
+    "tests",
+    "type:tests"
+   ],
+   "milestone": "Phase 2 — Communautaire & compétitif",
+   "epic": "API-MODER",
+   "type": "tests",
+   "ecrans": [
+    "K-05",
+    "K-06",
+    "WG-02",
+    "WG-03",
+    "A-09",
+    "A-10"
+   ]
+  },
+  {
+   "code": "API-MODER-31",
+   "title": "[API-MODER-31] Tests de sécurité : XSS, IDOR, fuite d'identité, élévation de privilèges",
+   "labels": [
+    "backend",
+    "module:moderation",
+    "phase:2",
+    "priorite:P0",
+    "security",
+    "taille:M",
+    "tests",
+    "type:tests"
+   ],
+   "milestone": "Phase 2 — Communautaire & compétitif",
+   "epic": "API-MODER",
+   "type": "tests",
+   "ecrans": [
+    "WG-02",
+    "WG-03",
+    "WJ-01",
+    "K-05"
+   ]
+  },
+  {
+   "code": "API-MODER-32",
+   "title": "[API-MODER-32] Documentation OpenAPI, charte et guide du modérateur",
+   "labels": [
+    "backend",
+    "documentation",
+    "module:moderation",
+    "phase:2",
+    "priorite:P1",
+    "taille:S",
+    "type:doc"
+   ],
+   "milestone": "Phase 2 — Communautaire & compétitif",
+   "epic": "API-MODER",
+   "type": "doc",
+   "ecrans": [
+    "WG-01",
+    "WG-02",
+    "WG-03",
+    "WG-04",
+    "WG-05",
+    "WG-06",
+    "WG-07",
+    "WJ-01",
+    "WJ-02",
+    "WJ-06",
+    "A-09",
+    "A-10",
+    "K-04",
+    "K-05",
+    "K-06",
+    "K-07"
+   ]
+  },
+  {
    "code": "API-NOTIF-01",
    "title": "[API-NOTIF-01] Étendre NotificationPreference, DeviceToken et NotificationLog (+ NotificationCampaign)",
    "labels": [
@@ -3947,6 +7306,2367 @@
     "O-05",
     "WI-07"
    ]
+  },
+  {
+   "code": "API-PASS-01",
+   "title": "[API-PASS-01] Durcir UserProgress : compteurs, niveaux, jour d'activité et indexation",
+   "labels": [
+    "backend",
+    "module:passport",
+    "phase:2",
+    "priorite:P0",
+    "taille:M",
+    "type:donnees"
+   ],
+   "milestone": "Phase 2 — Communautaire & compétitif",
+   "epic": "API-PASS",
+   "type": "donnees",
+   "ecrans": [
+    "P-01",
+    "P-02",
+    "P-10"
+   ]
+  },
+  {
+   "code": "API-PASS-02",
+   "title": "[API-PASS-02] Journal d'activité UserActivity (source de vérité des points et de l'historique)",
+   "labels": [
+    "backend",
+    "module:passport",
+    "phase:2",
+    "priorite:P0",
+    "taille:M",
+    "type:donnees"
+   ],
+   "milestone": "Phase 2 — Communautaire & compétitif",
+   "epic": "API-PASS",
+   "type": "donnees",
+   "ecrans": [
+    "P-02",
+    "P-10",
+    "P-01"
+   ]
+  },
+  {
+   "code": "API-PASS-03",
+   "title": "[API-PASS-03] Service recordActivity : point d'entrée unique d'attribution de points",
+   "labels": [
+    "backend",
+    "high-priority",
+    "module:passport",
+    "phase:2",
+    "priorite:P0",
+    "taille:L",
+    "type:fonctionnel"
+   ],
+   "milestone": "Phase 2 — Communautaire & compétitif",
+   "epic": "API-PASS",
+   "type": "fonctionnel",
+   "ecrans": [
+    "P-01",
+    "P-06",
+    "P-02"
+   ]
+  },
+  {
+   "code": "API-PASS-04",
+   "title": "[API-PASS-04] Table passport_point_rules : barème de points transverse (configurable)",
+   "labels": [
+    "backend",
+    "module:passport",
+    "module:plateforme",
+    "phase:2",
+    "priorite:P0",
+    "taille:S",
+    "type:donnees"
+   ],
+   "milestone": "Phase 2 — Communautaire & compétitif",
+   "epic": "API-PASS",
+   "type": "donnees",
+   "ecrans": [
+    "P-01",
+    "P-02"
+   ]
+  },
+  {
+   "code": "API-PASS-05",
+   "title": "[API-PASS-05] XP et niveaux Passport (proposition à confirmer) distincts du niveau de quiz",
+   "labels": [
+    "backend",
+    "module:passport",
+    "phase:2",
+    "priorite:P1",
+    "taille:M",
+    "type:fonctionnel"
+   ],
+   "milestone": "Phase 2 — Communautaire & compétitif",
+   "epic": "API-PASS",
+   "type": "fonctionnel",
+   "ecrans": [
+    "P-01",
+    "P-05",
+    "P-02"
+   ]
+  },
+  {
+   "code": "API-PASS-06",
+   "title": "[API-PASS-06] Série d'activité : règles, fuseau, rupture et état « en péril »",
+   "labels": [
+    "backend",
+    "module:passport",
+    "phase:2",
+    "priorite:P0",
+    "taille:M",
+    "type:fonctionnel"
+   ],
+   "milestone": "Phase 2 — Communautaire & compétitif",
+   "epic": "API-PASS",
+   "type": "fonctionnel",
+   "ecrans": [
+    "P-01",
+    "P-10"
+   ]
+  },
+  {
+   "code": "API-PASS-07",
+   "title": "[API-PASS-07] Modèle Badge enrichi : catégories, conditions déclaratives et paliers",
+   "labels": [
+    "backend",
+    "module:passport",
+    "phase:2",
+    "priorite:P0",
+    "taille:M",
+    "type:donnees"
+   ],
+   "milestone": "Phase 2 — Communautaire & compétitif",
+   "epic": "API-PASS",
+   "type": "donnees",
+   "ecrans": [
+    "P-03",
+    "P-04",
+    "P-05"
+   ]
+  },
+  {
+   "code": "API-PASS-08",
+   "title": "[API-PASS-08] Seed du catalogue de 24 badges (12 vus sur les maquettes, 12 à confirmer)",
+   "labels": [
+    "backend",
+    "module:contenu",
+    "module:passport",
+    "phase:2",
+    "priorite:P0",
+    "taille:M",
+    "type:donnees"
+   ],
+   "milestone": "Phase 2 — Communautaire & compétitif",
+   "epic": "API-PASS",
+   "type": "donnees",
+   "ecrans": [
+    "P-03",
+    "P-04",
+    "P-05",
+    "P-06"
+   ]
+  },
+  {
+   "code": "API-PASS-09",
+   "title": "[API-PASS-09] Moteur d'attribution des badges (événementiel, idempotent)",
+   "labels": [
+    "backend",
+    "high-priority",
+    "module:passport",
+    "phase:2",
+    "priorite:P0",
+    "taille:L",
+    "type:fonctionnel"
+   ],
+   "milestone": "Phase 2 — Communautaire & compétitif",
+   "epic": "API-PASS",
+   "type": "fonctionnel",
+   "ecrans": [
+    "P-04",
+    "P-05",
+    "P-06"
+   ]
+  },
+  {
+   "code": "API-PASS-10",
+   "title": "[API-PASS-10] Collection UserBadge : déblocages, progression et état « vu »",
+   "labels": [
+    "backend",
+    "module:passport",
+    "phase:2",
+    "priorite:P0",
+    "taille:S",
+    "type:donnees"
+   ],
+   "milestone": "Phase 2 — Communautaire & compétitif",
+   "epic": "API-PASS",
+   "type": "donnees",
+   "ecrans": [
+    "P-03",
+    "P-04",
+    "P-06"
+   ]
+  },
+  {
+   "code": "API-PASS-11",
+   "title": "[API-PASS-11] GET /users/me/progress : vue d'ensemble du Passport",
+   "labels": [
+    "backend",
+    "module:passport",
+    "phase:2",
+    "priorite:P0",
+    "taille:M",
+    "type:api"
+   ],
+   "milestone": "Phase 2 — Communautaire & compétitif",
+   "epic": "API-PASS",
+   "type": "api",
+   "ecrans": [
+    "P-01",
+    "P-02"
+   ]
+  },
+  {
+   "code": "API-PASS-12",
+   "title": "[API-PASS-12] GET /badges : catalogue public localisé",
+   "labels": [
+    "backend",
+    "module:passport",
+    "phase:2",
+    "priorite:P0",
+    "taille:S",
+    "type:api"
+   ],
+   "milestone": "Phase 2 — Communautaire & compétitif",
+   "epic": "API-PASS",
+   "type": "api",
+   "ecrans": [
+    "P-03"
+   ]
+  },
+  {
+   "code": "API-PASS-13",
+   "title": "[API-PASS-13] GET /users/me/badges et /:code : états, progression et prochain palier",
+   "labels": [
+    "backend",
+    "module:passport",
+    "phase:2",
+    "priorite:P0",
+    "taille:M",
+    "type:api"
+   ],
+   "milestone": "Phase 2 — Communautaire & compétitif",
+   "epic": "API-PASS",
+   "type": "api",
+   "ecrans": [
+    "P-03",
+    "P-04",
+    "P-05"
+   ]
+  },
+  {
+   "code": "API-PASS-14",
+   "title": "[API-PASS-14] Déblocages non vus : meta.newBadges, /unseen et /seen (modale « Nouveau badge ! »)",
+   "labels": [
+    "backend",
+    "module:passport",
+    "phase:2",
+    "priorite:P0",
+    "taille:M",
+    "type:api"
+   ],
+   "milestone": "Phase 2 — Communautaire & compétitif",
+   "epic": "API-PASS",
+   "type": "api",
+   "ecrans": [
+    "P-06",
+    "P-04"
+   ]
+  },
+  {
+   "code": "API-PASS-15",
+   "title": "[API-PASS-15] GET /users/me/stats : statistiques détaillées (Global, Quiz, Guess)",
+   "labels": [
+    "backend",
+    "module:passport",
+    "phase:2",
+    "priorite:P1",
+    "taille:M",
+    "type:api"
+   ],
+   "milestone": "Phase 2 — Communautaire & compétitif",
+   "epic": "API-PASS",
+   "type": "api",
+   "ecrans": [
+    "P-02"
+   ]
+  },
+  {
+   "code": "API-PASS-16",
+   "title": "[API-PASS-16] Agrégats hebdomadaires UserStatsWeekly maintenus par recordActivity",
+   "labels": [
+    "backend",
+    "module:passport",
+    "performance",
+    "phase:2",
+    "priorite:P1",
+    "taille:M",
+    "type:donnees"
+   ],
+   "milestone": "Phase 2 — Communautaire & compétitif",
+   "epic": "API-PASS",
+   "type": "donnees",
+   "ecrans": [
+    "P-02",
+    "P-10"
+   ]
+  },
+  {
+   "code": "API-PASS-17",
+   "title": "[API-PASS-17] GET /users/me/activity/calendar : série et calendrier d'activité (P-10)",
+   "labels": [
+    "backend",
+    "module:passport",
+    "phase:2",
+    "priorite:P1",
+    "taille:M",
+    "type:api"
+   ],
+   "milestone": "Phase 2 — Communautaire & compétitif",
+   "epic": "API-PASS",
+   "type": "api",
+   "ecrans": [
+    "P-10",
+    "P-01"
+   ]
+  },
+  {
+   "code": "API-PASS-18",
+   "title": "[API-PASS-18] GET /users/me/activity : historique d'activité paginé",
+   "labels": [
+    "backend",
+    "module:passport",
+    "phase:2",
+    "priorite:P2",
+    "taille:M",
+    "type:api"
+   ],
+   "milestone": "Phase 2 — Communautaire & compétitif",
+   "epic": "API-PASS",
+   "type": "api",
+   "ecrans": [
+    "P-02",
+    "P-10"
+   ]
+  },
+  {
+   "code": "API-PASS-19",
+   "title": "[API-PASS-19] Charte des pseudos : filtrage, unicité insensible à la casse, disponibilité",
+   "labels": [
+    "backend",
+    "module:moderation",
+    "module:passport",
+    "phase:2",
+    "priorite:P0",
+    "security",
+    "taille:L",
+    "type:fonctionnel"
+   ],
+   "milestone": "Phase 2 — Communautaire & compétitif",
+   "epic": "API-PASS",
+   "type": "fonctionnel",
+   "ecrans": [
+    "P-07",
+    "P-08"
+   ]
+  },
+  {
+   "code": "API-PASS-20",
+   "title": "[API-PASS-20] Modification du profil Passport (P-07) : PATCH /users/me",
+   "labels": [
+    "backend",
+    "module:passport",
+    "phase:2",
+    "priorite:P0",
+    "taille:M",
+    "type:api"
+   ],
+   "milestone": "Phase 2 — Communautaire & compétitif",
+   "epic": "API-PASS",
+   "type": "api",
+   "ecrans": [
+    "P-07",
+    "P-08",
+    "P-01"
+   ]
+  },
+  {
+   "code": "API-PASS-21",
+   "title": "[API-PASS-21] Catalogue d'avatars illustrés (Joueurs, Initiales, Couleurs)",
+   "labels": [
+    "backend",
+    "module:contenu",
+    "module:passport",
+    "phase:2",
+    "priorite:P1",
+    "taille:S",
+    "type:api"
+   ],
+   "milestone": "Phase 2 — Communautaire & compétitif",
+   "epic": "API-PASS",
+   "type": "api",
+   "ecrans": [
+    "P-09",
+    "P-07"
+   ]
+  },
+  {
+   "code": "API-PASS-22",
+   "title": "[API-PASS-22] Profil public d'un autre culé avec statistiques publiques",
+   "labels": [
+    "backend",
+    "module:passport",
+    "phase:2",
+    "priorite:P1",
+    "rgpd",
+    "taille:M",
+    "type:api"
+   ],
+   "milestone": "Phase 2 — Communautaire & compétitif",
+   "epic": "API-PASS",
+   "type": "api",
+   "ecrans": [
+    "P-11"
+   ]
+  },
+  {
+   "code": "API-PASS-23",
+   "title": "[API-PASS-23] Partage du Passport et d'un badge (jeton public sans donnée personnelle)",
+   "labels": [
+    "backend",
+    "module:passport",
+    "phase:2",
+    "priorite:P2",
+    "rgpd",
+    "taille:M",
+    "type:api"
+   ],
+   "milestone": "Phase 2 — Communautaire & compétitif",
+   "epic": "API-PASS",
+   "type": "api",
+   "ecrans": [
+    "P-01",
+    "P-04"
+   ]
+  },
+  {
+   "code": "API-PASS-24",
+   "title": "[API-PASS-24] Anti-fraude des points et des badges (plafonds, rafales, signaux)",
+   "labels": [
+    "backend",
+    "module:passport",
+    "phase:2",
+    "priorite:P0",
+    "security",
+    "taille:M",
+    "type:securite"
+   ],
+   "milestone": "Phase 2 — Communautaire & compétitif",
+   "epic": "API-PASS",
+   "type": "securite",
+   "ecrans": [
+    "P-01",
+    "P-02"
+   ]
+  },
+  {
+   "code": "API-PASS-25",
+   "title": "[API-PASS-25] Ajustements administratifs : points, révocation de badge, recalcul",
+   "labels": [
+    "backend",
+    "module:passport",
+    "module:supervision",
+    "phase:2",
+    "priorite:P2",
+    "taille:M",
+    "type:api"
+   ],
+   "milestone": "Phase 2 — Communautaire & compétitif",
+   "epic": "API-PASS",
+   "type": "api",
+   "ecrans": [
+    "P-01",
+    "P-03"
+   ]
+  },
+  {
+   "code": "API-PASS-26",
+   "title": "[API-PASS-26] Job nocturne de réconciliation : totaux, séries et badges",
+   "labels": [
+    "backend",
+    "module:passport",
+    "phase:2",
+    "priorite:P1",
+    "taille:M",
+    "type:infra"
+   ],
+   "milestone": "Phase 2 — Communautaire & compétitif",
+   "epic": "API-PASS",
+   "type": "infra",
+   "ecrans": [
+    "P-01",
+    "P-03"
+   ]
+  },
+  {
+   "code": "API-PASS-27",
+   "title": "[API-PASS-27] Stratégie de cache Redis et HTTP du Passport",
+   "labels": [
+    "backend",
+    "module:passport",
+    "performance",
+    "phase:2",
+    "priorite:P1",
+    "taille:M",
+    "type:performance"
+   ],
+   "milestone": "Phase 2 — Communautaire & compétitif",
+   "epic": "API-PASS",
+   "type": "performance",
+   "ecrans": [
+    "P-01",
+    "P-02",
+    "P-03",
+    "P-10",
+    "P-11"
+   ]
+  },
+  {
+   "code": "API-PASS-28",
+   "title": "[API-PASS-28] Catalogue des événements d'activité émis par les modules (contrat inter-modules)",
+   "labels": [
+    "backend",
+    "documentation",
+    "module:passport",
+    "phase:2",
+    "priorite:P0",
+    "taille:M",
+    "type:doc"
+   ],
+   "milestone": "Phase 2 — Communautaire & compétitif",
+   "epic": "API-PASS",
+   "type": "doc",
+   "ecrans": [
+    "P-01",
+    "P-03",
+    "P-06"
+   ]
+  },
+  {
+   "code": "API-PASS-29",
+   "title": "[API-PASS-29] RGPD du Passport : export, suppression, minimisation et visibilité",
+   "labels": [
+    "backend",
+    "module:passport",
+    "phase:2",
+    "priorite:P0",
+    "rgpd",
+    "taille:M",
+    "type:rgpd"
+   ],
+   "milestone": "Phase 2 — Communautaire & compétitif",
+   "epic": "API-PASS",
+   "type": "rgpd",
+   "ecrans": [
+    "P-07",
+    "P-11",
+    "P-01"
+   ]
+  },
+  {
+   "code": "API-PASS-30",
+   "title": "[API-PASS-30] Index MongoDB et budgets de performance du Passport",
+   "labels": [
+    "backend",
+    "module:passport",
+    "performance",
+    "phase:2",
+    "priorite:P1",
+    "taille:S",
+    "type:performance"
+   ],
+   "milestone": "Phase 2 — Communautaire & compétitif",
+   "epic": "API-PASS",
+   "type": "performance",
+   "ecrans": [
+    "P-01",
+    "P-02",
+    "P-03"
+   ]
+  },
+  {
+   "code": "API-PASS-31",
+   "title": "[API-PASS-31] Tests unitaires du moteur de points, de la série, des niveaux et des badges",
+   "labels": [
+    "backend",
+    "module:passport",
+    "phase:2",
+    "priorite:P0",
+    "taille:M",
+    "tests",
+    "type:tests"
+   ],
+   "milestone": "Phase 2 — Communautaire & compétitif",
+   "epic": "API-PASS",
+   "type": "tests",
+   "ecrans": [
+    "P-01",
+    "P-03",
+    "P-04",
+    "P-05",
+    "P-06"
+   ]
+  },
+  {
+   "code": "API-PASS-32",
+   "title": "[API-PASS-32] Tests d'intégration et e2e du Passport",
+   "labels": [
+    "backend",
+    "module:passport",
+    "phase:2",
+    "priorite:P1",
+    "taille:M",
+    "tests",
+    "type:tests"
+   ],
+   "milestone": "Phase 2 — Communautaire & compétitif",
+   "epic": "API-PASS",
+   "type": "tests",
+   "ecrans": [
+    "P-01",
+    "P-02",
+    "P-03",
+    "P-04",
+    "P-05",
+    "P-06",
+    "P-07",
+    "P-08",
+    "P-09",
+    "P-10",
+    "P-11"
+   ]
+  },
+  {
+   "code": "API-PASS-33",
+   "title": "[API-PASS-33] Documentation OpenAPI du Passport et de la gamification",
+   "labels": [
+    "backend",
+    "documentation",
+    "module:passport",
+    "phase:2",
+    "priorite:P2",
+    "taille:S",
+    "type:doc"
+   ],
+   "milestone": "Phase 2 — Communautaire & compétitif",
+   "epic": "API-PASS",
+   "type": "doc",
+   "ecrans": [
+    "P-01",
+    "P-03",
+    "P-07"
+   ]
+  },
+  {
+   "code": "API-PLAT-01",
+   "title": "[API-PLAT-01] GET /config : configuration publique de démarrage consommée par le mobile",
+   "labels": [
+    "backend",
+    "module:plateforme",
+    "module:systeme",
+    "phase:0",
+    "priorite:P0",
+    "taille:M",
+    "type:api"
+   ],
+   "milestone": "Phase 0 — Socle technique",
+   "epic": "API-PLAT",
+   "type": "api",
+   "ecrans": [
+    "A-01",
+    "A-06",
+    "A-07"
+   ]
+  },
+  {
+   "code": "API-PLAT-02",
+   "title": "[API-PLAT-02] GET /version : version de l'API, du build et du contrat",
+   "labels": [
+    "backend",
+    "module:plateforme",
+    "module:systeme",
+    "phase:0",
+    "priorite:P1",
+    "taille:XS",
+    "type:api"
+   ],
+   "milestone": "Phase 0 — Socle technique",
+   "epic": "API-PLAT",
+   "type": "api",
+   "ecrans": [
+    "A-07"
+   ]
+  },
+  {
+   "code": "API-PLAT-03",
+   "title": "[API-PLAT-03] Maintenance planifiée : fenêtre datée, message et réponse 503 normalisée (A-06)",
+   "labels": [
+    "backend",
+    "module:plateforme",
+    "module:systeme",
+    "phase:1",
+    "priorite:P0",
+    "taille:M",
+    "type:fonctionnel"
+   ],
+   "milestone": "Phase 1 — MVP",
+   "epic": "API-PLAT",
+   "type": "fonctionnel",
+   "ecrans": [
+    "A-06",
+    "WH-01"
+   ]
+  },
+  {
+   "code": "API-PLAT-04",
+   "title": "[API-PLAT-04] Version minimale requise : en-tête X-App-Version et réponse 426 (A-07)",
+   "labels": [
+    "backend",
+    "module:plateforme",
+    "module:systeme",
+    "phase:1",
+    "priorite:P0",
+    "security",
+    "taille:M",
+    "type:fonctionnel"
+   ],
+   "milestone": "Phase 1 — MVP",
+   "epic": "API-PLAT",
+   "type": "fonctionnel",
+   "ecrans": [
+    "A-07"
+   ]
+  },
+  {
+   "code": "API-PLAT-05",
+   "title": "[API-PLAT-05] Erreurs 5xx : code d'incident utilisateur et traceId systématique (A-04)",
+   "labels": [
+    "backend",
+    "module:plateforme",
+    "module:systeme",
+    "phase:1",
+    "priorite:P0",
+    "taille:S",
+    "type:fonctionnel"
+   ],
+   "milestone": "Phase 1 — MVP",
+   "epic": "API-PLAT",
+   "type": "fonctionnel",
+   "ecrans": [
+    "A-04"
+   ]
+  },
+  {
+   "code": "API-PLAT-06",
+   "title": "[API-PLAT-06] 429 : en-tête Retry-After, quotas restants et compte à rebours (A-05)",
+   "labels": [
+    "backend",
+    "module:plateforme",
+    "module:systeme",
+    "phase:1",
+    "priorite:P0",
+    "security",
+    "taille:M",
+    "type:fonctionnel"
+   ],
+   "milestone": "Phase 1 — MVP",
+   "epic": "API-PLAT",
+   "type": "fonctionnel",
+   "ecrans": [
+    "A-05"
+   ]
+  },
+  {
+   "code": "API-PLAT-07",
+   "title": "[API-PLAT-07] Catalogue des codes d'erreur et états système (contrat mobile A-03 à A-08)",
+   "labels": [
+    "backend",
+    "documentation",
+    "module:systeme",
+    "phase:1",
+    "priorite:P1",
+    "taille:S",
+    "type:doc"
+   ],
+   "milestone": "Phase 1 — MVP",
+   "epic": "API-PLAT",
+   "type": "doc",
+   "ecrans": [
+    "A-03",
+    "A-04",
+    "A-05",
+    "A-06",
+    "A-07",
+    "A-08"
+   ]
+  },
+  {
+   "code": "API-PLAT-08",
+   "title": "[API-PLAT-08] Feature flags : modèle durci et évaluation déterministe par utilisateur",
+   "labels": [
+    "backend",
+    "module:plateforme",
+    "module:systeme",
+    "phase:1",
+    "priorite:P0",
+    "taille:M",
+    "type:donnees"
+   ],
+   "milestone": "Phase 1 — MVP",
+   "epic": "API-PLAT",
+   "type": "donnees",
+   "ecrans": [
+    "WI-05"
+   ]
+  },
+  {
+   "code": "API-PLAT-09",
+   "title": "[API-PLAT-09] Feature flags : exposition évaluée dans /config et /config/flags",
+   "labels": [
+    "backend",
+    "module:plateforme",
+    "module:systeme",
+    "phase:1",
+    "priorite:P0",
+    "taille:S",
+    "type:api"
+   ],
+   "milestone": "Phase 1 — MVP",
+   "epic": "API-PLAT",
+   "type": "api",
+   "ecrans": [
+    "WI-05",
+    "A-01"
+   ]
+  },
+  {
+   "code": "API-PLAT-10",
+   "title": "[API-PLAT-10] Admin : GET/PATCH /admin/config/feature-flags (WI-05)",
+   "labels": [
+    "backend",
+    "module:comptes",
+    "module:plateforme",
+    "phase:1",
+    "priorite:P1",
+    "security",
+    "taille:M",
+    "type:api"
+   ],
+   "milestone": "Phase 1 — MVP",
+   "epic": "API-PLAT",
+   "type": "api",
+   "ecrans": [
+    "WI-05"
+   ]
+  },
+  {
+   "code": "API-PLAT-11",
+   "title": "[API-PLAT-11] Admin : GET/PATCH /admin/config/ai-quotas (WI-06)",
+   "labels": [
+    "backend",
+    "module:comptes",
+    "module:ia",
+    "module:plateforme",
+    "phase:1",
+    "priorite:P1",
+    "taille:M",
+    "type:api"
+   ],
+   "milestone": "Phase 1 — MVP",
+   "epic": "API-PLAT",
+   "type": "api",
+   "ecrans": [
+    "WI-06"
+   ]
+  },
+  {
+   "code": "API-PLAT-12",
+   "title": "[API-PLAT-12] GET /admin/observability/health : statut agrégé et séries p50/p95/p99 (WH-01)",
+   "labels": [
+    "backend",
+    "module:plateforme",
+    "module:supervision",
+    "phase:1",
+    "priorite:P1",
+    "taille:L",
+    "type:api"
+   ],
+   "milestone": "Phase 1 — MVP",
+   "epic": "API-PLAT",
+   "type": "api",
+   "ecrans": [
+    "WH-01"
+   ]
+  },
+  {
+   "code": "API-PLAT-13",
+   "title": "[API-PLAT-13] Alertes actives (Alertmanager) pour le tableau de bord de supervision (WH-01)",
+   "labels": [
+    "backend",
+    "module:plateforme",
+    "module:supervision",
+    "phase:1",
+    "priorite:P1",
+    "taille:S",
+    "type:api"
+   ],
+   "milestone": "Phase 1 — MVP",
+   "epic": "API-PLAT",
+   "type": "api",
+   "ecrans": [
+    "WH-01"
+   ]
+  },
+  {
+   "code": "API-PLAT-14",
+   "title": "[API-PLAT-14] GET /admin/observability/queues : état de chaque file BullMQ (WH-02)",
+   "labels": [
+    "backend",
+    "module:plateforme",
+    "module:supervision",
+    "phase:1",
+    "priorite:P1",
+    "taille:M",
+    "type:api"
+   ],
+   "milestone": "Phase 1 — MVP",
+   "epic": "API-PLAT",
+   "type": "api",
+   "ecrans": [
+    "WH-02"
+   ]
+  },
+  {
+   "code": "API-PLAT-15",
+   "title": "[API-PLAT-15] POST /admin/observability/queues/:jobId/retry : relance manuelle d'un job en échec",
+   "labels": [
+    "backend",
+    "module:plateforme",
+    "module:supervision",
+    "phase:1",
+    "priorite:P1",
+    "taille:M",
+    "type:api"
+   ],
+   "milestone": "Phase 1 — MVP",
+   "epic": "API-PLAT",
+   "type": "api",
+   "ecrans": [
+    "WH-02"
+   ]
+  },
+  {
+   "code": "API-PLAT-16",
+   "title": "[API-PLAT-16] GET /admin/observability/logs : recherche Graylog filtrée et masquée (WH-03)",
+   "labels": [
+    "backend",
+    "module:plateforme",
+    "module:supervision",
+    "phase:1",
+    "priorite:P1",
+    "taille:L",
+    "type:api"
+   ],
+   "milestone": "Phase 1 — MVP",
+   "epic": "API-PLAT",
+   "type": "api",
+   "ecrans": [
+    "WH-03"
+   ]
+  },
+  {
+   "code": "API-PLAT-17",
+   "title": "[API-PLAT-17] Consommation IA : mesure, quotas et projection de dépassement (WH-04)",
+   "labels": [
+    "backend",
+    "module:ia",
+    "module:plateforme",
+    "module:supervision",
+    "phase:1",
+    "priorite:P1",
+    "taille:L",
+    "type:api"
+   ],
+   "milestone": "Phase 1 — MVP",
+   "epic": "API-PLAT",
+   "type": "api",
+   "ecrans": [
+    "WH-04",
+    "WI-06"
+   ]
+  },
+  {
+   "code": "API-PLAT-18",
+   "title": "[API-PLAT-18] Journal d'audit : immuabilité, filtres complets et export CSV (WH-05)",
+   "labels": [
+    "backend",
+    "module:plateforme",
+    "module:supervision",
+    "phase:1",
+    "priorite:P1",
+    "security",
+    "taille:M",
+    "type:securite"
+   ],
+   "milestone": "Phase 1 — MVP",
+   "epic": "API-PLAT",
+   "type": "securite",
+   "ecrans": [
+    "WH-05"
+   ]
+  },
+  {
+   "code": "API-PLAT-19",
+   "title": "[API-PLAT-19] Audit des actions comptes, sessions, configuration et notifications manuelles (WI-01 à WI-09)",
+   "labels": [
+    "backend",
+    "module:comptes",
+    "module:plateforme",
+    "phase:1",
+    "priorite:P1",
+    "security",
+    "taille:M",
+    "type:securite"
+   ],
+   "milestone": "Phase 1 — MVP",
+   "epic": "API-PLAT",
+   "type": "securite",
+   "ecrans": [
+    "WI-01",
+    "WI-02",
+    "WI-03",
+    "WI-04",
+    "WI-07",
+    "WI-08"
+   ]
+  },
+  {
+   "code": "API-PLAT-20",
+   "title": "[API-PLAT-20] Exports CSV/Excel asynchrones et rapport hebdomadaire e-mail (WI-09)",
+   "labels": [
+    "backend",
+    "module:comptes",
+    "module:plateforme",
+    "phase:2",
+    "priorite:P2",
+    "taille:L",
+    "type:fonctionnel"
+   ],
+   "milestone": "Phase 2 — Communautaire & compétitif",
+   "epic": "API-PLAT",
+   "type": "fonctionnel",
+   "ecrans": [
+    "WI-09"
+   ]
+  },
+  {
+   "code": "API-PLAT-21",
+   "title": "[API-PLAT-21] Métriques Prometheus métier et RED par route (ub_*)",
+   "labels": [
+    "backend",
+    "module:plateforme",
+    "performance",
+    "phase:1",
+    "priorite:P0",
+    "taille:M",
+    "type:infra"
+   ],
+   "milestone": "Phase 1 — MVP",
+   "epic": "API-PLAT",
+   "type": "infra",
+   "ecrans": [
+    "WH-01",
+    "WH-02"
+   ]
+  },
+  {
+   "code": "API-PLAT-22",
+   "title": "[API-PLAT-22] Tableaux de bord Grafana provisionnés (santé, usage, coûts IA, sécurité)",
+   "labels": [
+    "backend",
+    "docker",
+    "module:plateforme",
+    "phase:1",
+    "priorite:P1",
+    "taille:M",
+    "type:infra"
+   ],
+   "milestone": "Phase 1 — MVP",
+   "epic": "API-PLAT",
+   "type": "infra",
+   "ecrans": [
+    "WH-01",
+    "WH-04"
+   ]
+  },
+  {
+   "code": "API-PLAT-23",
+   "title": "[API-PLAT-23] Alerting : règles complètes et canaux de notification (e-mail / webhook)",
+   "labels": [
+    "backend",
+    "docker",
+    "module:plateforme",
+    "phase:1",
+    "priorite:P0",
+    "taille:M",
+    "type:infra"
+   ],
+   "milestone": "Phase 1 — MVP",
+   "epic": "API-PLAT",
+   "type": "infra",
+   "ecrans": [
+    "WH-01"
+   ]
+  },
+  {
+   "code": "API-PLAT-24",
+   "title": "[API-PLAT-24] OpenTelemetry : traces, spans Mongo/Redis/BullMQ et propagation traceId",
+   "labels": [
+    "backend",
+    "module:plateforme",
+    "performance",
+    "phase:1",
+    "priorite:P1",
+    "taille:M",
+    "type:infra"
+   ],
+   "milestone": "Phase 1 — MVP",
+   "epic": "API-PLAT",
+   "type": "infra",
+   "ecrans": [
+    "A-04",
+    "WH-03"
+   ]
+  },
+  {
+   "code": "API-PLAT-25",
+   "title": "[API-PLAT-25] Logs structurés Winston vers Graylog (GELF) avec masquage et rétention 90 jours",
+   "labels": [
+    "backend",
+    "module:plateforme",
+    "phase:1",
+    "priorite:P1",
+    "security",
+    "taille:M",
+    "type:infra"
+   ],
+   "milestone": "Phase 1 — MVP",
+   "epic": "API-PLAT",
+   "type": "infra",
+   "ecrans": [
+    "WH-03"
+   ]
+  },
+  {
+   "code": "API-PLAT-26",
+   "title": "[API-PLAT-26] En-têtes de sécurité (Helmet, CSP), CORS strict et cookies admin",
+   "labels": [
+    "backend",
+    "module:plateforme",
+    "phase:1",
+    "priorite:P0",
+    "security",
+    "taille:S",
+    "type:securite"
+   ],
+   "milestone": "Phase 1 — MVP",
+   "epic": "API-PLAT",
+   "type": "securite",
+   "ecrans": []
+  },
+  {
+   "code": "API-PLAT-27",
+   "title": "[API-PLAT-27] Audit des dépendances en CI : npm audit, Dependabot, Trivy bloquant, licences",
+   "labels": [
+    "backend",
+    "ci-cd",
+    "phase:0",
+    "priorite:P0",
+    "security",
+    "taille:S",
+    "type:securite"
+   ],
+   "milestone": "Phase 0 — Socle technique",
+   "epic": "API-PLAT",
+   "type": "securite",
+   "ecrans": []
+  },
+  {
+   "code": "API-PLAT-28",
+   "title": "[API-PLAT-28] Rotation des secrets : JWT à clés multiples (kid), clés tierces et procédure",
+   "labels": [
+    "backend",
+    "module:plateforme",
+    "phase:1",
+    "priorite:P1",
+    "security",
+    "taille:M",
+    "type:securite"
+   ],
+   "milestone": "Phase 1 — MVP",
+   "epic": "API-PLAT",
+   "type": "securite",
+   "ecrans": []
+  },
+  {
+   "code": "API-PLAT-29",
+   "title": "[API-PLAT-29] Scans DAST/SAST récurrents et plan de pen-test (OWASP API Top 10)",
+   "labels": [
+    "backend",
+    "phase:2",
+    "priorite:P1",
+    "security",
+    "taille:M",
+    "tests",
+    "type:securite"
+   ],
+   "milestone": "Phase 2 — Communautaire & compétitif",
+   "epic": "API-PLAT",
+   "type": "securite",
+   "ecrans": []
+  },
+  {
+   "code": "API-PLAT-30",
+   "title": "[API-PLAT-30] Protection SSRF : client HTTP sortant avec liste blanche et validation d'URL",
+   "labels": [
+    "backend",
+    "module:plateforme",
+    "phase:1",
+    "priorite:P1",
+    "security",
+    "taille:S",
+    "type:securite"
+   ],
+   "milestone": "Phase 1 — MVP",
+   "epic": "API-PLAT",
+   "type": "securite",
+   "ecrans": []
+  },
+  {
+   "code": "API-PLAT-31",
+   "title": "[API-PLAT-31] Audit des index MongoDB : explain, profiler et budget de requêtes",
+   "labels": [
+    "backend",
+    "module:plateforme",
+    "performance",
+    "phase:1",
+    "priorite:P1",
+    "taille:M",
+    "type:performance"
+   ],
+   "milestone": "Phase 1 — MVP",
+   "epic": "API-PLAT",
+   "type": "performance",
+   "ecrans": []
+  },
+  {
+   "code": "API-PLAT-32",
+   "title": "[API-PLAT-32] Cache Redis cache-aside standard : TTL du CDC, invalidation et anti-stampede",
+   "labels": [
+    "backend",
+    "module:plateforme",
+    "performance",
+    "phase:1",
+    "priorite:P0",
+    "taille:M",
+    "type:performance"
+   ],
+   "milestone": "Phase 1 — MVP",
+   "epic": "API-PLAT",
+   "type": "performance",
+   "ecrans": []
+  },
+  {
+   "code": "API-PLAT-33",
+   "title": "[API-PLAT-33] Timeouts serveur, pool MongoDB/Redis et limites de requête",
+   "labels": [
+    "backend",
+    "module:plateforme",
+    "performance",
+    "phase:1",
+    "priorite:P1",
+    "taille:S",
+    "type:performance"
+   ],
+   "milestone": "Phase 1 — MVP",
+   "epic": "API-PLAT",
+   "type": "performance",
+   "ecrans": [
+    "A-04"
+   ]
+  },
+  {
+   "code": "API-PLAT-34",
+   "title": "[API-PLAT-34] Circuit breakers et dégradation gracieuse vers les fournisseurs externes",
+   "labels": [
+    "backend",
+    "module:football-data",
+    "module:plateforme",
+    "phase:1",
+    "priorite:P1",
+    "taille:M",
+    "type:fonctionnel"
+   ],
+   "milestone": "Phase 1 — MVP",
+   "epic": "API-PLAT",
+   "type": "fonctionnel",
+   "ecrans": [
+    "A-04",
+    "WH-01"
+   ]
+  },
+  {
+   "code": "API-PLAT-35",
+   "title": "[API-PLAT-35] Arrêt gracieux, processus worker dédié et readiness",
+   "labels": [
+    "backend",
+    "docker",
+    "module:plateforme",
+    "phase:1",
+    "priorite:P1",
+    "taille:M",
+    "type:infra"
+   ],
+   "milestone": "Phase 1 — MVP",
+   "epic": "API-PLAT",
+   "type": "infra",
+   "ecrans": []
+  },
+  {
+   "code": "API-PLAT-36",
+   "title": "[API-PLAT-36] Seuils de couverture par couche appliqués en CI (CDC §8.2)",
+   "labels": [
+    "backend",
+    "ci-cd",
+    "phase:0",
+    "priorite:P0",
+    "taille:S",
+    "tests",
+    "type:tests"
+   ],
+   "milestone": "Phase 0 — Socle technique",
+   "epic": "API-PLAT",
+   "type": "tests",
+   "ecrans": []
+  },
+  {
+   "code": "API-PLAT-37",
+   "title": "[API-PLAT-37] Tests de contrat OpenAPI et non-régression nocturne",
+   "labels": [
+    "backend",
+    "ci-cd",
+    "documentation",
+    "phase:1",
+    "priorite:P1",
+    "taille:M",
+    "tests",
+    "type:tests"
+   ],
+   "milestone": "Phase 1 — MVP",
+   "epic": "API-PLAT",
+   "type": "tests",
+   "ecrans": []
+  },
+  {
+   "code": "API-PLAT-38",
+   "title": "[API-PLAT-38] Fixtures, factories et jeu de données de test partagés",
+   "labels": [
+    "backend",
+    "module:plateforme",
+    "phase:0",
+    "priorite:P1",
+    "taille:S",
+    "tests",
+    "type:tests"
+   ],
+   "milestone": "Phase 0 — Socle technique",
+   "epic": "API-PLAT",
+   "type": "tests",
+   "ecrans": []
+  },
+  {
+   "code": "API-PLAT-39",
+   "title": "[API-PLAT-39] Règle obligatoire : chaque nouvelle route est ajoutée aux scénarios k6 (garde CI)",
+   "labels": [
+    "backend",
+    "ci-cd",
+    "high-priority",
+    "performance",
+    "phase:0",
+    "priorite:P0",
+    "taille:M",
+    "tests",
+    "type:tests"
+   ],
+   "milestone": "Phase 0 — Socle technique",
+   "epic": "API-PLAT",
+   "type": "tests",
+   "ecrans": []
+  },
+  {
+   "code": "API-PLAT-40",
+   "title": "[API-PLAT-40] Seuils k6 par endpoint (p95/p99/erreurs) et budgets de performance",
+   "labels": [
+    "backend",
+    "high-priority",
+    "performance",
+    "phase:0",
+    "priorite:P0",
+    "taille:M",
+    "tests",
+    "type:tests"
+   ],
+   "milestone": "Phase 0 — Socle technique",
+   "epic": "API-PLAT",
+   "type": "tests",
+   "ecrans": [
+    "A-04"
+   ]
+  },
+  {
+   "code": "API-PLAT-41",
+   "title": "[API-PLAT-41] Profils de trafic réalistes : soir de match, annonce push, ouverture d'app",
+   "labels": [
+    "backend",
+    "performance",
+    "phase:1",
+    "priorite:P1",
+    "taille:M",
+    "tests",
+    "type:tests"
+   ],
+   "milestone": "Phase 1 — MVP",
+   "epic": "API-PLAT",
+   "type": "tests",
+   "ecrans": [
+    "A-01",
+    "A-04",
+    "A-05"
+   ]
+  },
+  {
+   "code": "API-PLAT-42",
+   "title": "[API-PLAT-42] Seed volumétrique pour les tests de charge (100 000 utilisateurs, catalogue réaliste)",
+   "labels": [
+    "backend",
+    "module:plateforme",
+    "performance",
+    "phase:1",
+    "priorite:P1",
+    "taille:M",
+    "tests",
+    "type:donnees"
+   ],
+   "milestone": "Phase 1 — MVP",
+   "epic": "API-PLAT",
+   "type": "donnees",
+   "ecrans": []
+  },
+  {
+   "code": "API-PLAT-43",
+   "title": "[API-PLAT-43] Suivi de capacité : baseline versionnée, tendance et journal des capacités mesurées",
+   "labels": [
+    "backend",
+    "documentation",
+    "high-priority",
+    "performance",
+    "phase:1",
+    "priorite:P0",
+    "taille:M",
+    "tests",
+    "type:tests"
+   ],
+   "milestone": "Phase 1 — MVP",
+   "epic": "API-PLAT",
+   "type": "tests",
+   "ecrans": []
+  },
+  {
+   "code": "API-PLAT-44",
+   "title": "[API-PLAT-44] Dimensionnement du serveur : protocole de mesure, règles et plan d'évolution",
+   "labels": [
+    "backend",
+    "docker",
+    "documentation",
+    "high-priority",
+    "performance",
+    "phase:1",
+    "priorite:P0",
+    "taille:M",
+    "tests",
+    "type:infra"
+   ],
+   "milestone": "Phase 1 — MVP",
+   "epic": "API-PLAT",
+   "type": "infra",
+   "ecrans": []
+  },
+  {
+   "code": "API-PLAT-45",
+   "title": "[API-PLAT-45] Portes de qualité du pipeline : charge, contrat, sécurité avant staging et production",
+   "labels": [
+    "backend",
+    "ci-cd",
+    "module:plateforme",
+    "phase:0",
+    "priorite:P0",
+    "taille:M",
+    "tests",
+    "type:infra"
+   ],
+   "milestone": "Phase 0 — Socle technique",
+   "epic": "API-PLAT",
+   "type": "infra",
+   "ecrans": []
+  },
+  {
+   "code": "API-PLAT-46",
+   "title": "[API-PLAT-46] Rollback documenté et testé : image précédente et migration inverse",
+   "labels": [
+    "backend",
+    "ci-cd",
+    "docker",
+    "module:plateforme",
+    "phase:1",
+    "priorite:P1",
+    "taille:M",
+    "type:infra"
+   ],
+   "milestone": "Phase 1 — MVP",
+   "epic": "API-PLAT",
+   "type": "infra",
+   "ecrans": []
+  },
+  {
+   "code": "API-PLAT-47",
+   "title": "[API-PLAT-47] Environnements dev/staging/prod : matrice de configuration et gestion des secrets",
+   "labels": [
+    "backend",
+    "ci-cd",
+    "docker",
+    "documentation",
+    "phase:0",
+    "priorite:P0",
+    "security",
+    "taille:S",
+    "type:infra"
+   ],
+   "milestone": "Phase 0 — Socle technique",
+   "epic": "API-PLAT",
+   "type": "infra",
+   "ecrans": []
+  },
+  {
+   "code": "API-PLAT-48",
+   "title": "[API-PLAT-48] Runbooks d'exploitation et d'incident (un par alerte)",
+   "labels": [
+    "backend",
+    "documentation",
+    "module:plateforme",
+    "phase:1",
+    "priorite:P1",
+    "taille:M",
+    "type:doc"
+   ],
+   "milestone": "Phase 1 — MVP",
+   "epic": "API-PLAT",
+   "type": "doc",
+   "ecrans": [
+    "WH-01",
+    "WH-02",
+    "A-06"
+   ]
+  },
+  {
+   "code": "API-PLAT-49",
+   "title": "[API-PLAT-49] Sauvegardes automatiques : job database-backup, rétention 30 j + 6 mois, copie hors VPS",
+   "labels": [
+    "backend",
+    "docker",
+    "module:plateforme",
+    "phase:1",
+    "priorite:P0",
+    "rgpd",
+    "taille:M",
+    "type:infra"
+   ],
+   "milestone": "Phase 1 — MVP",
+   "epic": "API-PLAT",
+   "type": "infra",
+   "ecrans": [
+    "WH-01"
+   ]
+  },
+  {
+   "code": "API-PLAT-50",
+   "title": "[API-PLAT-50] Restauration et reprise après sinistre : test trimestriel automatisé (RPO/RTO)",
+   "labels": [
+    "backend",
+    "docker",
+    "documentation",
+    "phase:1",
+    "priorite:P1",
+    "taille:M",
+    "tests",
+    "type:infra"
+   ],
+   "milestone": "Phase 1 — MVP",
+   "epic": "API-PLAT",
+   "type": "infra",
+   "ecrans": []
+  },
+  {
+   "code": "API-PLAT-51",
+   "title": "[API-PLAT-51] Migrations migrate-mongo et seed par environnement",
+   "labels": [
+    "backend",
+    "documentation",
+    "module:plateforme",
+    "phase:0",
+    "priorite:P1",
+    "taille:S",
+    "type:donnees"
+   ],
+   "milestone": "Phase 0 — Socle technique",
+   "epic": "API-PLAT",
+   "type": "donnees",
+   "ecrans": []
+  },
+  {
+   "code": "API-PLAT-52",
+   "title": "[API-PLAT-52] Jobs de purge et politique de rétention des données techniques",
+   "labels": [
+    "backend",
+    "module:plateforme",
+    "phase:1",
+    "priorite:P1",
+    "rgpd",
+    "taille:M",
+    "type:rgpd"
+   ],
+   "milestone": "Phase 1 — MVP",
+   "epic": "API-PLAT",
+   "type": "rgpd",
+   "ecrans": []
+  },
+  {
+   "code": "API-PLAT-53",
+   "title": "[API-PLAT-53] Dead-letter centralisée et politique de retry par type de job",
+   "labels": [
+    "backend",
+    "module:plateforme",
+    "module:supervision",
+    "phase:1",
+    "priorite:P1",
+    "taille:M",
+    "type:fonctionnel"
+   ],
+   "milestone": "Phase 1 — MVP",
+   "epic": "API-PLAT",
+   "type": "fonctionnel",
+   "ecrans": [
+    "WH-02"
+   ]
+  },
+  {
+   "code": "API-PLAT-54",
+   "title": "[API-PLAT-54] Registre des traitements RGPD, minimisation et revue de conformité",
+   "labels": [
+    "backend",
+    "documentation",
+    "module:plateforme",
+    "phase:1",
+    "priorite:P1",
+    "rgpd",
+    "taille:M",
+    "type:rgpd"
+   ],
+   "milestone": "Phase 1 — MVP",
+   "epic": "API-PLAT",
+   "type": "rgpd",
+   "ecrans": [
+    "WH-03",
+    "WH-05"
+   ]
+  },
+  {
+   "code": "API-PLAT-55",
+   "title": "[API-PLAT-55] Documentation plateforme : OpenAPI système/supervision, guides d'intégration mobile/admin",
+   "labels": [
+    "backend",
+    "documentation",
+    "module:plateforme",
+    "phase:1",
+    "priorite:P1",
+    "taille:S",
+    "type:doc"
+   ],
+   "milestone": "Phase 1 — MVP",
+   "epic": "API-PLAT",
+   "type": "doc",
+   "ecrans": [
+    "A-03",
+    "A-04",
+    "A-05",
+    "A-06",
+    "A-07",
+    "A-08",
+    "WH-01",
+    "WH-02",
+    "WH-03",
+    "WH-04",
+    "WH-05",
+    "WI-05",
+    "WI-06",
+    "WI-09"
+   ]
+  },
+  {
+   "code": "API-WALL-01",
+   "title": "[API-WALL-01] Durcir le modèle GeneratedWallpaper (statuts, prompt structuré, stockage, modération)",
+   "labels": [
+    "backend",
+    "module:wallpapers",
+    "phase:3",
+    "priorite:P0",
+    "taille:M",
+    "type:donnees"
+   ],
+   "milestone": "Phase 3 — Fonctionnalités avancées",
+   "epic": "API-WALL",
+   "type": "donnees",
+   "ecrans": [
+    "M-04",
+    "M-05",
+    "M-08",
+    "M-10"
+   ]
+  },
+  {
+   "code": "API-WALL-02",
+   "title": "[API-WALL-02] Catalogue de styles, occasions et modèles de prompts (WallpaperStyle, PromptTemplate)",
+   "labels": [
+    "backend",
+    "module:wallpapers",
+    "phase:3",
+    "priorite:P0",
+    "taille:M",
+    "type:donnees"
+   ],
+   "milestone": "Phase 3 — Fonctionnalités avancées",
+   "epic": "API-WALL",
+   "type": "donnees",
+   "ecrans": [
+    "M-01",
+    "M-02"
+   ]
+  },
+  {
+   "code": "API-WALL-03",
+   "title": "[API-WALL-03] GET /wallpapers/options : joueurs, styles et occasions du formulaire",
+   "labels": [
+    "backend",
+    "module:wallpapers",
+    "phase:3",
+    "priorite:P0",
+    "taille:S",
+    "type:api"
+   ],
+   "milestone": "Phase 3 — Fonctionnalités avancées",
+   "epic": "API-WALL",
+   "type": "api",
+   "ecrans": [
+    "M-01"
+   ]
+  },
+  {
+   "code": "API-WALL-04",
+   "title": "[API-WALL-04] Construction du prompt final à partir des choix guidés",
+   "labels": [
+    "backend",
+    "module:wallpapers",
+    "phase:3",
+    "priorite:P0",
+    "taille:M",
+    "type:fonctionnel"
+   ],
+   "milestone": "Phase 3 — Fonctionnalités avancées",
+   "epic": "API-WALL",
+   "type": "fonctionnel",
+   "ecrans": [
+    "M-01",
+    "M-02"
+   ]
+  },
+  {
+   "code": "API-WALL-05",
+   "title": "[API-WALL-05] Droits d'image : aucun logo, écusson ni marque du club dans les prompts et les images",
+   "labels": [
+    "backend",
+    "module:wallpapers",
+    "phase:3",
+    "priorite:P0",
+    "security",
+    "taille:M",
+    "type:securite"
+   ],
+   "milestone": "Phase 3 — Fonctionnalités avancées",
+   "epic": "API-WALL",
+   "type": "securite",
+   "ecrans": [
+    "M-02",
+    "M-03"
+   ]
+  },
+  {
+   "code": "API-WALL-06",
+   "title": "[API-WALL-06] Modération du prompt avant génération (filtrage de contenu inapproprié)",
+   "labels": [
+    "backend",
+    "module:wallpapers",
+    "phase:3",
+    "priorite:P0",
+    "security",
+    "taille:M",
+    "type:securite"
+   ],
+   "milestone": "Phase 3 — Fonctionnalités avancées",
+   "epic": "API-WALL",
+   "type": "securite",
+   "ecrans": [
+    "M-03",
+    "M-02"
+   ]
+  },
+  {
+   "code": "API-WALL-07",
+   "title": "[API-WALL-07] POST /wallpapers/check : pré-vérification sans quota ni job (aperçu du prompt)",
+   "labels": [
+    "backend",
+    "module:wallpapers",
+    "phase:3",
+    "priorite:P0",
+    "taille:S",
+    "type:api"
+   ],
+   "milestone": "Phase 3 — Fonctionnalités avancées",
+   "epic": "API-WALL",
+   "type": "api",
+   "ecrans": [
+    "M-02",
+    "M-03"
+   ]
+  },
+  {
+   "code": "API-WALL-08",
+   "title": "[API-WALL-08] Quota quotidien de générations et endpoint GET /wallpapers/quota",
+   "labels": [
+    "backend",
+    "module:wallpapers",
+    "phase:3",
+    "priorite:P0",
+    "taille:S",
+    "type:fonctionnel"
+   ],
+   "milestone": "Phase 3 — Fonctionnalités avancées",
+   "epic": "API-WALL",
+   "type": "fonctionnel",
+   "ecrans": [
+    "M-12",
+    "M-01",
+    "M-13"
+   ]
+  },
+  {
+   "code": "API-WALL-09",
+   "title": "[API-WALL-09] POST /wallpapers : demande de génération (202, idempotente)",
+   "labels": [
+    "backend",
+    "module:wallpapers",
+    "phase:3",
+    "priorite:P0",
+    "taille:M",
+    "type:api"
+   ],
+   "milestone": "Phase 3 — Fonctionnalités avancées",
+   "epic": "API-WALL",
+   "type": "api",
+   "ecrans": [
+    "M-01",
+    "M-02",
+    "M-04"
+   ]
+  },
+  {
+   "code": "API-WALL-10",
+   "title": "[API-WALL-10] Interface ImageGenerationProvider, adaptateur et fournisseur d'images simulé",
+   "labels": [
+    "backend",
+    "module:wallpapers",
+    "phase:3",
+    "priorite:P0",
+    "taille:M",
+    "type:infra"
+   ],
+   "milestone": "Phase 3 — Fonctionnalités avancées",
+   "epic": "API-WALL",
+   "type": "infra",
+   "ecrans": [
+    "M-04",
+    "M-05",
+    "M-13"
+   ]
+  },
+  {
+   "code": "API-WALL-11",
+   "title": "[API-WALL-11] Worker BullMQ ai-generation : traitement des jobs generate-wallpaper",
+   "labels": [
+    "backend",
+    "module:wallpapers",
+    "phase:3",
+    "priorite:P0",
+    "taille:L",
+    "type:infra"
+   ],
+   "milestone": "Phase 3 — Fonctionnalités avancées",
+   "epic": "API-WALL",
+   "type": "infra",
+   "ecrans": [
+    "M-04",
+    "M-05",
+    "M-13"
+   ]
+  },
+  {
+   "code": "API-WALL-12",
+   "title": "[API-WALL-12] Stockage objet des images (S3 compatible) et clés d'objets",
+   "labels": [
+    "backend",
+    "module:wallpapers",
+    "phase:3",
+    "priorite:P0",
+    "taille:M",
+    "type:infra"
+   ],
+   "milestone": "Phase 3 — Fonctionnalités avancées",
+   "epic": "API-WALL",
+   "type": "infra",
+   "ecrans": [
+    "M-05",
+    "M-08",
+    "M-10"
+   ]
+  },
+  {
+   "code": "API-WALL-13",
+   "title": "[API-WALL-13] URL signées, expiration et contrôle d'accès aux images",
+   "labels": [
+    "backend",
+    "module:wallpapers",
+    "phase:3",
+    "priorite:P0",
+    "security",
+    "taille:S",
+    "type:securite"
+   ],
+   "milestone": "Phase 3 — Fonctionnalités avancées",
+   "epic": "API-WALL",
+   "type": "securite",
+   "ecrans": [
+    "M-05",
+    "M-10",
+    "M-11"
+   ]
+  },
+  {
+   "code": "API-WALL-14",
+   "title": "[API-WALL-14] Traitement d'image : conversion, redimensionnement et miniatures",
+   "labels": [
+    "backend",
+    "module:wallpapers",
+    "performance",
+    "phase:3",
+    "priorite:P0",
+    "taille:S",
+    "type:fonctionnel"
+   ],
+   "milestone": "Phase 3 — Fonctionnalités avancées",
+   "epic": "API-WALL",
+   "type": "fonctionnel",
+   "ecrans": [
+    "M-08",
+    "M-05",
+    "M-10"
+   ]
+  },
+  {
+   "code": "API-WALL-15",
+   "title": "[API-WALL-15] Modération de l'image en sortie avant mise à disposition",
+   "labels": [
+    "backend",
+    "module:wallpapers",
+    "phase:3",
+    "priorite:P0",
+    "security",
+    "taille:M",
+    "type:securite"
+   ],
+   "milestone": "Phase 3 — Fonctionnalités avancées",
+   "epic": "API-WALL",
+   "type": "securite",
+   "ecrans": [
+    "M-05",
+    "M-10",
+    "M-13"
+   ]
+  },
+  {
+   "code": "API-WALL-16",
+   "title": "[API-WALL-16] GET /wallpapers/:id : statut, progression et résultat",
+   "labels": [
+    "backend",
+    "module:wallpapers",
+    "phase:3",
+    "priorite:P0",
+    "taille:S",
+    "type:api"
+   ],
+   "milestone": "Phase 3 — Fonctionnalités avancées",
+   "epic": "API-WALL",
+   "type": "api",
+   "ecrans": [
+    "M-04",
+    "M-05",
+    "M-13"
+   ]
+  },
+  {
+   "code": "API-WALL-17",
+   "title": "[API-WALL-17] Échecs de génération : classification, remboursement et réessai (écran M-13)",
+   "labels": [
+    "backend",
+    "module:wallpapers",
+    "phase:3",
+    "priorite:P0",
+    "taille:S",
+    "type:fonctionnel"
+   ],
+   "milestone": "Phase 3 — Fonctionnalités avancées",
+   "epic": "API-WALL",
+   "type": "fonctionnel",
+   "ecrans": [
+    "M-13",
+    "M-03"
+   ]
+  },
+  {
+   "code": "API-WALL-18",
+   "title": "[API-WALL-18] GET /wallpapers : galerie personnelle paginée (tous / favoris)",
+   "labels": [
+    "backend",
+    "module:wallpapers",
+    "phase:3",
+    "priorite:P0",
+    "taille:S",
+    "type:api"
+   ],
+   "milestone": "Phase 3 — Fonctionnalités avancées",
+   "epic": "API-WALL",
+   "type": "api",
+   "ecrans": [
+    "M-08",
+    "M-09"
+   ]
+  },
+  {
+   "code": "API-WALL-19",
+   "title": "[API-WALL-19] Détail, favori et suppression d'un wallpaper (PATCH/DELETE /wallpapers/:id)",
+   "labels": [
+    "backend",
+    "module:wallpapers",
+    "phase:3",
+    "priorite:P1",
+    "taille:S",
+    "type:api"
+   ],
+   "milestone": "Phase 3 — Fonctionnalités avancées",
+   "epic": "API-WALL",
+   "type": "api",
+   "ecrans": [
+    "M-10",
+    "M-08"
+   ]
+  },
+  {
+   "code": "API-WALL-20",
+   "title": "[API-WALL-20] Téléchargement de l'image pour enregistrement ou application (écrans M-05, M-06, M-07)",
+   "labels": [
+    "backend",
+    "module:wallpapers",
+    "phase:3",
+    "priorite:P1",
+    "taille:S",
+    "type:api"
+   ],
+   "milestone": "Phase 3 — Fonctionnalités avancées",
+   "epic": "API-WALL",
+   "type": "api",
+   "ecrans": [
+    "M-05",
+    "M-06",
+    "M-07"
+   ]
+  },
+  {
+   "code": "API-WALL-21",
+   "title": "[API-WALL-21] Notification push « wallpaper prêt » (Prévenez-moi quand c'est prêt)",
+   "labels": [
+    "backend",
+    "module:notifications",
+    "module:wallpapers",
+    "phase:3",
+    "priorite:P1",
+    "taille:S",
+    "type:fonctionnel"
+   ],
+   "milestone": "Phase 3 — Fonctionnalités avancées",
+   "epic": "API-WALL",
+   "type": "fonctionnel",
+   "ecrans": [
+    "M-04",
+    "M-05"
+   ]
+  },
+  {
+   "code": "API-WALL-22",
+   "title": "[API-WALL-22] Kill switch du module wallpapers (module désactivé, écran M-14)",
+   "labels": [
+    "backend",
+    "module:wallpapers",
+    "phase:3",
+    "priorite:P0",
+    "taille:S",
+    "type:fonctionnel"
+   ],
+   "milestone": "Phase 3 — Fonctionnalités avancées",
+   "epic": "API-WALL",
+   "type": "fonctionnel",
+   "ecrans": [
+    "M-14",
+    "M-08"
+   ]
+  },
+  {
+   "code": "API-WALL-23",
+   "title": "[API-WALL-23] Rate limiting des routes wallpapers (en plus du quota quotidien)",
+   "labels": [
+    "backend",
+    "module:wallpapers",
+    "phase:3",
+    "priorite:P0",
+    "security",
+    "taille:XS",
+    "type:securite"
+   ],
+   "milestone": "Phase 3 — Fonctionnalités avancées",
+   "epic": "API-WALL",
+   "type": "securite",
+   "ecrans": [
+    "M-01",
+    "M-04",
+    "M-12"
+   ]
+  },
+  {
+   "code": "API-WALL-24",
+   "title": "[API-WALL-24] Signalement d'un wallpaper par l'utilisateur",
+   "labels": [
+    "backend",
+    "module:moderation",
+    "module:wallpapers",
+    "phase:3",
+    "priorite:P2",
+    "taille:S",
+    "type:fonctionnel"
+   ],
+   "milestone": "Phase 3 — Fonctionnalités avancées",
+   "epic": "API-WALL",
+   "type": "fonctionnel",
+   "ecrans": [
+    "M-10"
+   ]
+  },
+  {
+   "code": "API-WALL-25",
+   "title": "[API-WALL-25] API back-office : bibliothèque de modération des wallpapers (contrôle a posteriori)",
+   "labels": [
+    "backend",
+    "module:moderation",
+    "module:wallpapers",
+    "phase:3",
+    "priorite:P2",
+    "taille:M",
+    "type:api"
+   ],
+   "milestone": "Phase 3 — Fonctionnalités avancées",
+   "epic": "API-WALL",
+   "type": "api",
+   "ecrans": [
+    "WH-04"
+   ]
+  },
+  {
+   "code": "API-WALL-26",
+   "title": "[API-WALL-26] Journalisation et coûts des générations d'images (budget WH-04, WI-06)",
+   "labels": [
+    "backend",
+    "module:supervision",
+    "module:wallpapers",
+    "phase:3",
+    "priorite:P1",
+    "taille:S",
+    "type:performance"
+   ],
+   "milestone": "Phase 3 — Fonctionnalités avancées",
+   "epic": "API-WALL",
+   "type": "performance",
+   "ecrans": [
+    "WH-04",
+    "WI-06"
+   ]
+  },
+  {
+   "code": "API-WALL-27",
+   "title": "[API-WALL-27] Job de purge : suppressions différées, images rejetées et orphelins",
+   "labels": [
+    "backend",
+    "module:wallpapers",
+    "phase:3",
+    "priorite:P1",
+    "rgpd",
+    "taille:M",
+    "type:infra"
+   ],
+   "milestone": "Phase 3 — Fonctionnalités avancées",
+   "epic": "API-WALL",
+   "type": "infra",
+   "ecrans": [
+    "M-08",
+    "M-10"
+   ]
+  },
+  {
+   "code": "API-WALL-28",
+   "title": "[API-WALL-28] RGPD : export et suppression des wallpapers à la clôture de compte",
+   "labels": [
+    "backend",
+    "module:wallpapers",
+    "phase:3",
+    "priorite:P1",
+    "rgpd",
+    "taille:S",
+    "type:rgpd"
+   ],
+   "milestone": "Phase 3 — Fonctionnalités avancées",
+   "epic": "API-WALL",
+   "type": "rgpd",
+   "ecrans": [
+    "M-08",
+    "M-10"
+   ]
+  },
+  {
+   "code": "API-WALL-29",
+   "title": "[API-WALL-29] Performance : cache HTTP, CDN et lecture de la galerie",
+   "labels": [
+    "backend",
+    "module:wallpapers",
+    "performance",
+    "phase:3",
+    "priorite:P2",
+    "taille:S",
+    "type:performance"
+   ],
+   "milestone": "Phase 3 — Fonctionnalités avancées",
+   "epic": "API-WALL",
+   "type": "performance",
+   "ecrans": [
+    "M-08",
+    "M-10",
+    "M-05"
+   ]
+  },
+  {
+   "code": "API-WALL-30",
+   "title": "[API-WALL-30] Tests d'intégration et de contrat de l'API wallpapers",
+   "labels": [
+    "backend",
+    "module:wallpapers",
+    "phase:3",
+    "priorite:P0",
+    "taille:M",
+    "tests",
+    "type:tests"
+   ],
+   "milestone": "Phase 3 — Fonctionnalités avancées",
+   "epic": "API-WALL",
+   "type": "tests",
+   "ecrans": [
+    "M-01",
+    "M-02",
+    "M-03",
+    "M-04",
+    "M-05",
+    "M-08",
+    "M-12",
+    "M-13",
+    "M-14"
+   ]
+  },
+  {
+   "code": "API-WALL-31",
+   "title": "[API-WALL-31] Documentation OpenAPI et guide d'intégration des wallpapers",
+   "labels": [
+    "backend",
+    "documentation",
+    "module:wallpapers",
+    "phase:3",
+    "priorite:P1",
+    "taille:S",
+    "type:doc"
+   ],
+   "milestone": "Phase 3 — Fonctionnalités avancées",
+   "epic": "API-WALL",
+   "type": "doc",
+   "ecrans": [
+    "M-01",
+    "M-04",
+    "M-05",
+    "M-08"
+   ]
   }
  ],
  "epics": [
@@ -4089,6 +9809,52 @@
    ]
   },
   {
+   "code": "API-FANT",
+   "title": "[API-FANT] Épopée — Fantasy Barça et La Masia Academy",
+   "labels": [
+    "backend",
+    "epic",
+    "phase:2"
+   ],
+   "milestone": "Phase 2 — Communautaire & compétitif",
+   "children": [
+    "API-FANT-01",
+    "API-FANT-02",
+    "API-FANT-03",
+    "API-FANT-04",
+    "API-FANT-05",
+    "API-FANT-06",
+    "API-FANT-07",
+    "API-FANT-08",
+    "API-FANT-09",
+    "API-FANT-10",
+    "API-FANT-11",
+    "API-FANT-12",
+    "API-FANT-13",
+    "API-FANT-14",
+    "API-FANT-15",
+    "API-FANT-16",
+    "API-FANT-17",
+    "API-FANT-18",
+    "API-FANT-19",
+    "API-FANT-20",
+    "API-FANT-21",
+    "API-FANT-22",
+    "API-FANT-23",
+    "API-FANT-24",
+    "API-FANT-25",
+    "API-FANT-26",
+    "API-FANT-27",
+    "API-FANT-28",
+    "API-FANT-29",
+    "API-FANT-30",
+    "API-FANT-31",
+    "API-FANT-32",
+    "API-FANT-33",
+    "API-FANT-34"
+   ]
+  },
+  {
    "code": "API-FOOT",
    "title": "[API-FOOT] Épopée — Données football et contenu éditorial",
    "labels": [
@@ -4157,6 +9923,183 @@
    ]
   },
   {
+   "code": "API-GOAT",
+   "title": "[API-GOAT] Épopée — Comparateur GOAT et votes",
+   "labels": [
+    "backend",
+    "epic",
+    "phase:2"
+   ],
+   "milestone": "Phase 2 — Communautaire & compétitif",
+   "children": [
+    "API-GOAT-01",
+    "API-GOAT-02",
+    "API-GOAT-03",
+    "API-GOAT-04",
+    "API-GOAT-05",
+    "API-GOAT-06",
+    "API-GOAT-07",
+    "API-GOAT-08",
+    "API-GOAT-09",
+    "API-GOAT-10",
+    "API-GOAT-11",
+    "API-GOAT-12",
+    "API-GOAT-13",
+    "API-GOAT-14",
+    "API-GOAT-15",
+    "API-GOAT-16",
+    "API-GOAT-17",
+    "API-GOAT-18",
+    "API-GOAT-19",
+    "API-GOAT-20",
+    "API-GOAT-21",
+    "API-GOAT-22",
+    "API-GOAT-23",
+    "API-GOAT-24",
+    "API-GOAT-25",
+    "API-GOAT-26"
+   ]
+  },
+  {
+   "code": "API-IA",
+   "title": "[API-IA] Épopée — Assistant IA Barça AI",
+   "labels": [
+    "backend",
+    "epic",
+    "phase:1"
+   ],
+   "milestone": "Phase 1 — MVP",
+   "children": [
+    "API-IA-01",
+    "API-IA-02",
+    "API-IA-03",
+    "API-IA-04",
+    "API-IA-05",
+    "API-IA-06",
+    "API-IA-07",
+    "API-IA-08",
+    "API-IA-09",
+    "API-IA-10",
+    "API-IA-11",
+    "API-IA-12",
+    "API-IA-13",
+    "API-IA-14",
+    "API-IA-15",
+    "API-IA-16",
+    "API-IA-17",
+    "API-IA-18",
+    "API-IA-19",
+    "API-IA-20",
+    "API-IA-21",
+    "API-IA-22",
+    "API-IA-23",
+    "API-IA-24",
+    "API-IA-25",
+    "API-IA-26",
+    "API-IA-27",
+    "API-IA-28",
+    "API-IA-29",
+    "API-IA-30",
+    "API-IA-31",
+    "API-IA-32",
+    "API-IA-33",
+    "API-IA-34"
+   ]
+  },
+  {
+   "code": "API-JEUX",
+   "title": "[API-JEUX] Épopée — Guess the Player & Quiz adaptatif",
+   "labels": [
+    "backend",
+    "epic",
+    "phase:1"
+   ],
+   "milestone": "Phase 1 — MVP",
+   "children": [
+    "API-JEUX-01",
+    "API-JEUX-02",
+    "API-JEUX-03",
+    "API-JEUX-04",
+    "API-JEUX-05",
+    "API-JEUX-06",
+    "API-JEUX-07",
+    "API-JEUX-08",
+    "API-JEUX-09",
+    "API-JEUX-10",
+    "API-JEUX-11",
+    "API-JEUX-12",
+    "API-JEUX-13",
+    "API-JEUX-14",
+    "API-JEUX-15",
+    "API-JEUX-16",
+    "API-JEUX-17",
+    "API-JEUX-18",
+    "API-JEUX-19",
+    "API-JEUX-20",
+    "API-JEUX-21",
+    "API-JEUX-22",
+    "API-JEUX-23",
+    "API-JEUX-24",
+    "API-JEUX-25",
+    "API-JEUX-26",
+    "API-JEUX-27",
+    "API-JEUX-28",
+    "API-JEUX-29",
+    "API-JEUX-30",
+    "API-JEUX-31",
+    "API-JEUX-32",
+    "API-JEUX-33",
+    "API-JEUX-34",
+    "API-JEUX-35",
+    "API-JEUX-36",
+    "API-JEUX-37"
+   ]
+  },
+  {
+   "code": "API-MODER",
+   "title": "[API-MODER] Épopée — Modération et sécurité communautaire",
+   "labels": [
+    "backend",
+    "epic",
+    "phase:2"
+   ],
+   "milestone": "Phase 2 — Communautaire & compétitif",
+   "children": [
+    "API-MODER-01",
+    "API-MODER-02",
+    "API-MODER-03",
+    "API-MODER-04",
+    "API-MODER-05",
+    "API-MODER-06",
+    "API-MODER-07",
+    "API-MODER-08",
+    "API-MODER-09",
+    "API-MODER-10",
+    "API-MODER-11",
+    "API-MODER-12",
+    "API-MODER-13",
+    "API-MODER-14",
+    "API-MODER-15",
+    "API-MODER-16",
+    "API-MODER-17",
+    "API-MODER-18",
+    "API-MODER-19",
+    "API-MODER-20",
+    "API-MODER-21",
+    "API-MODER-22",
+    "API-MODER-23",
+    "API-MODER-24",
+    "API-MODER-25",
+    "API-MODER-26",
+    "API-MODER-27",
+    "API-MODER-28",
+    "API-MODER-29",
+    "API-MODER-30",
+    "API-MODER-31",
+    "API-MODER-32"
+   ]
+  },
+  {
    "code": "API-NOTIF",
    "title": "[API-NOTIF] Épopée — Notifications push et centre de notifications",
    "labels": [
@@ -4197,6 +10140,161 @@
     "API-NOTIF-29",
     "API-NOTIF-30",
     "API-NOTIF-31"
+   ]
+  },
+  {
+   "code": "API-PASS",
+   "title": "[API-PASS] Épopée — Culé Passport et gamification transverse",
+   "labels": [
+    "backend",
+    "epic",
+    "phase:2"
+   ],
+   "milestone": "Phase 2 — Communautaire & compétitif",
+   "children": [
+    "API-PASS-01",
+    "API-PASS-02",
+    "API-PASS-03",
+    "API-PASS-04",
+    "API-PASS-05",
+    "API-PASS-06",
+    "API-PASS-07",
+    "API-PASS-08",
+    "API-PASS-09",
+    "API-PASS-10",
+    "API-PASS-11",
+    "API-PASS-12",
+    "API-PASS-13",
+    "API-PASS-14",
+    "API-PASS-15",
+    "API-PASS-16",
+    "API-PASS-17",
+    "API-PASS-18",
+    "API-PASS-19",
+    "API-PASS-20",
+    "API-PASS-21",
+    "API-PASS-22",
+    "API-PASS-23",
+    "API-PASS-24",
+    "API-PASS-25",
+    "API-PASS-26",
+    "API-PASS-27",
+    "API-PASS-28",
+    "API-PASS-29",
+    "API-PASS-30",
+    "API-PASS-31",
+    "API-PASS-32",
+    "API-PASS-33"
+   ]
+  },
+  {
+   "code": "API-PLAT",
+   "title": "[API-PLAT] Épopée — Plateforme, qualité, performance et exploitation",
+   "labels": [
+    "backend",
+    "epic",
+    "phase:0"
+   ],
+   "milestone": "Phase 0 — Socle technique",
+   "children": [
+    "API-PLAT-01",
+    "API-PLAT-02",
+    "API-PLAT-03",
+    "API-PLAT-04",
+    "API-PLAT-05",
+    "API-PLAT-06",
+    "API-PLAT-07",
+    "API-PLAT-08",
+    "API-PLAT-09",
+    "API-PLAT-10",
+    "API-PLAT-11",
+    "API-PLAT-12",
+    "API-PLAT-13",
+    "API-PLAT-14",
+    "API-PLAT-15",
+    "API-PLAT-16",
+    "API-PLAT-17",
+    "API-PLAT-18",
+    "API-PLAT-19",
+    "API-PLAT-20",
+    "API-PLAT-21",
+    "API-PLAT-22",
+    "API-PLAT-23",
+    "API-PLAT-24",
+    "API-PLAT-25",
+    "API-PLAT-26",
+    "API-PLAT-27",
+    "API-PLAT-28",
+    "API-PLAT-29",
+    "API-PLAT-30",
+    "API-PLAT-31",
+    "API-PLAT-32",
+    "API-PLAT-33",
+    "API-PLAT-34",
+    "API-PLAT-35",
+    "API-PLAT-36",
+    "API-PLAT-37",
+    "API-PLAT-38",
+    "API-PLAT-39",
+    "API-PLAT-40",
+    "API-PLAT-41",
+    "API-PLAT-42",
+    "API-PLAT-43",
+    "API-PLAT-44",
+    "API-PLAT-45",
+    "API-PLAT-46",
+    "API-PLAT-47",
+    "API-PLAT-48",
+    "API-PLAT-49",
+    "API-PLAT-50",
+    "API-PLAT-51",
+    "API-PLAT-52",
+    "API-PLAT-53",
+    "API-PLAT-54",
+    "API-PLAT-55"
+   ]
+  },
+  {
+   "code": "API-WALL",
+   "title": "[API-WALL] Épopée — Wallpapers IA",
+   "labels": [
+    "backend",
+    "epic",
+    "phase:3"
+   ],
+   "milestone": "Phase 3 — Fonctionnalités avancées",
+   "children": [
+    "API-WALL-01",
+    "API-WALL-02",
+    "API-WALL-03",
+    "API-WALL-04",
+    "API-WALL-05",
+    "API-WALL-06",
+    "API-WALL-07",
+    "API-WALL-08",
+    "API-WALL-09",
+    "API-WALL-10",
+    "API-WALL-11",
+    "API-WALL-12",
+    "API-WALL-13",
+    "API-WALL-14",
+    "API-WALL-15",
+    "API-WALL-16",
+    "API-WALL-17",
+    "API-WALL-18",
+    "API-WALL-19",
+    "API-WALL-20",
+    "API-WALL-21",
+    "API-WALL-22",
+    "API-WALL-23",
+    "API-WALL-24",
+    "API-WALL-25",
+    "API-WALL-26",
+    "API-WALL-27",
+    "API-WALL-28",
+    "API-WALL-29",
+    "API-WALL-30",
+    "API-WALL-31"
    ]
   }
  ],
