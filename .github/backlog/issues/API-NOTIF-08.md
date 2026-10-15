@@ -1,0 +1,109 @@
+> **API-NOTIF-08** · Infrastructure · Priorité **P0** · Taille **L** · Phase 1 — MVP
+
+## 🎯 Contexte
+
+La file `notifications` existe dans src/jobs/queues.ts mais aucun worker métier n'est implémenté. Ce worker est le coeur du module : il résout les destinataires, applique consentement/préférences/heures calmes, écrit le NotificationLog et envoie via FCM.
+
+## ✅ Objectif
+
+Implémenter le processor central et son enregistrement au démarrage.
+
+## 🖼️ Maquettes de référence
+
+Toutes les captures ci-dessous sont les maquettes validées (clair / sombre, mobile / tablette ou bureau). Le comportement visuel, les espacements, états et libellés doivent être reproduits à l'identique ; les tokens du design system s'appliquent (aucune couleur en dur).
+
+#### `O-08` — Écran verrouillé — rappel de match
+_Module : Notifications_
+
+<table><tr><th align='center'>Mobile · Clair</th><th align='center'>Mobile · Sombre</th><th align='center'>Tablette · Clair</th><th align='center'>Tablette · Sombre</th></tr><tr><td align='center'><a href='https://github.com/TheGoatIA/univers_barca_mobile/blob/main/docs/maquettes/ecrans/O/O-08_ecran-verrouille-rappel-de-match__phone_light.webp?raw=true'><img src='https://github.com/TheGoatIA/univers_barca_mobile/blob/main/docs/maquettes/ecrans/O/O-08_ecran-verrouille-rappel-de-match__phone_light.webp?raw=true' width='230' alt='O-08 Mobile Clair'></a></td><td align='center'><a href='https://github.com/TheGoatIA/univers_barca_mobile/blob/main/docs/maquettes/ecrans/O/O-08_ecran-verrouille-rappel-de-match__phone_dark.webp?raw=true'><img src='https://github.com/TheGoatIA/univers_barca_mobile/blob/main/docs/maquettes/ecrans/O/O-08_ecran-verrouille-rappel-de-match__phone_dark.webp?raw=true' width='230' alt='O-08 Mobile Sombre'></a></td><td align='center'><a href='https://github.com/TheGoatIA/univers_barca_mobile/blob/main/docs/maquettes/ecrans/O/O-08_ecran-verrouille-rappel-de-match__tablet_light.webp?raw=true'><img src='https://github.com/TheGoatIA/univers_barca_mobile/blob/main/docs/maquettes/ecrans/O/O-08_ecran-verrouille-rappel-de-match__tablet_light.webp?raw=true' width='330' alt='O-08 Tablette Clair'></a></td><td align='center'><a href='https://github.com/TheGoatIA/univers_barca_mobile/blob/main/docs/maquettes/ecrans/O/O-08_ecran-verrouille-rappel-de-match__tablet_dark.webp?raw=true'><img src='https://github.com/TheGoatIA/univers_barca_mobile/blob/main/docs/maquettes/ecrans/O/O-08_ecran-verrouille-rappel-de-match__tablet_dark.webp?raw=true' width='330' alt='O-08 Tablette Sombre'></a></td></tr></table>
+
+<details><summary>Éléments relevés dans la maquette</summary>
+
+**Textes visibles** : « Jeudi 15 octobre » · « Match dans 1 h ⚽ » · « maintenant » · « FC Barcelone – Real Madrid · Liga · 20:00 WAT »
+
+</details>
+
+**Issues liées sur ce même écran :** [API-NOTIF-07](https://github.com/TheGoatIA/univers_barca_api/issues?q=is%3Aissue%20%22%5BAPI-NOTIF-07%5D%22) · [API-NOTIF-09](https://github.com/TheGoatIA/univers_barca_api/issues?q=is%3Aissue%20%22%5BAPI-NOTIF-09%5D%22) · [API-NOTIF-12](https://github.com/TheGoatIA/univers_barca_api/issues?q=is%3Aissue%20%22%5BAPI-NOTIF-12%5D%22) · [API-NOTIF-13](https://github.com/TheGoatIA/univers_barca_api/issues?q=is%3Aissue%20%22%5BAPI-NOTIF-13%5D%22) · [API-NOTIF-29](https://github.com/TheGoatIA/univers_barca_api/issues?q=is%3Aissue%20%22%5BAPI-NOTIF-29%5D%22) · [API-NOTIF-30](https://github.com/TheGoatIA/univers_barca_api/issues?q=is%3Aissue%20%22%5BAPI-NOTIF-30%5D%22)
+
+#### `O-09` — Écran verrouillé — autres notifications
+_Module : Notifications_
+
+<table><tr><th align='center'>Mobile · Clair</th><th align='center'>Mobile · Sombre</th><th align='center'>Tablette · Clair</th><th align='center'>Tablette · Sombre</th></tr><tr><td align='center'><a href='https://github.com/TheGoatIA/univers_barca_mobile/blob/main/docs/maquettes/ecrans/O/O-09_ecran-verrouille-autres-notifications__phone_light.webp?raw=true'><img src='https://github.com/TheGoatIA/univers_barca_mobile/blob/main/docs/maquettes/ecrans/O/O-09_ecran-verrouille-autres-notifications__phone_light.webp?raw=true' width='230' alt='O-09 Mobile Clair'></a></td><td align='center'><a href='https://github.com/TheGoatIA/univers_barca_mobile/blob/main/docs/maquettes/ecrans/O/O-09_ecran-verrouille-autres-notifications__phone_dark.webp?raw=true'><img src='https://github.com/TheGoatIA/univers_barca_mobile/blob/main/docs/maquettes/ecrans/O/O-09_ecran-verrouille-autres-notifications__phone_dark.webp?raw=true' width='230' alt='O-09 Mobile Sombre'></a></td><td align='center'><a href='https://github.com/TheGoatIA/univers_barca_mobile/blob/main/docs/maquettes/ecrans/O/O-09_ecran-verrouille-autres-notifications__tablet_light.webp?raw=true'><img src='https://github.com/TheGoatIA/univers_barca_mobile/blob/main/docs/maquettes/ecrans/O/O-09_ecran-verrouille-autres-notifications__tablet_light.webp?raw=true' width='330' alt='O-09 Tablette Clair'></a></td><td align='center'><a href='https://github.com/TheGoatIA/univers_barca_mobile/blob/main/docs/maquettes/ecrans/O/O-09_ecran-verrouille-autres-notifications__tablet_dark.webp?raw=true'><img src='https://github.com/TheGoatIA/univers_barca_mobile/blob/main/docs/maquettes/ecrans/O/O-09_ecran-verrouille-autres-notifications__tablet_dark.webp?raw=true' width='330' alt='O-09 Tablette Sombre'></a></td></tr></table>
+
+<details><summary>Éléments relevés dans la maquette</summary>
+
+**Textes visibles** : « Jeudi 15 octobre » · « Ta série est en danger 🔥 » · « Joue au Guess the Player avant minuit. » · « Anniversaire de Pedri 🎂 » · « Il fête ses 23 ans aujourd’hui. » · « Culés Cameroun » · « Mamadou : « Qui est chaud pour samedi ? » » · « Résultat final » · « hier » · « Barça 3 – 1 Real Madrid · Voir le résumé »
+
+</details>
+
+**Issues liées sur ce même écran :** [API-NOTIF-07](https://github.com/TheGoatIA/univers_barca_api/issues?q=is%3Aissue%20%22%5BAPI-NOTIF-07%5D%22) · [API-NOTIF-12](https://github.com/TheGoatIA/univers_barca_api/issues?q=is%3Aissue%20%22%5BAPI-NOTIF-12%5D%22) · [API-NOTIF-14](https://github.com/TheGoatIA/univers_barca_api/issues?q=is%3Aissue%20%22%5BAPI-NOTIF-14%5D%22) · [API-NOTIF-15](https://github.com/TheGoatIA/univers_barca_api/issues?q=is%3Aissue%20%22%5BAPI-NOTIF-15%5D%22) · [API-NOTIF-16](https://github.com/TheGoatIA/univers_barca_api/issues?q=is%3Aissue%20%22%5BAPI-NOTIF-16%5D%22) · [API-NOTIF-17](https://github.com/TheGoatIA/univers_barca_api/issues?q=is%3Aissue%20%22%5BAPI-NOTIF-17%5D%22) · [API-NOTIF-18](https://github.com/TheGoatIA/univers_barca_api/issues?q=is%3Aissue%20%22%5BAPI-NOTIF-18%5D%22) · [API-NOTIF-29](https://github.com/TheGoatIA/univers_barca_api/issues?q=is%3Aissue%20%22%5BAPI-NOTIF-29%5D%22)
+
+#### `O-10` — Notification dans l’application
+_Module : Notifications_
+
+<table><tr><th align='center'>Mobile · Clair</th><th align='center'>Mobile · Sombre</th><th align='center'>Tablette · Clair</th><th align='center'>Tablette · Sombre</th></tr><tr><td align='center'><a href='https://github.com/TheGoatIA/univers_barca_mobile/blob/main/docs/maquettes/ecrans/O/O-10_notification-dans-l-application__phone_light.webp?raw=true'><img src='https://github.com/TheGoatIA/univers_barca_mobile/blob/main/docs/maquettes/ecrans/O/O-10_notification-dans-l-application__phone_light.webp?raw=true' width='230' alt='O-10 Mobile Clair'></a></td><td align='center'><a href='https://github.com/TheGoatIA/univers_barca_mobile/blob/main/docs/maquettes/ecrans/O/O-10_notification-dans-l-application__phone_dark.webp?raw=true'><img src='https://github.com/TheGoatIA/univers_barca_mobile/blob/main/docs/maquettes/ecrans/O/O-10_notification-dans-l-application__phone_dark.webp?raw=true' width='230' alt='O-10 Mobile Sombre'></a></td><td align='center'><a href='https://github.com/TheGoatIA/univers_barca_mobile/blob/main/docs/maquettes/ecrans/O/O-10_notification-dans-l-application__tablet_light.webp?raw=true'><img src='https://github.com/TheGoatIA/univers_barca_mobile/blob/main/docs/maquettes/ecrans/O/O-10_notification-dans-l-application__tablet_light.webp?raw=true' width='330' alt='O-10 Tablette Clair'></a></td><td align='center'><a href='https://github.com/TheGoatIA/univers_barca_mobile/blob/main/docs/maquettes/ecrans/O/O-10_notification-dans-l-application__tablet_dark.webp?raw=true'><img src='https://github.com/TheGoatIA/univers_barca_mobile/blob/main/docs/maquettes/ecrans/O/O-10_notification-dans-l-application__tablet_dark.webp?raw=true' width='330' alt='O-10 Tablette Sombre'></a></td></tr></table>
+
+<details><summary>Éléments relevés dans la maquette</summary>
+
+**Textes visibles** : « But du Barça ! ⚽ 2 – 1 » · « Raphinha (67') · Touche pour suivre le live » · « maintenant »
+
+**Composants repérés** : `avatar`, `card`
+
+</details>
+
+**Issues liées sur ce même écran :** [API-NOTIF-07](https://github.com/TheGoatIA/univers_barca_api/issues?q=is%3Aissue%20%22%5BAPI-NOTIF-07%5D%22) · [API-NOTIF-12](https://github.com/TheGoatIA/univers_barca_api/issues?q=is%3Aissue%20%22%5BAPI-NOTIF-12%5D%22) · [API-NOTIF-14](https://github.com/TheGoatIA/univers_barca_api/issues?q=is%3Aissue%20%22%5BAPI-NOTIF-14%5D%22) · [API-NOTIF-29](https://github.com/TheGoatIA/univers_barca_api/issues?q=is%3Aissue%20%22%5BAPI-NOTIF-29%5D%22)
+
+## 📐 Règles de gestion
+
+- Types de jobs (CDC §7 « send-notifications ») : `match-reminder`, `match-kickoff`, `match-halftime`, `match-fulltime`, `match-goal`, `match-schedule-changed`, `daily-challenge`, `streak-reminder`, `badge-unlocked`, `history-anniversary`, `group-activity`, `moderation-notice`, `campaign-send`, `deliver` (envoi unitaire/lot).
+- Pipeline par destinataire : consentement → préférence de catégorie/option → heures calmes → déduplication (clé `dedupe:{userId}:{type}:{refId}`, TTL 24 h Redis) → écriture NotificationLog(status 'queued') → envoi → mise à jour du statut.
+- Concurrence 5 (valeur par défaut de registerWorker) pour le fan-out ; 2 pour `deliver` afin de respecter les quotas FCM.
+- Idempotence : jobId déterministe `{type}:{refId}:{userId|batch}` ; relance sans duplication grâce à la déduplication.
+- Les jobs de fan-out découpent les utilisateurs en lots de 500 et enfilent des jobs `deliver` (voir notif-envoi-batch).
+- Métriques : notifications_sent_total{category,result}, notifications_job_duration_seconds, notifications_suppressed_total{reason} (src/config/metrics.ts).
+
+## 🔄 Comportement et états
+
+- Redis absent : enqueue renvoie null (comportement existant) et le déclencheur loggue un warning.
+- Arrêt propre : closeQueues() attend les workers en cours.
+
+## 🛠️ Tâches
+
+- [ ] Créer src/jobs/workers/notifications.worker.ts (processor) + registre src/jobs/workers/notifications.handlers.ts (un handler par type).
+- [ ] Créer src/services/notification-dispatcher.service.ts : dispatch(userId, template, data).
+- [ ] Enregistrer registerWorker('notifications', …) dans src/server.ts (désactivé si NODE_ENV=test ou ENABLE_WORKERS=false).
+- [ ] Ajouter la variable ENABLE_WORKERS (Joi).
+- [ ] Helper de déduplication Redis.
+- [ ] Instrumentation Prometheus.
+- [ ] Tests du pipeline avec FakeProvider.
+- [ ] Documenter les types et payloads dans docs/NOTIFICATIONS.md.
+
+## ✔️ Critères d'acceptation
+
+- [ ] Étant donné un job match-reminder pour un utilisateur sans consentement, alors NotificationLog status 'suppressed' / 'no-consent' et aucun appel FCM.
+- [ ] Étant donné le même job rejoué, alors une seule notification est envoyée.
+- [ ] Étant donné un utilisateur ayant désactivé la catégorie match, alors suppressed / 'preference'.
+- [ ] Étant donné ENABLE_WORKERS=false, alors aucun worker n'est démarré.
+- [ ] Étant donné un envoi réussi, alors status 'sent' et sentAt renseigné.
+
+## 🧪 Tests à écrire
+
+- [ ] unit: pipeline consentement/préférence
+- [ ] unit: déduplication
+- [ ] integration: dispatcher avec FakeProvider
+- [ ] unit: routage par type
+- [ ] integration: arrêt propre
+- [ ] unit: métriques incrémentées
+
+## 🔗 Dépendances
+
+À réaliser après : `API-NOTIF-07` · `API-NOTIF-05` · `API-NOTIF-06` · `API-NOTIF-04` (rechercher le code entre crochets dans le titre des issues).
+
+## 📚 Références
+
+- CDC Backend §3.10, §11.4, §7
+- CDC Backend §7.1
+
+## 📦 Définition de terminé
+
+`npm run lint`, `format:check`, `typecheck`, tests unitaires/intégration/sécurité verts ; Swagger (`npm run export:swagger`) à jour ; migration si schéma modifié ; PR vers `dev` ; CI verte.
