@@ -1,0 +1,94 @@
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "06:00"
+      timezone: "Africa/Douala"
+    target-branch: "dev"
+    open-pull-requests-limit: 10
+    reviewers:
+      - "TheGoatIA"
+    labels: ["dependabot", "backend", "dependencies"]
+    commit-message:
+      prefix: "build(deps)"
+      prefix-development: "build(deps-dev)"
+      include: "scope"
+    groups:
+      express:
+        patterns:
+          [
+            "express",
+            "express-*",
+            "@types/express*",
+            "cors",
+            "@types/cors",
+            "compression",
+            "cookie-parser",
+            "morgan",
+          ]
+      mongoose:
+        patterns: ["mongoose", "mongodb", "migrate-mongo", "mongo-sanitize"]
+      security-libs:
+        patterns:
+          [
+            "argon2*",
+            "helmet*",
+            "jsonwebtoken*",
+            "@types/jsonwebtoken",
+            "hpp*",
+            "speakeasy*",
+            "rate-limit-redis*",
+          ]
+      queues-cache:
+        patterns: ["bullmq*", "ioredis*", "node-cron*"]
+      observability:
+        patterns: ["@opentelemetry/*", "winston*", "prom-client*"]
+      testing:
+        patterns: ["jest*", "@types/jest*", "supertest*", "ts-jest*", "@types/supertest"]
+      lint-format:
+        patterns: ["eslint*", "@typescript-eslint/*", "prettier*", "typescript-eslint*"]
+    ignore:
+      - dependency-name: "*"
+        update-types: ["version-update:semver-major"]
+
+  - package-ecosystem: "docker"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "wednesday"
+      time: "06:00"
+      timezone: "Africa/Douala"
+    target-branch: "dev"
+    labels: ["dependabot", "docker"]
+    commit-message:
+      prefix: "build(docker)"
+
+  - package-ecosystem: "docker"
+    directory: "/docker"
+    schedule:
+      interval: "weekly"
+      day: "wednesday"
+      time: "06:00"
+      timezone: "Africa/Douala"
+    target-branch: "dev"
+    labels: ["dependabot", "docker"]
+    commit-message:
+      prefix: "build(docker)"
+
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "wednesday"
+      time: "06:00"
+      timezone: "Africa/Douala"
+    target-branch: "dev"
+    labels: ["dependabot", "ci-cd"]
+    commit-message:
+      prefix: "ci(deps)"
+    groups:
+      actions:
+        patterns: ["*"]

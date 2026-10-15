@@ -1,0 +1,22 @@
+groups:
+  - name: univers-barca-api
+    rules:
+      - alert: ApiDown
+        expr: up{job=~"univers-barca-api.*"} == 0
+        for: 2m
+        labels: { severity: critical }
+        annotations: { summary: "API indisponible ({{ $labels.job }})" }
+      - alert: HighLatencyP95
+        expr: histogram_quantile(0.95, sum(rate(ub_http_request_duration_seconds_bucket[5m])) by (le)) > 1
+        for: 10m
+        labels: { severity: warning }
+        annotations: { summary: "Latence p95 > 1 s" }
+      - alert: HighErrorRate
+        expr: sum(rate(ub_http_request_duration_seconds_count{status=~"5.."}[5m])) / sum(rate(ub_http_request_duration_seconds_count[5m])) > 0.05
+        for: 5m
+        labels: { severity: critical }
+        annotations: { summary: "Taux de 5xx > 5 %" }
+      - alert: JobsFailing
+        expr: increase(ub_jobs_failed_total[15m]) > 10
+        labels: { severity: warning }
+        annotations: { summary: "Jobs BullMQ en échec répétés" }

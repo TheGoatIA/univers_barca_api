@@ -1,0 +1,208 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Univers Barça API",
+    "version": "1.0.0",
+    "description": "API REST de l'application mobile et du back-office Univers Barça."
+  },
+  "servers": [
+    {
+      "url": "/api/v1"
+    }
+  ],
+  "components": {
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
+      }
+    },
+    "schemas": {
+      "RegisterInput": {
+        "type": "object",
+        "required": [
+          "email",
+          "password",
+          "displayName",
+          "consents"
+        ],
+        "properties": {
+          "email": {
+            "type": "string",
+            "format": "email"
+          },
+          "password": {
+            "type": "string",
+            "minLength": 8
+          },
+          "displayName": {
+            "type": "string",
+            "minLength": 3,
+            "maxLength": 20
+          },
+          "locale": {
+            "type": "string",
+            "enum": [
+              "fr",
+              "en",
+              "es"
+            ]
+          },
+          "consents": {
+            "type": "object",
+            "required": [
+              "terms",
+              "privacy"
+            ],
+            "properties": {
+              "terms": {
+                "type": "boolean"
+              },
+              "privacy": {
+                "type": "boolean"
+              },
+              "notifications": {
+                "type": "boolean"
+              },
+              "geolocation": {
+                "type": "boolean"
+              },
+              "analytics": {
+                "type": "boolean"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "paths": {
+    "/auth/register": {
+      "post": {
+        "tags": [
+          "Auth"
+        ],
+        "summary": "Création de compte (consentements RGPD obligatoires)",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegisterInput"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Compte créé",
+            "jetons retournés": null
+          },
+          "409": {
+            "description": "Email déjà utilisé"
+          },
+          "422": {
+            "description": "Validation échouée"
+          }
+        }
+      }
+    },
+    "/auth/login": {
+      "post": {
+        "tags": [
+          "Auth"
+        ],
+        "summary": "Connexion email / mot de passe",
+        "responses": {
+          "200": {
+            "description": "Jetons d'accès et de rafraîchissement"
+          },
+          "401": {
+            "description": "Identifiants incorrects"
+          }
+        }
+      }
+    },
+    "/auth/refresh": {
+      "post": {
+        "tags": [
+          "Auth"
+        ],
+        "summary": "Rotation du refresh token (détection de réutilisation)",
+        "responses": {
+          "200": {
+            "description": "Nouveaux jetons"
+          },
+          "401": {
+            "description": "Refresh invalide",
+            "expiré ou réutilisé": null
+          }
+        }
+      }
+    },
+    "/auth/logout": {
+      "post": {
+        "tags": [
+          "Auth"
+        ],
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "summary": "Déconnexion (blacklist du jti + révocation du refresh)",
+        "responses": {
+          "204": {
+            "description": "Déconnecté"
+          }
+        }
+      }
+    },
+    "/users/me": {
+      "get": {
+        "tags": [
+          "Utilisateurs"
+        ],
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "summary": "Profil de l'utilisateur connecté",
+        "responses": {
+          "200": {
+            "description": "Profil"
+          }
+        }
+      }
+    },
+    "/players": {
+      "get": {
+        "tags": [
+          "Contenu"
+        ],
+        "summary": "Liste paginée des joueurs publiés",
+        "responses": {
+          "200": {
+            "description": "Page de joueurs"
+          }
+        }
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "Auth"
+    },
+    {
+      "name": "Utilisateurs"
+    },
+    {
+      "name": "Admin"
+    },
+    {
+      "name": "Contenu"
+    }
+  ]
+}

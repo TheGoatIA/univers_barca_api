@@ -1,0 +1,53 @@
+name: Régression nocturne
+
+on:
+  schedule:
+    - cron: "30 2 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  full-suite:
+    name: Suite complète + audit des dépendances
+    runs-on: ubuntu-latest
+    services:
+      mongo:
+        image: mongo:7-jammy
+        ports: ["27017:27017"]
+        options: >-
+          --health-cmd "mongosh --quiet --eval 'db.adminCommand(\"ping\").ok'"
+          --health-interval 10s --health-timeout 5s --health-retries 10
+      redis:
+        image: redis:7-alpine
+        ports: ["6379:6379"]
+    env:
+      MONGODB_URI: mongodb://localhost:27017/univers_barca_nightly
+      REDIS_URL: redis://localhost:6379
+      RATE_LIMIT_IN_TESTS: "false"
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: dev
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+      - run: npm ci
+      - run: npm run test:all
+      - name: Audit complet
+        run: npm audit --audit-level=moderate
+        continue-on-error: true
+      - name: Démarrer l'API pour le test de charge
+        run: |
+          npm run build
+          JWT_ACCESS_SECRET=$(openssl rand -hex 32) JWT_REFRESH_SECRET=$(openssl rand -hex 32) RUN_CRON=false node dist/server.js &
+          for i in $(seq 1 30); do curl -sf http://localhost:5000/health && break || sleep 1; done
+      - name: Test de charge de fumée (k6)
+        uses: grafana/k6-action@v0.3.1
+        continue-on-error: true
+        with:
+          filename: tests/load/smoke.js
+        env:
+          BASE_URL: http://localhost:5000

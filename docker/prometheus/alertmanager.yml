@@ -1,0 +1,6 @@
+route:
+  receiver: default
+  group_by: [alertname]
+receivers:
+  - name: default
+    # Brancher Slack/email ici (ne jamais committer de webhook réel : utiliser un fichier monté depuis le VPS)

@@ -1,0 +1,66 @@
+# Environnement de développement local : MongoDB (replica set) + Redis (+ API en option).
+# Usage : docker compose -f docker/docker-compose.dev.yml up -d mongodb redis mongo-init
+name: univers-barca-dev
+
+services:
+  mongodb:
+    image: mongo:7-jammy
+    command: ["--replSet", "rs0", "--bind_ip_all", "--wiredTigerCacheSizeGB", "1"]
+    ports: ["127.0.0.1:27017:27017"]
+    volumes: [mongo_data:/data/db]
+    healthcheck:
+      test: ["CMD", "mongosh", "--quiet", "--eval", "db.adminCommand('ping').ok"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 20s
+
+  # One-shot idempotent : initialise le replica set au premier démarrage
+  mongo-init:
+    image: mongo:7-jammy
+    depends_on:
+      mongodb: { condition: service_healthy }
+    command:
+      - mongosh
+      - --host
+      - mongodb:27017
+      - --quiet
+      - --eval
+      - "try { rs.status() } catch(e) { rs.initiate({ _id: 'rs0', members: [{ _id: 0, host: 'localhost:27017' }] }) }"
+    restart: "no"
+
+  redis:
+    image: redis:7-alpine
+    command: ["redis-server", "--appendonly", "yes"]
+    ports: ["127.0.0.1:6379:6379"]
+    volumes: [redis_data:/data]
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  api:
+    profiles: [full]
+    build: { context: .., target: production }
+    env_file: ../.env
+    environment:
+      MONGODB_URI: mongodb://mongodb:27017/univers_barca?replicaSet=rs0
+      REDIS_URL: redis://redis:6379
+    ports: ["127.0.0.1:5000:5000"]
+    depends_on:
+      mongo-init: { condition: service_completed_successfully }
+      redis: { condition: service_healthy }
+
+  seeder:
+    profiles: [tools]
+    build: { context: .., target: seeder }
+    env_file: ../.env
+    environment:
+      MONGODB_URI: mongodb://mongodb:27017/univers_barca?replicaSet=rs0
+    depends_on:
+      mongo-init: { condition: service_completed_successfully }
+
+volumes:
+  mongo_data:
+  redis_data:

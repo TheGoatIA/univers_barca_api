@@ -1,0 +1,46 @@
+# Stack d'observabilité mutualisée (Prometheus, Alertmanager, Grafana, Jaeger).
+# Créer le réseau une fois : docker network create univers_barca_services
+name: univers-barca-observability
+
+networks:
+  services:
+    external: true
+    name: univers_barca_services
+
+services:
+  prometheus:
+    image: prom/prometheus:v2.55.1
+    volumes:
+      - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+      - ./prometheus/alerts.yml:/etc/prometheus/alerts.yml:ro
+      - prom_data:/prometheus
+    deploy: { resources: { limits: { memory: 1G, cpus: "0.5" } } }
+    networks: [services]
+    restart: unless-stopped
+  alertmanager:
+    image: prom/alertmanager:v0.27.0
+    volumes: [./prometheus/alertmanager.yml:/etc/alertmanager/alertmanager.yml:ro]
+    deploy: { resources: { limits: { memory: 128M, cpus: "0.1" } } }
+    networks: [services]
+    restart: unless-stopped
+  grafana:
+    image: grafana/grafana:11.3.0
+    environment:
+      GF_SECURITY_ADMIN_PASSWORD: ${GRAFANA_PASSWORD:?défini dans .env}
+      GF_USERS_ALLOW_SIGN_UP: "false"
+    volumes: [grafana_data:/var/lib/grafana]
+    ports: ["127.0.0.1:3001:3000"]
+    deploy: { resources: { limits: { memory: 512M, cpus: "0.5" } } }
+    networks: [services]
+    restart: unless-stopped
+  jaeger:
+    image: jaegertracing/all-in-one:1.62.0
+    environment: { COLLECTOR_OTLP_ENABLED: "true" }
+    ports: ["127.0.0.1:16686:16686"]
+    deploy: { resources: { limits: { memory: 1G, cpus: "0.5" } } }
+    networks: [services]
+    restart: unless-stopped
+
+volumes:
+  prom_data:
+  grafana_data:
