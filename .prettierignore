@@ -4,3 +4,5 @@ coverage
 package-lock.json
 swagger.json
 THIRD_PARTY_LICENSES.md
+.github/backlog
+docs/maquettes
