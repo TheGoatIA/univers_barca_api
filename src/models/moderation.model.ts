@@ -1,5 +1,6 @@
 import { model, Schema } from 'mongoose';
 import { baseOptions, withJson } from './_common';
+import { normalizeReportStatus, REPORT_STATUSES } from './moderation.constants';
 
 const reportSchema = withJson(
   new Schema(
@@ -19,8 +20,10 @@ const reportSchema = withJson(
       },
       status: {
         type: String,
-        enum: ['pending', 'in-progress', 'resolved', 'ignored'],
-        default: 'pending',
+        enum: [...REPORT_STATUSES],
+        // Les valeurs héritées (pending, in-progress, ignored) sont converties à l'écriture/requête.
+        set: normalizeReportStatus,
+        default: 'open',
         index: true,
       },
       snapshot: Schema.Types.Mixed,

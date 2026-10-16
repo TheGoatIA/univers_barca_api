@@ -306,7 +306,7 @@ sequenceDiagram
 * **Verrouillage progressif** : seuil 5 échecs ; 1er verrou 15 min, 2e dans les 24 h → 1 h, 3e → 24 h. Même un bon mot de passe est refusé pendant le verrou.
 * **Compte supprimé** : indiscernable d'un compte inexistant (`401 BAD_CREDENTIALS`) ; le statut `deleted` n'est jamais divulgué.
 * **Suspension échue** : si `suspendedUntil <= now`, le login (ou le refresh) remet `status='active'` et purge le bloc `suspension` (`API-AUTH-08`).
-* **Conflit de codes d'erreur (à trancher)** : le code actuel renvoie `ACCOUNT_DISABLED` pour banni **et** supprimé, et `MOB-A-05`/`MOB-B-06` s'appuient sur ce code ; le backlog API (`API-AUTH-08`) introduit `ACCOUNT_BANNED` et traite `deleted` en `BAD_CREDENTIALS`. Voir §14.
+* **Codes d'erreur (tranché, `docs/DECISIONS.md`)** : compte banni → `403 ACCOUNT_BANNED` avec `details.legacyCode = "ACCOUNT_DISABLED"` (alias déprécié, supprimé à la version suivante, le temps que `MOB-A-05`/`MOB-B-06` migrent) ; compte supprimé → `401 BAD_CREDENTIALS`. Implémenté dans `auth.service.ts#login`.
 
 ### 5.3 Refresh à rotation et détection de réutilisation
 
@@ -792,7 +792,7 @@ flowchart LR
 
 ## 14. Points ouverts et décisions à confirmer
 
-1. **Code d'erreur banni/supprimé** : `ACCOUNT_DISABLED` (code existant, utilisé par `MOB-A-05`, `MOB-A-13`, `MOB-B-06`, `MOB-B-21`) vs `ACCOUNT_BANNED` + `deleted → BAD_CREDENTIALS` (`API-AUTH-08`). Proposition : conserver `ACCOUNT_DISABLED` comme alias déprécié le temps de la migration mobile.
+1. ~~**Code d'erreur banni/supprimé**~~ *(tranché : `ACCOUNT_BANNED` + alias `details.legacyCode`, `deleted → BAD_CREDENTIALS`)* : `ACCOUNT_DISABLED` (code existant, utilisé par `MOB-A-05`, `MOB-A-13`, `MOB-B-06`, `MOB-B-21`) vs `ACCOUNT_BANNED` + `deleted → BAD_CREDENTIALS` (`API-AUTH-08`). Proposition : conserver `ACCOUNT_DISABLED` comme alias déprécié le temps de la migration mobile.
 2. **Compteur d'essais** : `details.attemptsLeft` (`API-AUTH-07`, `API-AUTH-33`) vs `details.remainingAttempts` (`MOB-B-22`, `ADM-WA-01`, `ADM-WA-04`). À harmoniser avant le codage.
 3. **Login admin en 1 ou 2 étapes** : `totp` dans la requête de login + `TOTP_REQUIRED` (code existant, `ADM-WA-01`) vs `challengeToken` (`API-AUTH-34`).
 4. **Contrats d'invitation admin** : API `GET /admin/auth/invitation?token=` + `POST /admin/auth/activate` + `410 INVITE_INVALID` ; admin `ADM-WA-09` utilise `GET /admin/auth/invitations/:token` + `POST /admin/auth/accept-invite` et distingue `INVITE_EXPIRED` (410) / `INVITE_USED` (409) ; `ADM-WI-05` rejoint `activate`. Corps du 2FA confirm : `{token}` (code) vs `{code}` (`ADM-WA-10`) ; `backupCodes` et `twoFactorSetupRequired` vs `requires2fa`.

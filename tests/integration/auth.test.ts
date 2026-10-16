@@ -108,3 +108,27 @@ describe('RGPD', () => {
     expect(relog.status).toBe(401);
   });
 });
+
+describe('Auth — comptes restreints (registre des décisions)', () => {
+  const login = (n: number) =>
+    api()
+      .post(`${V1}/auth/login`)
+      .send({ email: `user${n}@example.com`, password: validUser(n).password });
+
+  it('banni : 403 ACCOUNT_BANNED + alias legacyCode', async () => {
+    await api().post(`${V1}/auth/register`).send(validUser(41));
+    await User.updateOne({ email: 'user41@example.com' }, { status: 'banned' });
+    const res = await login(41);
+    expect(res.status).toBe(403);
+    expect(res.body.error.code).toBe('ACCOUNT_BANNED');
+    expect(res.body.error.details.legacyCode).toBe('ACCOUNT_DISABLED');
+  });
+
+  it('supprimé : 401 BAD_CREDENTIALS (pas de fuite)', async () => {
+    await api().post(`${V1}/auth/register`).send(validUser(42));
+    await User.updateOne({ email: 'user42@example.com' }, { status: 'deleted' });
+    const res = await login(42);
+    expect(res.status).toBe(401);
+    expect(res.body.error.code).toBe('BAD_CREDENTIALS');
+  });
+});

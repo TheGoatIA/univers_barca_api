@@ -31,6 +31,8 @@ async function main() {
     {
       fullName: 'Lamine Yamal',
       position: 'AD',
+      strongFoot: 'left',
+      heightCm: 180,
       shirtNumber: 10,
       nationality: 'Espagne',
       status: 'published',
@@ -43,6 +45,8 @@ async function main() {
     {
       fullName: 'Pedri',
       position: 'MC',
+      strongFoot: 'right',
+      heightCm: 174,
       shirtNumber: 8,
       nationality: 'Espagne',
       status: 'published',
@@ -50,6 +54,8 @@ async function main() {
     {
       fullName: 'Robert Lewandowski',
       position: 'BU',
+      strongFoot: 'right',
+      heightCm: 185,
       shirtNumber: 9,
       nationality: 'Pologne',
       status: 'published',

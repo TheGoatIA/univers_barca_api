@@ -83,6 +83,10 @@ export const register = async (input: RegisterInput, device: DeviceInfo) => {
   return { ...(await session(user, device)), verificationToken };
 };
 
+export const ACCOUNT_BANNED = 'ACCOUNT_BANNED';
+/** @deprecated Alias de `ACCOUNT_BANNED`, à supprimer à la version suivante (voir docs/DECISIONS.md). */
+export const LEGACY_ACCOUNT_DISABLED = 'ACCOUNT_DISABLED';
+
 export const login = async (email: string, password: string, device: DeviceInfo) => {
   const user = await User.findOne({ email: email.toLowerCase() }).select('+passwordHash');
   const ok = user?.passwordHash ? await verifyPassword(user.passwordHash, password) : false;
@@ -90,8 +94,16 @@ export const login = async (email: string, password: string, device: DeviceInfo)
     authFailures.inc({ reason: 'bad_credentials' });
     throw AppError.unauthorized('Email ou mot de passe incorrect', 'BAD_CREDENTIALS');
   }
-  if (user.status === 'banned' || user.status === 'deleted')
-    throw AppError.forbidden('Compte indisponible', 'ACCOUNT_DISABLED');
+  // D-registre : un compte supprimé est indiscernable d'un compte inexistant (pas de fuite d'existence).
+  if (user.status === 'deleted') {
+    authFailures.inc({ reason: 'bad_credentials' });
+    throw AppError.unauthorized('Email ou mot de passe incorrect', 'BAD_CREDENTIALS');
+  }
+  // `ACCOUNT_DISABLED` : alias déprécié exposé dans `details.legacyCode` le temps de la migration mobile.
+  if (user.status === 'banned')
+    throw AppError.forbidden('Compte banni', ACCOUNT_BANNED, {
+      legacyCode: LEGACY_ACCOUNT_DISABLED,
+    });
   if (user.status === 'suspended' && user.suspendedUntil && user.suspendedUntil > new Date())
     throw AppError.forbidden('Compte suspendu', 'ACCOUNT_SUSPENDED');
   if (user.passwordHash && needsRehash(user.passwordHash))

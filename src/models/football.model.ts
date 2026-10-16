@@ -1,5 +1,7 @@
 import { model, Schema } from 'mongoose';
 import { baseOptions, i18nField, withJson } from './_common';
+import { uniqueSlug } from '../utils/slug';
+import { HEIGHT_CM_MAX, HEIGHT_CM_MIN, PLAYER_POSITIONS, STRONG_FEET } from './player.constants';
 
 const playerSchema = withJson(
   new Schema(
@@ -9,10 +11,11 @@ const playerSchema = withJson(
       shortName: String,
       birthDate: Date,
       nationality: { type: String, index: true },
-      position: {
-        type: String,
-        enum: ['GB', 'DD', 'DC', 'DG', 'MD', 'MC', 'MO', 'AD', 'AG', 'BU'],
-      },
+      /** D18 : identifiant public (slug unique, généré depuis le nom — voir `utils/slug`). */
+      publicId: { type: String, index: { unique: true, sparse: true } },
+      position: { type: String, enum: [...PLAYER_POSITIONS] },
+      strongFoot: { type: String, enum: [...STRONG_FEET] },
+      heightCm: { type: Number, min: HEIGHT_CM_MIN, max: HEIGHT_CM_MAX },
       shirtNumber: Number,
       previousClub: String,
       isActive: { type: Boolean, default: true, index: true },
@@ -40,6 +43,14 @@ const playerSchema = withJson(
   ),
 );
 playerSchema.index({ status: 1, position: 1 });
+/** D18 : génère `publicId` (slug unique) à la création si absent. Un `publicId` existant n'est jamais modifié. */
+playerSchema.pre('validate', async function generatePublicId() {
+  if (this.publicId || !this.fullName) return;
+  const Model = this.constructor as unknown as { exists: (f: object) => Promise<unknown> };
+  this.publicId = await uniqueSlug(this.fullName, async (s) =>
+    Boolean(await Model.exists({ publicId: s })),
+  );
+});
 export const Player = model<any>('Player', playerSchema);
 
 const teamSchema = new Schema(

@@ -17,12 +17,14 @@ const refreshTokenSchema = new Schema(
     userAgent: { type: String },
     ip: { type: String },
     expiresAt: { type: Date, required: true },
+    /** Date de purge (TTL) : expiresAt + 30 j, ou révocation + 90 j (voir config/retention). */
+    purgeAt: { type: Date },
     revokedAt: { type: Date },
     replacedByHash: { type: String },
     lastUsedAt: { type: Date },
   },
   baseOptions,
 );
-refreshTokenSchema.index({ expiresAt: 1 }, { expireAfterSeconds: 0 });
+refreshTokenSchema.index({ purgeAt: 1 }, { expireAfterSeconds: 0 });
 
 export const RefreshToken = model<any>('RefreshToken', refreshTokenSchema);

@@ -4,6 +4,7 @@ import { env } from '../config/env';
 import { getStore } from '../config/redis';
 import { AppError } from '../utils/appError';
 import { RefreshToken } from '../models';
+import { refreshPurgeAt, RETENTION, revokedPurgeAt } from '../config/retention';
 
 export interface AccessPayload {
   id: string;
@@ -75,15 +76,26 @@ export const issueRefreshToken = async (
   familyId: string = crypto.randomUUID(),
 ) => {
   const token = randomToken();
+  const expiresAt = refreshExpiry();
   await RefreshToken.create({
     userId,
     familyId,
     tokenHash: sha256(token),
-    expiresAt: refreshExpiry(),
+    expiresAt,
+    purgeAt: refreshPurgeAt(expiresAt),
     lastUsedAt: new Date(),
     ...device,
   });
   return { token, familyId };
+};
+
+/** Révoque les tokens ciblés et prolonge leur conservation (famille gardée `revokedRefreshFamilyDays`). */
+const revokeWhere = async (filter: Record<string, unknown>) => {
+  const now = new Date();
+  const keepUntil = new Date(now.getTime() + RETENTION.revokedRefreshFamilyDays * 86_400_000);
+  await RefreshToken.updateMany(filter, [
+    { $set: { revokedAt: now, purgeAt: { $max: ['$purgeAt', keepUntil] } } },
+  ]);
 };
 
 /**
@@ -94,10 +106,7 @@ export const rotateRefreshToken = async (presented: string, device: DeviceInfo =
   const doc = await RefreshToken.findOne({ tokenHash: sha256(presented) });
   if (!doc) throw AppError.unauthorized('Refresh token invalide', 'REFRESH_INVALID');
   if (doc.revokedAt) {
-    await RefreshToken.updateMany(
-      { familyId: doc.familyId, revokedAt: { $exists: false } },
-      { revokedAt: new Date() },
-    );
+    await revokeWhere({ familyId: doc.familyId, revokedAt: { $exists: false } });
     throw AppError.unauthorized('Réutilisation détectée : session révoquée', 'REFRESH_REUSED');
   }
   if (doc.expiresAt < new Date())
@@ -112,21 +121,16 @@ export const rotateRefreshToken = async (presented: string, device: DeviceInfo =
     doc.familyId,
   );
   doc.revokedAt = new Date();
+  doc.purgeAt = revokedPurgeAt(doc.revokedAt, doc.expiresAt);
   doc.replacedByHash = sha256(next.token);
   await doc.save();
   return { userId: String(doc.userId), refreshToken: next.token };
 };
 
 export const revokeRefreshToken = async (presented: string) => {
-  await RefreshToken.updateOne(
-    { tokenHash: sha256(presented), revokedAt: { $exists: false } },
-    { revokedAt: new Date() },
-  );
+  await revokeWhere({ tokenHash: sha256(presented), revokedAt: { $exists: false } });
 };
 
 export const revokeAllForUser = async (userId: string) => {
-  await RefreshToken.updateMany(
-    { userId, revokedAt: { $exists: false } },
-    { revokedAt: new Date() },
-  );
+  await revokeWhere({ userId, revokedAt: { $exists: false } });
 };

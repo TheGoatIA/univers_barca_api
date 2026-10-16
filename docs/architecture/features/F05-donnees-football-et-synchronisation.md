@@ -31,6 +31,8 @@
 
 Les CDC citent NestJS, Prisma et PostgreSQL (tables `players`, `player_stat_seasons`, `match_events`…). **La stack réelle est Express 4 + TypeScript + Mongoose/MongoDB (replica set) + Redis + BullMQ + node-cron + PM2.** Conséquences : les statistiques par saison, les événements et les compositions sont **embarqués** dans les documents `Player` et `Match` (pas de tables de jointure) ; la file CDC `sync-live-matches` devient la file BullMQ **`football-sync`** qui porte plusieurs types de jobs.
 
+> **Modèle `Player` (D18, implémenté)** : `publicId` (slug unique généré depuis `fullName`, index unique sparse, migration `20261016000000-player-public-id`), `strongFoot` (`left|right|both`), `heightCm` (120–230) et postes élargis : codes historiques (`GB`, `DD`, `DC`, `DG`, `MD`, `MC`, `MO`, `AD`, `AG`, `BU`) conservés, plus postes larges (`GK`, `DF`, `MF`, `FW`) et sous-postes (`LB`, `RB`, `CB`, `DM`, `CM`, `AM`, `LW`, `RW`, `ST`). Constantes dans `src/models/player.constants.ts`.
+
 > État du code à la date de rédaction : seuls `GET /api/v1/players`, `GET /api/v1/players/:id` et `GET /api/v1/matches` existent (`src/controllers/content.controller.ts`, filtrage minimal) ; les modèles `Player`, `Team`, `Competition`, `Match` sont dans `src/models/football.model.ts` ; la file `football-sync` est déclarée dans `src/jobs/queues.ts` mais **aucun worker football n'est encore branché**. Tout le reste de ce document décrit la cible du backlog.
 
 ## 2. Acteurs et user stories

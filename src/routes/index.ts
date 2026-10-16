@@ -46,7 +46,8 @@ export const buildRouter = (): Router => {
    *     summary: Connexion email / mot de passe
    *     responses:
    *       200: { description: Jetons d'accès et de rafraîchissement }
-   *       401: { description: Identifiants incorrects }
+   *       401: { description: "Identifiants incorrects (code BAD_CREDENTIALS, y compris compte supprimé)" }
+   *       403: { description: "Compte banni (ACCOUNT_BANNED ; details.legacyCode = ACCOUNT_DISABLED, alias déprécié) ou suspendu (ACCOUNT_SUSPENDED)" }
    */
   r.post('/auth/login', authRl, validate(v.loginSchema), auth.login);
   /**

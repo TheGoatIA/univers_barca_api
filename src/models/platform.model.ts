@@ -84,11 +84,21 @@ export const NotificationPreference = model(
         halfTime: { type: Boolean, default: true },
         fullTime: { type: Boolean, default: true },
       },
+      /**
+       * D11 : heures calmes par jour — 7 entrées (index 0 = lundi … 6 = dimanche), `start`/`end`
+       * « HH:mm » optionnels (entrée vide = pas d'heures calmes ce jour-là). Tableau vide = aucune.
+       * Remplace l'ancien objet `{enabled,from,to}` (converti par la migration 20261016000100).
+       */
       quietHours: {
-        enabled: { type: Boolean, default: false },
-        from: { type: String, default: '23:00' },
-        to: { type: String, default: '07:00' },
+        type: [new Schema({ start: String, end: String }, { _id: false })],
+        default: [],
+        validate: {
+          validator: (v: unknown[]) => v.length === 0 || v.length === 7,
+          message: 'quietHours doit contenir 0 ou 7 entrées',
+        },
       },
+      liveGoals: { type: Boolean, default: true },
+      followedCompetitions: [{ type: Schema.Types.ObjectId, ref: 'Competition' }],
       streakReminderTime: { type: String, default: '20:30' },
     },
     baseOptions,

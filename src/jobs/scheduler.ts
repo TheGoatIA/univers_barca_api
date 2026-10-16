@@ -1,5 +1,6 @@
 import cron, { ScheduledTask } from 'node-cron';
 import { RefreshToken, User } from '../models';
+import { RETENTION } from '../config/retention';
 import { logger } from '../utils/logger';
 
 const tasks: ScheduledTask[] = [];
@@ -22,9 +23,18 @@ export const startScheduler = () => {
     }),
   );
   tasks.push(
+    // Filet de sécurité : le TTL `purgeAt` fait l'essentiel, ce job purge aussi les documents sans `purgeAt`.
     cron.schedule('30 3 * * *', async () => {
+      const day = 86_400_000;
       await RefreshToken.deleteMany({
-        revokedAt: { $lt: new Date(Date.now() - 30 * 86_400_000) },
+        $or: [
+          { revokedAt: { $lt: new Date(Date.now() - RETENTION.revokedRefreshFamilyDays * day) } },
+          {
+            revokedAt: { $exists: false },
+            purgeAt: { $exists: false },
+            expiresAt: { $lt: new Date(Date.now() - RETENTION.refreshTokenAfterExpiryDays * day) },
+          },
+        ],
       });
     }),
   );
