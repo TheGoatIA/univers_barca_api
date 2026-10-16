@@ -29,6 +29,6 @@ const make = (prefix: string, windowMs: number, limit: number, message: string) 
 export const globalLimiter = () =>
   make('global', 60_000, 300, 'Trop de requêtes, réessayez dans une minute');
 export const authLimiter = () =>
-  make('auth', 15 * 60_000, 20, 'Trop de tentatives, réessayez dans 15 minutes');
+  make('auth', 15 * 60_000, 10, 'Trop de tentatives, réessayez dans 15 minutes');
 export const sensitiveLimiter = () =>
   make('sensitive', 60 * 60_000, 5, 'Limite horaire atteinte pour cette action');
