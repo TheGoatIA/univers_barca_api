@@ -70,7 +70,7 @@
     "luxon": "^3.7.2",
     "migrate-mongo": "^14.0.7",
     "mongo-sanitize": "^1.1.0",
-    "mongoose": "^9.11.2",
+    "mongoose": "^9.11.3",
     "morgan": "^1.12.1",
     "nanoid": "^6.0.2",
     "node-cron": "^4.6.0",
