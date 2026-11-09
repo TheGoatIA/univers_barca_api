@@ -50,9 +50,9 @@
     ]
   },
   "dependencies": {
-    "@opentelemetry/auto-instrumentations-node": "^0.82.0",
-    "@opentelemetry/exporter-trace-otlp-http": "^0.300.0",
-    "@opentelemetry/sdk-node": "^0.300.0",
+    "@opentelemetry/auto-instrumentations-node": "^0.83.0",
+    "@opentelemetry/exporter-trace-otlp-http": "^0.301.0",
+    "@opentelemetry/sdk-node": "^0.301.0",
     "argon2": "^0.45.2",
     "bullmq": "^6.5.1",
     "compression": "^1.8.2",
