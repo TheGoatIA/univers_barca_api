@@ -27,10 +27,10 @@ jobs:
       REDIS_URL: redis://localhost:6379
       RATE_LIMIT_IN_TESTS: "false"
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           ref: dev
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v7
         with:
           node-version: "22"
           cache: npm
